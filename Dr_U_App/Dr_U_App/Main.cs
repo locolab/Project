@@ -16,6 +16,7 @@ namespace Dr_U_App
 			// you can specify it here.
 			UIApplication.Main (args, null, "AppDelegate");
             //These wounds they will not heal
+            //Adding a comment on vs, using vs team explorer to commit
 		}
 	}
 }
