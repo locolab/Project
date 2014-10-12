@@ -1,27 +1,139 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="75f4f39e-67e2-4e13-85fa-3b9ea3e20779" name="Dr_U_UML-01" linkedPackageId="275cd224-c5b1-45ab-b818-00eb99a51fd6" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="20abfda6-f4c8-4de8-8519-a61ae039e097">
-      <profileInstance Id="29f7af81-e7e6-4e1d-9600-bd1595492c31" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4666d2c1-b5c4-4ca4-b3a9-207e1108ed9a">
-      <profileInstance Id="24eb79f5-f92e-47db-bc1d-2e53fd62cf97" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="fccab933-c13a-4ca0-a1e7-ca863d7c72e1" name="Class1" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="fccab933-c13a-4ca0-a1e7-ca863d7c72e1" name="Main" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f0014d41-8e02-4ac6-82b5-50f9114149f7" />
+        <targetEnds>
+          <association Id="fe03a692-409b-430d-be72-a2906d97660c" isDerived="false" sourceEndRoleName="Main" targetEndRoleName="AppDelegate" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bc13767c-a863-428c-8682-396dc69264e9" LastKnownName="AppDelegate" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="13ad0924-c4a9-4c64-a040-b6c75b5ad42f" name="Main" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="39181dc0-c1d6-4dbc-adf3-4e030ef3f679" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="70c952a5-fe50-4d2a-b1ad-d38e397be152" name="AppDelegate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b62747b4-1425-4f0f-9b97-cf864e9de104" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c169049d-c052-4d7c-b317-9f2cbd1ad2ca" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bc13767c-a863-428c-8682-396dc69264e9" name="AppDelegate" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c073a03b-b2eb-4972-b0f2-0905e2e35b7d" />
+        <targetEnds>
+          <association Id="1a236998-8df4-4da6-a9d9-8f0c5cb81fdd" isDerived="false" sourceEndRoleName="AppDelegate" targetEndRoleName="StartScreen" isLeaf="false" isAbstract="false">
+            <classMoniker Id="7cf12118-de68-4f05-b3e3-bd59c0ef86c2" LastKnownName="StartScreen" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f46dc7b2-0c68-4441-996f-9a650af65bfa" name="AppDelegate" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="921189da-9710-4bef-aaf8-b8cbcac4687e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e3122481-09a8-41e1-aff0-81d23e1b546d" name="StartScreen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="662846a7-b492-4003-9330-0c3e27d0ae22" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4abe0e2d-ff9c-4ec8-9798-1b885e3921b3" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7cf12118-de68-4f05-b3e3-bd59c0ef86c2" name="StartScreen" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="55bee55b-a7ee-4c0f-b87e-7477fba556f0" />
+        <targetEnds>
+          <association Id="c6342c56-ed9a-46a0-a83c-0ebcab06c5d4" isDerived="false" sourceEndRoleName="StartScreen" targetEndRoleName="Museum" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d4d867ab-2c07-4646-a080-f01b6c443c93" LastKnownName="Museum" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bd852fae-2012-4f4b-aff4-1d4559ae4bc3" name="StartScreen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="879de77d-395d-4220-8ba8-f654452aead4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="103dd329-26b4-4cf3-b562-67e5406ba41b" name="Museum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="78e05a0d-c560-4c2d-8e9b-461ca2e773fc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="11fbfa50-9949-4e67-9cc6-6dc3a763a1b4" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="168d5ab3-5e6f-483e-83a8-66a076c83be2" name="Go Button" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4ec5bd88-0c7e-4cfb-871c-87f5ef4c39d8" />
+          </property>
+          <property Id="89feb8a5-342d-4fcf-ae98-d420ead3dd7b" name="User Name Input" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a0d613a6-84eb-4844-9177-1db585037755" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e115b57f-a1f0-4acc-8b79-5125051bf7c5" name="initMuseum" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8c8bb219-21f3-47ec-aeb6-50e78875df1e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ca281a4b-30d1-43ef-85ca-10a87bdfd9f4" name="userName" direction="In" isUnique="false">
+                  <elementDefinition Id="26ce8fc7-5ec4-449c-8960-1859ce9bcebd" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d4d867ab-2c07-4646-a080-f01b6c443c93" name="Museum" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0c618f31-208b-43bd-9368-6325c8a0ce04" />
+        <ownedAttributesInternal>
+          <property Id="3e65783c-82ba-4bad-a977-055864ab4931" name="Exhibit Handler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="03956f97-ae97-41ac-9318-a7231cb4dc94" />
+          </property>
+          <property Id="f73229f7-a8a1-4e6a-a781-a543059274e8" name="Menu Slider" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="63226a90-b659-4359-8949-09f4d3c252c4" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a95344f4-fe64-4222-be4a-442c8b0d3e4c" name="QuestionHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ba7b1c91-0d97-4337-9d27-7bfaf2073ea8" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c1489fbe-35a4-4073-80f4-12d08a2a71e6" name="DrUGame" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7a98d4e4-8d7c-412e-824d-e16c4321b4d5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="01b75158-5c31-4fc4-8168-e5e07289801e" name="Settings" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5a352924-254b-4df1-9312-9d0276aec876" />
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="275cd224-c5b1-45ab-b818-00eb99a51fd6" name="Class_UML">
     <elementDefinition Id="88791f92-0a31-41e5-a434-fab1e3d09f4f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="20abfda6-f4c8-4de8-8519-a61ae039e097">
+        <profileInstance Id="29f7af81-e7e6-4e1d-9600-bd1595492c31" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4666d2c1-b5c4-4ca4-b3a9-207e1108ed9a">
+        <profileInstance Id="24eb79f5-f92e-47db-bc1d-2e53fd62cf97" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
