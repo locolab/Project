@@ -3,7 +3,7 @@
   <ownedCommentsInternal>
     <comment Id="d7d7cb41-36ea-4f11-bfd5-8aa8a503c970">
       <elementDefinition Id="db8b2bbe-2609-4378-b3a6-51784515dbd2" />
-      <body>Modules are .cs
+      <body>Blue boxes are .cs
 </body>
     </comment>
   </ownedCommentsInternal>
@@ -274,6 +274,11 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="01b75158-5c31-4fc4-8168-e5e07289801e" name="Settings" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="5a352924-254b-4df1-9312-9d0276aec876" />
+        <ownedOperationsInternal>
+          <operation Id="e6e1e968-3ddf-439c-a737-daffd6e84c37" name="toggleAccess" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8e050501-1adb-4e5c-bc28-839dfda7e982" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -373,14 +378,6 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="3ec8d30b-48e9-41b7-b1f8-57394c0f3eae" name="Admin" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="5260eba7-68fe-4922-836a-ae6862647448" />
-        <ownedAttributesInternal>
-          <property Id="7a3294c2-8012-4013-90e0-c678898e31ba" name="Username Text" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="0cc657c2-6f7d-4f11-b38d-238f1d01e74c" />
-          </property>
-          <property Id="da9d3d6e-41f1-4a23-8b77-a43d3e8a4069" name="Password Text" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="a9f76775-28a6-4d61-b910-180884718486" />
-          </property>
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="f6d3625e-8145-4822-ad72-a43c6d4c4d6f" name="updateExhibits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c64e7257-7e3d-45d1-87bf-9663b0c9e8e0" />
@@ -397,6 +394,33 @@
             <elementDefinition Id="788a0000-9e98-484c-adb1-271c2e5d2c2a" />
           </dependency>
         </suppliersInternal>
+        <ownedAttributes>
+          <property Id="edbaf988-191a-42e6-9be7-e11ee01c9f14" name="Username Field" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a455db6f-14d2-4e4f-a1cb-4cfc2d5be19a" />
+          </property>
+          <property Id="2bf64499-35ce-4ee1-914d-76933bebd2b9" name="Password Field" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c688a706-d848-4797-a577-0597dbf554e4" />
+          </property>
+          <property Id="d3152de4-55b4-48f6-a0e9-94d1c661214e" name="Log In Button" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="93a2412c-8c8a-4d78-955e-621539e92b7d" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="03246fc7-4b9c-46a7-9935-fee43d2d45a0" name="Settings" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c44ea9cf-17ea-49f1-aa00-b0b836a1f0c0" />
+        <suppliersInternal>
+          <dependency Id="9178dfd8-5c41-43cd-ab3f-b4c0433e71fb">
+            <classMoniker Id="01b75158-5c31-4fc4-8168-e5e07289801e" LastKnownName="Settings" />
+            <elementDefinition Id="d6e1c469-ef8a-4f97-94dd-711b696e32ce" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property Id="2d4e949a-3996-4904-8a7f-4f4497cbaa3f" name="Accessability Button" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b11e44ec-baf1-4d72-96b1-e1366fc39eeb" />
+          </property>
+        </ownedAttributes>
       </Interface>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>

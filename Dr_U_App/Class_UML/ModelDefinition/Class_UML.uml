@@ -6,7 +6,7 @@
   <ownedCommentsInternal>
     <comment
       Id="db8b2bbe-2609-4378-b3a6-51784515dbd2">
-      <body>Modules are .cs
+      <body>Blue boxes are .cs
 </body>
     </comment>
   </ownedCommentsInternal>
@@ -601,7 +601,18 @@
         name="Settings"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="8e050501-1adb-4e5c-bc28-839dfda7e982"
+            name="toggleAccess"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -857,30 +868,6 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="0cc657c2-6f7d-4f11-b38d-238f1d01e74c"
-            name="Username Text"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="a9f76775-28a6-4d61-b910-180884718486"
-            name="Password Text"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="c64e7257-7e3d-45d1-87bf-9663b0c9e8e0"
@@ -908,6 +895,71 @@
               LastKnownLocation="Class_UML.uml" />
           </dependency>
         </suppliersInternal>
+        <ownedAttributes>
+          <property
+            Id="a455db6f-14d2-4e4f-a1cb-4cfc2d5be19a"
+            name="Username Field"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c688a706-d848-4797-a577-0597dbf554e4"
+            name="Password Field"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="93a2412c-8c8a-4d78-955e-621539e92b7d"
+            name="Log In Button"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="c44ea9cf-17ea-49f1-aa00-b0b836a1f0c0"
+        name="Settings"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="d6e1c469-ef8a-4f97-94dd-711b696e32ce">
+            <classMoniker
+              Id="5a352924-254b-4df1-9312-9d0276aec876"
+              LastKnownName="Settings"
+              LastKnownLocation="Class_UML.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property
+            Id="b11e44ec-baf1-4d72-96b1-e1366fc39eeb"
+            name="Accessability Button"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
       </Interface>
     </packageHasNamedElement>
   </packagedElements>
