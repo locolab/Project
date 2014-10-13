@@ -5,10 +5,6 @@
   name="Class_UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
-      Id="0c4e3522-672b-41fb-a6e7-61a1b064cebf">
-      <body>After hitting GO</body>
-    </comment>
-    <comment
       Id="db8b2bbe-2609-4378-b3a6-51784515dbd2">
       <body>Modules are .cs
 </body>
@@ -211,6 +207,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="a6be598a-51e5-434c-836d-7f6fa24ae2c4"
+            isDerived="false"
+            sourceEndRoleName="StartScreen"
+            targetEndRoleName="Admin"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5260eba7-68fe-4922-836a-ae6862647448"
+              LastKnownName="Admin"
+              LastKnownLocation="Class_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ecf15a58-e424-4c8f-9ea2-b701e6f92f24"
+                  name="StartScreen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="80fbc888-7f98-4798-9164-e469711005b1"
+                  name="Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
@@ -224,8 +259,33 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="26ce8fc7-5ec4-449c-8960-1859ce9bcebd"
+                  Id="4340d5b7-3051-476f-ae33-1de5c4e0ec5f"
+                  name="user"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dc4a2fd2-f8cb-4cb5-b93e-381c77826596"
+            name="initAdmin"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3f9ed55c-cdc5-4a19-8c61-dfa41f919035"
                   name="userName"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2e634d5f-b4bc-4e95-9c2c-ef4e6a5b1d58"
+                  name="pass"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -241,6 +301,164 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ebfe2f86-9326-40b2-87a5-ad0ab6f2d50f"
+            isDerived="false"
+            sourceEndRoleName="Museum"
+            targetEndRoleName="QuestionHandler"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ba7b1c91-0d97-4337-9d27-7bfaf2073ea8"
+              LastKnownName="QuestionHandler"
+              LastKnownLocation="Class_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d74f4d81-46ab-42f0-90f4-9cb914ef1114"
+                  name="Museum"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5133b799-c8c8-45ab-80d9-b8919c3faf22"
+                  name="QuestionHandler"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5d507d64-1747-423b-9a78-ab299895982f"
+            isDerived="false"
+            sourceEndRoleName="Museum"
+            targetEndRoleName="DrUGame"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7a98d4e4-8d7c-412e-824d-e16c4321b4d5"
+              LastKnownName="DrUGame"
+              LastKnownLocation="Class_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f5abb465-3f24-48c5-b115-f4d5d45f2d8f"
+                  name="Museum"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="52838dbf-a086-47de-a35f-c6275a1f7b55"
+                  name="DrUGame"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b7283705-19dd-4f55-b470-10416bf38cd2"
+            isDerived="false"
+            sourceEndRoleName="Museum"
+            targetEndRoleName="Settings"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5a352924-254b-4df1-9312-9d0276aec876"
+              LastKnownName="Settings"
+              LastKnownLocation="Class_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9b5a454c-b812-42bc-93ad-cd8ae5e26f9c"
+                  name="Museum"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2412cebb-e0c5-49fb-8c39-01b32cc069ea"
+                  name="Settings"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="cb378087-9e2a-43cd-b21d-85b6a2a51fb1"
+            isDerived="false"
+            sourceEndRoleName="Museum"
+            targetEndRoleName="Estimote"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="45019593-085c-40dd-8104-6cbbc56e55d5"
+              LastKnownName="Estimote"
+              LastKnownLocation="Class_UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dd583780-c6ea-4967-9953-42e7fec8209d"
+                  name="Museum"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="62c200dd-a88d-4b37-8beb-b8d2560dbaee"
+                  name="Estimote"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="cf80586c-f2d6-464d-83d8-c1fa297c5e43"
@@ -279,6 +497,14 @@
           <operation
             Id="2d40cf0d-4418-45ce-aaf6-084a63c6bb50"
             name="getLoc"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f376c936-c579-43ba-877f-5570c823e94e"
+            name="initGame"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -340,7 +566,34 @@
         name="DrUGame"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="3cd31343-781f-4017-a9a0-81ef7a885749"
+            name="updatePlayer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="97d98e48-12be-4978-85e2-f654df864c17"
+            name="goBack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e76d9a89-7bc4-48c1-ba28-0c1bf194857f"
+            name="win"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -389,6 +642,22 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="06187a1b-b865-4883-a34a-f638f74c1eb8"
+            name="updateLoc"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7220c110-2144-4f9c-88e7-9d4f904d061d"
+            name="updateExhibit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -422,6 +691,17 @@
           <property
             Id="45f485f0-cdcb-43f9-9fa6-3c38b7403c57"
             name="User Name Input"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="53b4841c-83ea-4f1e-aa73-b7104cee2794"
+            name="Admin Button"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -527,6 +807,107 @@
             aggregation="None"
             isComposite="false" />
         </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="1e12e5ad-e1c6-4be5-a151-77d5bbf55259"
+        name="DrUGame"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="a376ea13-1e07-4506-b141-0f1781fcd6a6">
+            <classMoniker
+              Id="7a98d4e4-8d7c-412e-824d-e16c4321b4d5"
+              LastKnownName="DrUGame"
+              LastKnownLocation="Class_UML.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property
+            Id="52085534-0743-4883-9189-1bc811dc5116"
+            name="Game"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="414dda14-9909-48b9-88a4-dbf86767d3a6"
+            name="Back Button"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5260eba7-68fe-4922-836a-ae6862647448"
+        name="Admin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="0cc657c2-6f7d-4f11-b38d-238f1d01e74c"
+            name="Username Text"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a9f76775-28a6-4d61-b910-180884718486"
+            name="Password Text"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c64e7257-7e3d-45d1-87bf-9663b0c9e8e0"
+            name="updateExhibits"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="5ffcfcac-43c6-443b-860f-ca26e5f1344f"
+        name="Admin"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="788a0000-9e98-484c-adb1-271c2e5d2c2a">
+            <classMoniker
+              Id="5260eba7-68fe-4922-836a-ae6862647448"
+              LastKnownName="Admin"
+              LastKnownLocation="Class_UML.uml" />
+          </dependency>
+        </suppliersInternal>
       </Interface>
     </packageHasNamedElement>
   </packagedElements>

@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="75f4f39e-67e2-4e13-85fa-3b9ea3e20779" name="Dr_U_UML-01" linkedPackageId="275cd224-c5b1-45ab-b818-00eb99a51fd6" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
-    <comment Id="c92421db-28c3-4bf2-bcdf-b0d768bd1f90">
-      <elementDefinition Id="0c4e3522-672b-41fb-a6e7-61a1b064cebf" />
-      <body>After hitting GO</body>
-    </comment>
     <comment Id="d7d7cb41-36ea-4f11-bfd5-8aa8a503c970">
       <elementDefinition Id="db8b2bbe-2609-4378-b3a6-51784515dbd2" />
       <body>Modules are .cs
@@ -91,14 +87,45 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="00d81385-1971-45a0-b0cd-c4a1003ac83c" />
           </association>
+          <association Id="2e4a6b25-9892-4b86-bf58-b80965b0ffc2" isDerived="false" sourceEndRoleName="StartScreen" targetEndRoleName="Admin" isLeaf="false" isAbstract="false">
+            <classMoniker Id="3ec8d30b-48e9-41b7-b1f8-57394c0f3eae" LastKnownName="Admin" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1f4e1b2-f23c-4118-9d5c-10dee5377e10" name="StartScreen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ecf15a58-e424-4c8f-9ea2-b701e6f92f24" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0462742a-36e0-4b12-a2ab-a49491acbe8b" name="Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="80fbc888-7f98-4798-9164-e469711005b1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a6be598a-51e5-434c-836d-7f6fa24ae2c4" />
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation Id="e115b57f-a1f0-4acc-8b79-5125051bf7c5" name="initMuseum" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="8c8bb219-21f3-47ec-aeb6-50e78875df1e" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="ca281a4b-30d1-43ef-85ca-10a87bdfd9f4" name="userName" direction="In" isUnique="false">
-                  <elementDefinition Id="26ce8fc7-5ec4-449c-8960-1859ce9bcebd" />
+                <parameter Id="cf93b609-f4f1-415a-ac34-ded5711cb1d6" name="user" direction="In" isUnique="false">
+                  <elementDefinition Id="4340d5b7-3051-476f-ae33-1de5c4e0ec5f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8d2fe497-375e-4655-808c-ca9ce4d09d1a" name="initAdmin" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dc4a2fd2-f8cb-4cb5-b93e-381c77826596" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="15c49acb-8c7c-4058-a170-570f24cb90fe" name="userName" direction="In" isUnique="false">
+                  <elementDefinition Id="3f9ed55c-cdc5-4a19-8c61-dfa41f919035" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3d117c92-12d4-4deb-b89c-3bd49c5c9900" name="pass" direction="In" isUnique="false">
+                  <elementDefinition Id="2e634d5f-b4bc-4e95-9c2c-ef4e6a5b1d58" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -109,6 +136,72 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="d4d867ab-2c07-4646-a080-f01b6c443c93" name="Museum" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="0c618f31-208b-43bd-9368-6325c8a0ce04" />
+        <targetEnds>
+          <association Id="affc97b7-b48e-4397-bfcc-61c7e0b0572e" isDerived="false" sourceEndRoleName="Museum" targetEndRoleName="QuestionHandler" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a95344f4-fe64-4222-be4a-442c8b0d3e4c" LastKnownName="QuestionHandler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="770c882a-4a46-4f99-913d-35f40a01d765" name="Museum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d74f4d81-46ab-42f0-90f4-9cb914ef1114" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3789a2c1-c038-449b-b341-57289f229690" name="QuestionHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5133b799-c8c8-45ab-80d9-b8919c3faf22" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ebfe2f86-9326-40b2-87a5-ad0ab6f2d50f" />
+          </association>
+          <association Id="0c6f4710-6e6a-48e0-9128-8c1fdae4bcf9" isDerived="false" sourceEndRoleName="Museum" targetEndRoleName="DrUGame" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c1489fbe-35a4-4073-80f4-12d08a2a71e6" LastKnownName="DrUGame" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a371b0a1-9b3b-44f0-ba98-73c3b6ca2c82" name="Museum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f5abb465-3f24-48c5-b115-f4d5d45f2d8f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="edac0cc2-9a40-4eb9-94e8-4896f07685ae" name="DrUGame" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="52838dbf-a086-47de-a35f-c6275a1f7b55" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5d507d64-1747-423b-9a78-ab299895982f" />
+          </association>
+          <association Id="a0111978-8ba9-4e9d-b6c3-b89016325b72" isDerived="false" sourceEndRoleName="Museum" targetEndRoleName="Settings" isLeaf="false" isAbstract="false">
+            <classMoniker Id="01b75158-5c31-4fc4-8168-e5e07289801e" LastKnownName="Settings" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="436bc48a-f416-4390-813f-611484e7e8e8" name="Museum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9b5a454c-b812-42bc-93ad-cd8ae5e26f9c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="374b6e1a-b063-4972-ad95-b43543c82b90" name="Settings" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2412cebb-e0c5-49fb-8c39-01b32cc069ea" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b7283705-19dd-4f55-b470-10416bf38cd2" />
+          </association>
+          <association Id="53ee6295-da90-4727-bf17-fba062330a73" isDerived="false" sourceEndRoleName="Museum" targetEndRoleName="Estimote" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9005d0cd-d3f9-4444-ab67-b12f36d8b8ba" LastKnownName="Estimote" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fcc62d89-ffad-4272-9f23-f603be875d6b" name="Museum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dd583780-c6ea-4967-9953-42e7fec8209d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7aa27b28-24b1-49da-a48c-db1537bfaf74" name="Estimote" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="62c200dd-a88d-4b37-8beb-b8d2560dbaee" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cb378087-9e2a-43cd-b21d-85b6a2a51fb1" />
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation Id="67635815-353c-4801-906b-3fb3aa506b5f" name="initExhibit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="cf80586c-f2d6-464d-83d8-c1fa297c5e43" />
@@ -128,6 +221,9 @@
           </operation>
           <operation Id="98d19bbf-8d11-4c4b-a5fd-a3aef916a667" name="getLoc" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2d40cf0d-4418-45ce-aaf6-084a63c6bb50" />
+          </operation>
+          <operation Id="89c66a23-0474-4be5-99ea-77e34240377b" name="initGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f376c936-c579-43ba-877f-5570c823e94e" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -162,6 +258,17 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="c1489fbe-35a4-4073-80f4-12d08a2a71e6" name="DrUGame" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="7a98d4e4-8d7c-412e-824d-e16c4321b4d5" />
+        <ownedOperationsInternal>
+          <operation Id="9c040ec5-5422-44c4-8e4e-6c09a6f720d4" name="updatePlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3cd31343-781f-4017-a9a0-81ef7a885749" />
+          </operation>
+          <operation Id="0c0eb992-1f16-4544-b55f-ccc591767d36" name="goBack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="97d98e48-12be-4978-85e2-f654df864c17" />
+          </operation>
+          <operation Id="ff56bd30-eb51-493b-8950-73463aa2ce26" name="win" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e76d9a89-7bc4-48c1-ba28-0c1bf194857f" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -178,6 +285,12 @@
           </operation>
           <operation Id="b363bb6f-5a49-47a8-b0b4-08694d8defc2" name="tagHandle" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0fad7236-fba4-486d-b1cf-f96605b9ad9c" />
+          </operation>
+          <operation Id="76a79d74-97b2-4825-9415-444cbcf9fe5f" name="updateLoc" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="06187a1b-b865-4883-a34a-f638f74c1eb8" />
+          </operation>
+          <operation Id="6aec6438-f094-4713-a16b-208ecceaf493" name="updateExhibit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7220c110-2144-4f9c-88e7-9d4f904d061d" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -197,6 +310,9 @@
           </property>
           <property Id="8becaf79-f568-4549-a6f7-6fcb5af0fa91" name="User Name Input" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="45f485f0-cdcb-43f9-9fa6-3c38b7403c57" />
+          </property>
+          <property Id="4f007c0d-06a5-4fda-b7b1-e0911edf4e1a" name="Admin Button" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="53b4841c-83ea-4f1e-aa73-b7104cee2794" />
           </property>
         </ownedAttributes>
       </Interface>
@@ -233,6 +349,54 @@
             <elementDefinition Id="cab4112e-df27-4b4c-a238-8f933603e41d" />
           </property>
         </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="61834db0-7162-4ab0-8332-271e4bc6ccf0" name="DrUGame" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1e12e5ad-e1c6-4be5-a151-77d5bbf55259" />
+        <suppliersInternal>
+          <dependency Id="fb00d218-520f-4970-87aa-00252a18d0d7">
+            <classMoniker Id="c1489fbe-35a4-4073-80f4-12d08a2a71e6" LastKnownName="DrUGame" />
+            <elementDefinition Id="a376ea13-1e07-4506-b141-0f1781fcd6a6" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property Id="92f86d2b-13f9-48ad-8721-a2659a78b344" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="52085534-0743-4883-9189-1bc811dc5116" />
+          </property>
+          <property Id="ae16d510-588b-4962-ab31-5d07e8657a15" name="Back Button" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="414dda14-9909-48b9-88a4-dbf86767d3a6" />
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3ec8d30b-48e9-41b7-b1f8-57394c0f3eae" name="Admin" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5260eba7-68fe-4922-836a-ae6862647448" />
+        <ownedAttributesInternal>
+          <property Id="7a3294c2-8012-4013-90e0-c678898e31ba" name="Username Text" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0cc657c2-6f7d-4f11-b38d-238f1d01e74c" />
+          </property>
+          <property Id="da9d3d6e-41f1-4a23-8b77-a43d3e8a4069" name="Password Text" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a9f76775-28a6-4d61-b910-180884718486" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="f6d3625e-8145-4822-ad72-a43c6d4c4d6f" name="updateExhibits" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c64e7257-7e3d-45d1-87bf-9663b0c9e8e0" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="89c6e4a9-906b-4eb3-8e08-e69deb979c6a" name="Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ffcfcac-43c6-443b-860f-ca26e5f1344f" />
+        <suppliersInternal>
+          <dependency Id="4eb4d309-e2fb-44bb-9cbe-58197a1e95ec">
+            <classMoniker Id="3ec8d30b-48e9-41b7-b1f8-57394c0f3eae" LastKnownName="Admin" />
+            <elementDefinition Id="788a0000-9e98-484c-adb1-271c2e5d2c2a" />
+          </dependency>
+        </suppliersInternal>
       </Interface>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
