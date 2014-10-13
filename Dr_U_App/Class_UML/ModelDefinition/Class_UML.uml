@@ -3,6 +3,17 @@
   dslVersion="1.0.0.0"
   Id="88791f92-0a31-41e5-a434-fab1e3d09f4f"
   name="Class_UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="0c4e3522-672b-41fb-a6e7-61a1b064cebf">
+      <body>After hitting GO</body>
+    </comment>
+    <comment
+      Id="db8b2bbe-2609-4378-b3a6-51784515dbd2">
+      <body>Modules are .cs
+</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -66,6 +77,16 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="fdf56124-7932-472c-a35c-daa2cdf13711"
+            name="AppDelegate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -84,7 +105,7 @@
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="4abe0e2d-ff9c-4ec8-9798-1b885e3921b3"
+            Id="819769cd-cc0b-4deb-a270-40ee70347f8f"
             isDerived="false"
             sourceEndRoleName="AppDelegate"
             targetEndRoleName="StartScreen"
@@ -97,7 +118,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="921189da-9710-4bef-aaf8-b8cbcac4687e"
+                  Id="74ffb79d-ae7c-42bc-9d66-3764c9ed028f"
                   name="AppDelegate"
                   isLeaf="false"
                   isStatic="false"
@@ -110,7 +131,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="662846a7-b492-4003-9330-0c3e27d0ae22"
+                  Id="61b62514-3cbc-4bd3-b597-edcaddceaab7"
                   name="StartScreen"
                   isLeaf="false"
                   isStatic="false"
@@ -123,6 +144,24 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="b4c5047a-86d8-4427-add0-26f15d20d28b"
+            name="initSplash"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e91aef89-685f-4398-a702-f4a2249ff47d"
+            name="initError"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -134,7 +173,7 @@
         isActiveClass="false">
         <targetEnds>
           <association
-            Id="11fbfa50-9949-4e67-9cc6-6dc3a763a1b4"
+            Id="00d81385-1971-45a0-b0cd-c4a1003ac83c"
             isDerived="false"
             sourceEndRoleName="StartScreen"
             targetEndRoleName="Museum"
@@ -147,7 +186,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="879de77d-395d-4220-8ba8-f654452aead4"
+                  Id="8059a47f-2f55-4d2d-89fc-6e5eda63c99b"
                   name="StartScreen"
                   isLeaf="false"
                   isStatic="false"
@@ -160,7 +199,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="78e05a0d-c560-4c2d-8e9b-461ca2e773fc"
+                  Id="2491cf82-2dab-4f3c-93af-3cfa32970458"
                   name="Museum"
                   isLeaf="false"
                   isStatic="false"
@@ -173,30 +212,6 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="4ec5bd88-0c7e-4cfb-871c-87f5ef4c39d8"
-            name="Go Button"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="a0d613a6-84eb-4844-9177-1db585037755"
-            name="User Name Input"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="8c8bb219-21f3-47ec-aeb6-50e78875df1e"
@@ -226,30 +241,50 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="03956f97-ae97-41ac-9318-a7231cb4dc94"
-            name="Exhibit Handler"
+        <ownedOperationsInternal>
+          <operation
+            Id="cf80586c-f2d6-464d-83d8-c1fa297c5e43"
+            name="initExhibit"
             isLeaf="false"
             isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="63226a90-b659-4359-8949-09f4d3c252c4"
-            name="Menu Slider"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="39c2145e-18e6-433d-a3a1-00c2380b73e3"
+            name="questionAsked"
             isLeaf="false"
             isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="82a04354-ac47-4fe5-a90d-c1c8bbee2754"
+                  name="question"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9c362e1a-4ae0-4e99-9a81-c4dae9e55ef7"
+            name="displayInfo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2d40cf0d-4418-45ce-aaf6-084a63c6bb50"
+            name="getLoc"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -258,7 +293,46 @@
         name="QuestionHandler"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="acea3662-12c3-4b3c-844d-f2de0e2e558a"
+            name="getAnswer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0302ce99-5ac6-4022-b828-dc7cd3609495"
+                  name="question"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="57ebc45f-896a-4246-b7ba-5667b24093fd"
+            name="newQuestion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cda98ae0-e939-4cb3-b23b-45c70a7e8a4d"
+                  name="question"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -283,6 +357,177 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="8a38cd10-3cab-44c2-8ce3-bfe6b820778a"
+        name="Interface2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="45019593-085c-40dd-8104-6cbbc56e55d5"
+        name="Estimote"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="8a114cda-be74-4e1b-83e4-fdebdd628a9b"
+            name="beaconHandle"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0fad7236-fba4-486d-b1cf-f96605b9ad9c"
+            name="tagHandle"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="df321be6-9c65-4a39-ac29-4fd502fd98b2"
+        name="StartScreen"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="69ba2398-10b4-4fee-8532-d6ef37d941f3">
+            <classMoniker
+              Id="55bee55b-a7ee-4c0f-b87e-7477fba556f0"
+              LastKnownName="StartScreen"
+              LastKnownLocation="Class_UML.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property
+            Id="de5f1219-1c04-40bf-9a4a-0c362ce73843"
+            name="Go Button"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="45f485f0-cdcb-43f9-9fa6-3c38b7403c57"
+            name="User Name Input"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="a2083b42-0e9f-42d5-889f-b3b9c75cfa4d"
+        name="Museum"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="98e25c02-76c0-46df-87e3-2e22d57c606e">
+            <classMoniker
+              Id="0c618f31-208b-43bd-9368-6325c8a0ce04"
+              LastKnownName="Museum"
+              LastKnownLocation="Class_UML.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property
+            Id="f56203aa-38f0-409f-8d63-7a00f1ed4286"
+            name="Ask Button"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="aeecf025-ea11-4000-8b5c-3ae18376e3f3"
+            name="Exhibit Handler"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="49e37f3f-5797-459c-baa1-8a51576fb1c3"
+            name="Exhibit Slider"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="1d14aa36-1120-4ab9-ac73-6062e5c19c74"
+            name="Info Of Display"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="662903b4-48ac-465c-83c2-5aa864819d8e"
+            name="Menu Slider"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2d8702f7-a8e5-4a60-984b-2a5cd7d9d65c"
+            name="Question Text Box"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="cab4112e-df27-4b4c-a238-8f933603e41d"
+            name="Show Map"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+      </Interface>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
