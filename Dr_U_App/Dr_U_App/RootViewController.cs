@@ -92,6 +92,10 @@ namespace Dr_U_App
 
 			return UIPageViewControllerSpineLocation.Mid;
 		}
+
+        partial void UIButton13_TouchUpInside(UIButton sender)
+        {
+        }
 	}
 }
 
