@@ -1,10 +1,12 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Xamarin Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
+using System;
 using MonoTouch.Foundation;
+using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 
 namespace Dr_U_App
@@ -20,22 +22,44 @@ namespace Dr_U_App
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel labelTitle { get; set; }
-		
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView images { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton left_button { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton map_button { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton right_button { get; set; }
+
+		[Action ("UIButton13_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void UIButton13_TouchUpInside (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (buttonPrev != null) {
-				buttonPrev.Dispose ();
-				buttonPrev = null;
+			if (images != null) {
+				images.Dispose ();
+				images = null;
 			}
-
-			if (buttonNext != null) {
-				buttonNext.Dispose ();
-				buttonNext = null;
+			if (left_button != null) {
+				left_button.Dispose ();
+				left_button = null;
 			}
-
-			if (labelTitle != null) {
-				labelTitle.Dispose ();
-				labelTitle = null;
+			if (map_button != null) {
+				map_button.Dispose ();
+				map_button = null;
+			}
+			if (right_button != null) {
+				right_button.Dispose ();
+				right_button = null;
 			}
 		}
 	}

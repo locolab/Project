@@ -1,0 +1,6 @@
+C:\Users\Dheeraj\Documents\GitHub\Project\Dr_U_App\Dr_U_App\bin\iPhoneSimulator\Debug\Dr_U_App.exe
+C:\Users\Dheeraj\Documents\GitHub\Project\Dr_U_App\Dr_U_App\bin\iPhoneSimulator\Debug\Dr_U_App.pdb
+C:\Users\Dheeraj\Documents\GitHub\Project\Dr_U_App\Dr_U_App\obj\iPhoneSimulator\Debug\
+C:\Users\Dheeraj\Documents\GitHub\Project\Dr_U_App\Dr_U_App\obj\iPhoneSimulator\Debug\Dr_U_App.csprojResolveAssemblyReference.cache
+C:\Users\Dheeraj\Documents\GitHub\Project\Dr_U_App\Dr_U_App\obj\iPhoneSimulator\Debug\Dr_U_App.exe
+C:\Users\Dheeraj\Documents\GitHub\Project\Dr_U_App\Dr_U_App\obj\iPhoneSimulator\Debug\Dr_U_App.pdb
