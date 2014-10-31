@@ -27,6 +27,18 @@ namespace DrU
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+
+            btn_askButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                var firstAttributes = new UIStringAttributes
+                {
+                    ForegroundColor = UIColor.Blue,
+                    BackgroundColor = UIColor.Yellow,
+                    Font = UIFont.FromName("Courier", 18f)
+                };
+
+                 txt_askQuestion.AttributedText = new NSAttributedString("UITextField is pretty!", firstAttributes);
+            };
 		}
 
 		public override void ViewWillAppear (bool animated)
