@@ -14,6 +14,7 @@ namespace Dr_U_App
 		{
 			// if you want to use a different Application Delegate class from "AppDelegate"
 			// you can specify it here.
+
 			UIApplication.Main (args, null, "AppDelegate");
             //These wounds they will not heal
             //Adding a comment on vs, using vs team explorer to
