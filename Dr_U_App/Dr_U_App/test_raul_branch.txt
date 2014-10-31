@@ -3,3 +3,8 @@
 int main(){
 	printf("Buals");
 }
+
+int leave()
+{
+	cout>>"leav alone">>endl;
+}
