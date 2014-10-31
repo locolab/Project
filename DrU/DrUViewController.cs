@@ -32,9 +32,9 @@ namespace DrU
             {
                 var firstAttributes = new UIStringAttributes
                 {
-                    ForegroundColor = UIColor.Blue,
-                    BackgroundColor = UIColor.Yellow,
-                    Font = UIFont.FromName("Courier", 18f)
+                    ForegroundColor = UIColor.Black,
+                    BackgroundColor = UIColor.Clear,
+                    Font = UIFont.FromName("Times New Roman", 20f)
                 };
 
                  txt_askQuestion.AttributedText = new NSAttributedString("UITextField is pretty!", firstAttributes);
