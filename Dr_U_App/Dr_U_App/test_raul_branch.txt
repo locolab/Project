@@ -3,6 +3,7 @@
 int raul(){
 	
 	printf("New Shit");
+	printf("Double Sync")
 }
 
 int main(){
