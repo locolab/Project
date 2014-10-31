@@ -99,6 +99,14 @@
     <Compile Include="DrUViewController.designer.cs">
       <DependentUpon>DrUViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="text_askQuestion.cs" />
+    <Compile Include="text_askQuestion.designer.cs">
+      <DependentUpon>text_askQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="txt_askQuestion.cs" />
+    <Compile Include="txt_askQuestion.designer.cs">
+      <DependentUpon>txt_askQuestion.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
