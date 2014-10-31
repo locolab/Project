@@ -12,4 +12,6 @@ int main(){
 int leave()
 {
 	cout>>"leav alone">>endl;
+	// new line raj...testin
 }
+
