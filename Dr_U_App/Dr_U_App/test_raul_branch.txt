@@ -1,9 +1,13 @@
 #include <stdio.txt>
 
+int raul(){
+	
+	printf("New Shit");
+}
+
 int main(){
 	printf("Buals");
 }
-
 int leave()
 {
 	cout>>"leav alone">>endl;
