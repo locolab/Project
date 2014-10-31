@@ -46,7 +46,7 @@ namespace DrU
                     break;
 
                     case 1:
-                         lbl_exhibit.Text = txt_askQuestion.Text.ToString();
+					lbl_exibitName.Text = txt_askQuestion.Text.ToString();
                     break;
                 }
                 

@@ -24,6 +24,14 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIBarButtonItem btn_map { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIBarButtonItem btn_menu { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton btn_right { get; set; }
 
 		[Outlet]
@@ -59,6 +67,14 @@ namespace DrU
 			if (btn_left != null) {
 				btn_left.Dispose ();
 				btn_left = null;
+			}
+			if (btn_map != null) {
+				btn_map.Dispose ();
+				btn_map = null;
+			}
+			if (btn_menu != null) {
+				btn_menu.Dispose ();
+				btn_menu = null;
 			}
 			if (btn_right != null) {
 				btn_right.Dispose ();

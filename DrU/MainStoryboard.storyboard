@@ -49,13 +49,13 @@
                                 <rect key="frame" x="113" y="147" width="276" height="198"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This should change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jix-zp-oqw">
-                                <rect key="frame" x="506" y="147" width="150" height="21"/>
+                                <rect key="frame" x="522" y="147" width="176" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgo-Vc-jB4">
-                                <rect key="frame" x="397" y="147" width="107" height="21"/>
+                                <rect key="frame" x="397" y="147" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -104,6 +104,8 @@
                         <outlet property="txt_moreInfo" destination="7" id="name-outlet-7"/>
                         <outlet property="btn_left" destination="13" id="name-outlet-13"/>
                         <outlet property="btn_right" destination="15" id="name-outlet-15"/>
+                        <outlet property="btn_menu" destination="des-af-feU" id="name-outlet-des-af-feU"/>
+                        <outlet property="btn_map" destination="xdb-CV-mGE" id="name-outlet-xdb-CV-mGE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
