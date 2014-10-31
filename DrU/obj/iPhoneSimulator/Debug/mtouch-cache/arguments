@@ -1,14 +1,14 @@
 # Version: 8.4.0.15 (08968c4)
-# [first argument, ignore] # /Users/tylerwallace/Projects/DrU/DrU/bin/iPhoneSimulator/Debug/mtouch.exe
+# [first argument, ignore] # /Users/Dheeraj_Mac/Github/Project/DrU/bin/iPhoneSimulator/Debug/mtouch.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/8.4.0.15/bin/mtouch \
 	-sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--cache \
-	/Users/tylerwallace/Projects/DrU/DrU/obj/iPhoneSimulator/Debug/mtouch-cache \
+	/Users/Dheeraj_Mac/Github/Project/DrU/obj/iPhoneSimulator/Debug/mtouch-cache \
 	--nomanifest \
 	--nosign \
 	-sim \
-	/Users/tylerwallace/Projects/DrU/DrU/bin/iPhoneSimulator/Debug/DrU.app \
+	/Users/Dheeraj_Mac/Github/Project/DrU/bin/iPhoneSimulator/Debug/DrU.app \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.dll \
 	-r \
@@ -20,8 +20,6 @@
 	-debug \
 	-nolink \
 	-sdk \
-	8.0 \
-	-targetver \
-	7.0 \
+	8.1 \
 	--abi=i386 \
-	/Users/tylerwallace/Projects/DrU/DrU/bin/iPhoneSimulator/Debug/DrU.exe \
+	/Users/Dheeraj_Mac/Github/Project/DrU/bin/iPhoneSimulator/Debug/DrU.exe \

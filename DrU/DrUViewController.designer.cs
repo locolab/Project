@@ -20,6 +20,14 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btn_left { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btn_right { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIImageView img_exhibit { get; set; }
 
 		[Outlet]
@@ -47,6 +55,14 @@ namespace DrU
 			if (btn_askButton != null) {
 				btn_askButton.Dispose ();
 				btn_askButton = null;
+			}
+			if (btn_left != null) {
+				btn_left.Dispose ();
+				btn_left = null;
+			}
+			if (btn_right != null) {
+				btn_right.Dispose ();
+				btn_right = null;
 			}
 			if (img_exhibit != null) {
 				img_exhibit.Dispose ();
