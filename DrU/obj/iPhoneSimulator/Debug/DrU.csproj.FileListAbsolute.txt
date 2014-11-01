@@ -1,0 +1,10 @@
+E:\Repos\Project\DrU\bin\iPhoneSimulator\Debug\DrU.exe
+E:\Repos\Project\DrU\bin\iPhoneSimulator\Debug\DrU.pdb
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.plist
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.storyboardc\BYZ-38-t0r-view-8bC-Xf-vdC.nib
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.storyboardc\Info.plist
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.storyboardc\UIViewController-BYZ-38-t0r.nib
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\DrU.csprojResolveAssemblyReference.cache
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\DrU.exe
+E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\DrU.pdb

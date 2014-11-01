@@ -108,9 +108,4 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
-  <ItemGroup>
-    <BundleResource Include="..\..\..\Dropbox\Documents\Shared\Capstone\Dr-C\dru_icon_ipad%402x.png">
-      <Link>Resources\dru_icon_ipad%402x.png</Link>
-    </BundleResource>
-  </ItemGroup>
 </Project>
