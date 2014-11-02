@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>DrU</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.your-company.DrU</string>
+	<string>com.cryotek.DrU</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -28,5 +28,13 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow location in background</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow Location when in use</string>
 </dict>
 </plist>

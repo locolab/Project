@@ -28,30 +28,6 @@ namespace DrU
 			
 			// Perform any additional setup after loading the view, typically from a nib.
 
-            var i = 0;
-
-            btn_askButton.TouchUpInside += (object sender, EventArgs e) =>
-            {
-                switch (i)
-                {
-                    case 0:
-                        var firstAttributes = new UIStringAttributes
-                        {
-                            ForegroundColor = UIColor.Black,
-                            BackgroundColor = UIColor.Clear,
-                            Font = UIFont.FromName("Times New Roman", 20f)
-                        };
-                         txt_askQuestion.AttributedText = new NSAttributedString("UITextField is pretty!", firstAttributes);
-                         i++;
-                    break;
-
-                    case 1:
-					lbl_exibitName.Text = txt_askQuestion.Text.ToString();
-                    break;
-                }
-                
-            };
-
 
 		}
 

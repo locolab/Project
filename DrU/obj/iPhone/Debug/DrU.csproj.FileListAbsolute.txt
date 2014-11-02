@@ -4,3 +4,13 @@ C:\Users\Raul\Documents\GitHub\Project\DrU\obj\iPhone\Debug\
 C:\Users\Raul\Documents\GitHub\Project\DrU\obj\iPhone\Debug\DrU.csprojResolveAssemblyReference.cache
 C:\Users\Raul\Documents\GitHub\Project\DrU\obj\iPhone\Debug\DrU.exe
 C:\Users\Raul\Documents\GitHub\Project\DrU\obj\iPhone\Debug\DrU.pdb
+E:\Repos\Project\DrU\bin\iPhone\Debug\DrU.exe
+E:\Repos\Project\DrU\bin\iPhone\Debug\DrU.pdb
+E:\Repos\Project\DrU\obj\iPhone\Debug\ibtool\MainStoryboard.plist
+E:\Repos\Project\DrU\obj\iPhone\Debug\ibtool\MainStoryboard.storyboardc\BYZ-38-t0r-view-8bC-Xf-vdC.nib
+E:\Repos\Project\DrU\obj\iPhone\Debug\ibtool\MainStoryboard.storyboardc\Info.plist
+E:\Repos\Project\DrU\obj\iPhone\Debug\ibtool\MainStoryboard.storyboardc\UIViewController-BYZ-38-t0r.nib
+E:\Repos\Project\DrU\obj\iPhone\Debug\
+E:\Repos\Project\DrU\obj\iPhone\Debug\DrU.csprojResolveAssemblyReference.cache
+E:\Repos\Project\DrU\obj\iPhone\Debug\DrU.exe
+E:\Repos\Project\DrU\obj\iPhone\Debug\DrU.pdb
