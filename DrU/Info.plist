@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>DrU</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.cryotek.DrU</string>
+	<string>com.Cryotek.DrU</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -28,13 +28,19 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow location in background</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow Location when in use</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>external-accessory</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+		<string>fetch</string>
+	</array>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>
