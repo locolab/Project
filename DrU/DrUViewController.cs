@@ -3,6 +3,11 @@ using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.CoreLocation;
+using MonoTouch.CoreBluetooth;
+using MonoTouch.CoreFoundation;
+
+using Estimote;
 
 namespace DrU
 {
@@ -23,13 +28,28 @@ namespace DrU
 		#region View lifecycle
 
 		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
-			
-			// Perform any additional setup after loading the view, typically from a nib.
+        {
+            base.ViewDidLoad();
+
+            // Perform any additional setup after loading the view, typically from a nib.
+
+            ESTBeaconManager manager = new ESTBeaconManager();
+            ESTBeaconRegion region = new ESTBeaconRegion("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+            ESTBeacon beacon = new ESTBeacon();
+
+            manager.AvoidUnknownStateBeacons = true;
+
+            manager.StartMonitoringForRegion(region);
+            manager.RequestStateForRegion(region);
 
 
-		}
+
+            manager.DidRangeBeacons += (object b, DidRangeBeaconsEventArgs e) =>
+            {
+                
+            };
+
+        }
 
 		public override void ViewWillAppear (bool animated)
 		{
