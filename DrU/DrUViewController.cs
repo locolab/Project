@@ -27,6 +27,11 @@ namespace DrU
 
 		#region View lifecycle
 
+        public override void DidRangeBeacons(ESTBeaconManager manager, NSArray[] beacons, ESTBeaconRegion region)
+        {
+
+        }
+
 		public override void ViewDidLoad ()
         {
             base.ViewDidLoad();
@@ -44,12 +49,10 @@ namespace DrU
 
 
 
-            manager.DidRangeBeacons += (object b, DidRangeBeaconsEventArgs e) =>
-            {
-                
-            };
 
         }
+
+
 
 		public override void ViewWillAppear (bool animated)
 		{
