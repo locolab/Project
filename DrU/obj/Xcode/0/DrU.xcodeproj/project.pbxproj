@@ -1,0 +1,230 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		382F5E4F0000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC06AED0000000000000000 /* UIKit.framework */; };
+		19C501820000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D560E200000000000000000 /* MapKit.framework */; };
+		2EF86A1A0000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 328976B80000000000000000 /* Foundation.framework */; };
+		9AC614000000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F459010000000000000000 /* CoreGraphics.framework */; };
+		23D186570000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 276292F50000000000000000 /* Info.plist */; };
+		3904EEEF0000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C95FB8D0000000000000000 /* Entitlements.plist */; };
+		272FAFD90000000000000000 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC0BC770000000000000000 /* MainStoryboard.storyboard */; };
+		155A70C30000000000000000 /* Estimote.dll in Resources */ = {isa = PBXBuildFile; fileRef = 18EB7D610000000000000000 /* Estimote.dll */; };
+		2189C8420000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 251AD4E00000000000000000 /* AppDelegate.h */; };
+		3A1B5A5C0000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAC66FA0000000000000000 /* AppDelegate.m */; };
+		34A855E10000000000000000 /* DrUViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3839627F0000000000000000 /* DrUViewController.h */; };
+		2BA444C80000000000000000 /* DrUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3551660000000000000000 /* DrUViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F52ED380000000000000000 /* DrU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "DrU.app"; path = "DrU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC06AED0000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		1D560E200000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		328976B80000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		25F459010000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		276292F50000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		3C95FB8D0000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		2AC0BC770000000000000000 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "MainStoryboard.storyboard"; path = "MainStoryboard.storyboard"; sourceTree = "<group>"; };
+		18EB7D610000000000000000 /* Estimote.dll */ = {isa = PBXFileReference; name = "Estimote.dll"; path = "Estimote.dll"; sourceTree = "<group>"; };
+		251AD4E00000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		3DAC66FA0000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		3839627F0000000000000000 /* DrUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DrUViewController.h"; path = "DrUViewController.h"; sourceTree = "<group>"; };
+		2F3551660000000000000000 /* DrUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DrUViewController.m"; path = "DrUViewController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16B4A2570000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				382F5E4F0000000000000000 /* UIKit.framework in Frameworks */,
+				19C501820000000000000000 /* MapKit.framework in Frameworks */,
+				2EF86A1A0000000000000000 /* Foundation.framework in Frameworks */,
+				9AC614000000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36CE13E50000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				2167C8310000000000000000 /* DrU */,
+				512465D00000000000000000 /* Frameworks */,
+				2C1AEE0B0000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C1AEE0B0000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F52ED380000000000000000 /* DrU.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		512465D00000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BC06AED0000000000000000 /* UIKit.framework */,
+				1D560E200000000000000000 /* MapKit.framework */,
+				328976B80000000000000000 /* Foundation.framework */,
+				25F459010000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		2167C8310000000000000000 /* DrU */ = {
+			isa = PBXGroup;
+			children = (
+				251AD4E00000000000000000 /* AppDelegate.h */,
+				3839627F0000000000000000 /* DrUViewController.h */,
+				3C95FB8D0000000000000000 /* Entitlements.plist */,
+				18EB7D610000000000000000 /* Estimote.dll */,
+				276292F50000000000000000 /* Info.plist */,
+				2AC0BC770000000000000000 /* MainStoryboard.storyboard */,
+				3BFD52390000000000000000 /* Supporting Files */,
+			);
+			name = "DrU";
+			sourceTree = "<group>";
+		};
+		3BFD52390000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DAC66FA0000000000000000 /* AppDelegate.m */,
+				2F3551660000000000000000 /* DrUViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B5C1A620000000000000000 /* DrU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 149FC75E0000000000000000 /* Build configuration list for PBXNativeTarget "DrU" */;
+			buildPhases = (
+				14E56A300000000000000000 /* Sources */,
+				16B4A2570000000000000000 /* Frameworks */,
+				2A38F62E0000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DrU";
+			productName = "DrU";
+			productReference = 1F52ED380000000000000000 /* DrU.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10A8F4880000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 65B94E600000000000000000 /* Build configuration list for PBXProject "DrU" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 36CE13E50000000000000000;
+			productRefGroup = 2C1AEE0B0000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B5C1A620000000000000000 /* DrU */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A38F62E0000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D186570000000000000000 /* Info.plist in Resources */,
+				3904EEEF0000000000000000 /* Entitlements.plist in Resources */,
+				272FAFD90000000000000000 /* MainStoryboard.storyboard in Resources */,
+				155A70C30000000000000000 /* Estimote.dll in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14E56A300000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2189C8420000000000000000 /* AppDelegate.h in Sources */,
+				3A1B5A5C0000000000000000 /* AppDelegate.m in Sources */,
+				34A855E10000000000000000 /* DrUViewController.h in Sources */,
+				2BA444C80000000000000000 /* DrUViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2B8244B70000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		3BA86F0C0000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "DrU";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65B94E600000000000000000 /* Build configuration list for PBXProject "DrU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B8244B70000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		149FC75E0000000000000000 /* Build configuration list for PBXNativeTarget "DrU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA86F0C0000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10A8F4880000000000000000 /* Project object */;
+}

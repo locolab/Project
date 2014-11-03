@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--DrU View Controller-->
@@ -16,8 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-gP-vFH" placeholder="Ask me a question?">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Ask me a question?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-gP-vFH">
                                 <rect key="frame" x="16" y="986" width="457" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" searchField="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -45,11 +48,17 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jQB-jq-oiQ">
                                 <rect key="frame" x="544" y="777" width="208" height="239"/>
                             </containerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="dru_icon_ipad.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dru_icon_ipad.png" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL">
                                 <rect key="frame" x="113" y="147" width="276" height="198"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
+                                </accessibility>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This should change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jix-zp-oqw">
                                 <rect key="frame" x="522" y="147" width="176" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,25 +75,28 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" text="TEST">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="TEST" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                                 <rect key="frame" x="397" y="176" width="282" height="149"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" text="MORE INFO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="MORE INFO" translatesAutoresizingMaskIntoConstraints="NO" id="7">
                                 <rect key="frame" x="11" y="446" width="745" height="236"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                                 <rect key="frame" x="0.0" y="147" width="62" height="198"/>
                                 <state key="normal" title="LEFT">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="15" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="706" y="152" width="62" height="198"/>
                                 <state key="normal" title="Right">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,29 +107,29 @@
                     </view>
                     <navigationItem key="navigationItem" id="9ca-IT-GhY"/>
                     <connections>
-                        <outlet property="txt_askQuestion" destination="Hft-gP-vFH" id="name-outlet-Hft-gP-vFH"/>
                         <outlet property="btn_askButton" destination="Qur-rB-xow" id="name-outlet-Qur-rB-xow"/>
-                        <outlet property="text_description" destination="6" id="name-outlet-6"/>
+                        <outlet property="btn_left" destination="13" id="name-outlet-13"/>
+                        <outlet property="btn_map" destination="xdb-CV-mGE" id="name-outlet-xdb-CV-mGE"/>
+                        <outlet property="btn_menu" destination="des-af-feU" id="name-outlet-des-af-feU"/>
+                        <outlet property="btn_right" destination="15" id="name-outlet-15"/>
+                        <outlet property="img_exhibit" destination="k6o-XJ-YfL" id="name-outlet-k6o-XJ-YfL"/>
                         <outlet property="lbl_exhibit" destination="Kgo-Vc-jB4" id="name-outlet-Kgo-Vc-jB4"/>
                         <outlet property="lbl_exibitName" destination="Jix-zp-oqw" id="name-outlet-Jix-zp-oqw"/>
-                        <outlet property="img_exhibit" destination="k6o-XJ-YfL" id="name-outlet-k6o-XJ-YfL"/>
+                        <outlet property="text_description" destination="6" id="name-outlet-6"/>
+                        <outlet property="txt_askQuestion" destination="Hft-gP-vFH" id="name-outlet-Hft-gP-vFH"/>
                         <outlet property="txt_moreInfo" destination="7" id="name-outlet-7"/>
-                        <outlet property="btn_left" destination="13" id="name-outlet-13"/>
-                        <outlet property="btn_right" destination="15" id="name-outlet-15"/>
-                        <outlet property="btn_menu" destination="des-af-feU" id="name-outlet-des-af-feU"/>
-                        <outlet property="btn_map" destination="xdb-CV-mGE" id="name-outlet-xdb-CV-mGE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="dru_icon_ipad.png" width="144" height="144"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <resources>
-        <image name="dru_icon_ipad.png" width="144" height="144"/>
-    </resources>
 </document>

@@ -100,10 +100,6 @@
     <Compile Include="DrUViewController.designer.cs">
       <DependentUpon>DrUViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="txt_askQuestion.cs" />
-    <Compile Include="txt_askQuestion.designer.cs">
-      <DependentUpon>txt_askQuestion.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
@@ -112,4 +108,8 @@
     <BundleResource Include="Resources\Estimote.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\images\" />
+  </ItemGroup>
 </Project>

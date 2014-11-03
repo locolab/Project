@@ -40,7 +40,5 @@
 		<string>bluetooth-peripheral</string>
 		<string>fetch</string>
 	</array>
-	<key>XSAppIconAssets</key>
-	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>
