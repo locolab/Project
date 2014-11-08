@@ -14,3 +14,4 @@ E:\Repos\Project\DrU\obj\iPhone\Debug\
 E:\Repos\Project\DrU\obj\iPhone\Debug\DrU.csprojResolveAssemblyReference.cache
 E:\Repos\Project\DrU\obj\iPhone\Debug\DrU.exe
 E:\Repos\Project\DrU\obj\iPhone\Debug\DrU.pdb
+E:\Repos\Project\DrU\bin\iPhone\Debug\Estimote.dll

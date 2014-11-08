@@ -27,10 +27,10 @@ namespace DrU
 
 		#region View lifecycle
 
-        public override void DidRangeBeacons(ESTBeaconManager manager, NSArray[] beacons, ESTBeaconRegion region)
+       /* public override void DidRangeBeacons(ESTBeaconManager manager, NSArray[] beacons, ESTBeaconRegion region)
         {
 
-        }
+        }*/
 
 		public override void ViewDidLoad ()
         {
