@@ -27,10 +27,7 @@ namespace DrU
 
 		#region View lifecycle
 
-       /* public override void DidRangeBeacons(ESTBeaconManager manager, NSArray[] beacons, ESTBeaconRegion region)
-        {
-
-        }*/
+        
 
 		public override void ViewDidLoad ()
         {
@@ -38,16 +35,31 @@ namespace DrU
 
             // Perform any additional setup after loading the view, typically from a nib.
 
-            ESTBeaconManager manager = new ESTBeaconManager();
+            /*ESTBeaconManager manager = new ESTBeaconManager();
             ESTBeaconRegion region = new ESTBeaconRegion("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
             ESTBeacon beacon = new ESTBeacon();
 
             manager.AvoidUnknownStateBeacons = true;
 
             manager.StartMonitoringForRegion(region);
-            manager.RequestStateForRegion(region);
+            manager.RequestStateForRegion(region);*/
 
+            CLLocationManager manager = new CLLocationManager();
+            var beaconID = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+            CLBeaconRegion region = new CLBeaconRegion(beaconID, "Da Reejun");
 
+            manager.DidRangeBeacons += (sender, e) =>
+            {
+
+                foreach (var beek in e.Beacons)
+                {
+                    lbl_exibitName.Text = beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy;
+                }
+
+            };
+
+            manager.StartRangingBeacons(region);
+            txt_askQuestion.Text = "Started Ranging";
 
 
         }
