@@ -58,20 +58,20 @@ namespace DrU
 
             manager.DidRangeBeacons += (sender, e) =>
             {
-
+                var bInfo = "";
                 foreach (var beek in e.Beacons)
                 {
 
-                    lbl_exibitName.Text = beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy;
+                    bInfo += beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy + "\n";
                 }
 
+                txt_moreInfo.Text = bInfo;
             };
 
             manager.StartMonitoring(region);
             manager.StartRangingBeacons(region);
             manager.StartUpdatingLocation();
             txt_askQuestion.Text = "Started Ranging";
-
 
         }
 
