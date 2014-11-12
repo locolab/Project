@@ -11,7 +11,7 @@ using Estimote;
 
 namespace DrU
 {
-	public partial class DrUViewController : UIViewController
+	public partial class DrUViewController : UIViewController, ICLLocationManagerDelegate
 	{
 		public DrUViewController (IntPtr handle) : base (handle)
 		{
@@ -47,24 +47,34 @@ namespace DrU
             CLLocationManager manager = new CLLocationManager();
             var beaconID = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
             CLBeaconRegion region = new CLBeaconRegion(beaconID, "Da Reejun");
+            
 
             if (!CLLocationManager.LocationServicesEnabled)
                 lbl_exibitName.Text = "Location Not Enabled";
 
             manager.RequestAlwaysAuthorization();
+            manager.RequestWhenInUseAuthorization();
             manager.PausesLocationUpdatesAutomatically = false;
 
-            manager.DidRangeBeacons += (sender, e) =>
+            /*manager.DidRangeBeacons += (sender, e) =>
             {
 
                 foreach (var beek in e.Beacons)
                 {
-                    lbl_exibitName.Text = beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy;
+                    
+                    txt_moreinfo.Text = beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy;
                 }
 
+            };*/
+
+            manager.RegionEntered += (object s, CLRegionEventArgs e) =>
+            {
+                txt_moreInfo.Text = "Found Estimote! : " + e.Region;
             };
 
+            manager.StartMonitoring(region);
             manager.StartRangingBeacons(region);
+            manager.StartUpdatingLocation();
             txt_askQuestion.Text = "Started Ranging";
 
 
