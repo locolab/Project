@@ -48,6 +48,12 @@ namespace DrU
             var beaconID = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
             CLBeaconRegion region = new CLBeaconRegion(beaconID, "Da Reejun");
 
+            if (!CLLocationManager.LocationServicesEnabled)
+                lbl_exibitName.Text = "Location Not Enabled";
+
+            manager.RequestAlwaysAuthorization();
+            manager.PausesLocationUpdatesAutomatically = false;
+
             manager.DidRangeBeacons += (sender, e) =>
             {
 
