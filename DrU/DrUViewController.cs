@@ -56,20 +56,15 @@ namespace DrU
             manager.RequestWhenInUseAuthorization();
             manager.PausesLocationUpdatesAutomatically = false;
 
-            /*manager.DidRangeBeacons += (sender, e) =>
+            manager.DidRangeBeacons += (sender, e) =>
             {
 
                 foreach (var beek in e.Beacons)
                 {
-                    
-                    txt_moreinfo.Text = beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy;
+
+                    lbl_exibitName.Text = beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy;
                 }
 
-            };*/
-
-            manager.RegionEntered += (object s, CLRegionEventArgs e) =>
-            {
-                txt_moreInfo.Text = "Found Estimote! : " + e.Region;
             };
 
             manager.StartMonitoring(region);
