@@ -99,6 +99,14 @@ namespace DrU
 		}
 
 		#endregion
+
+        partial void btn_map_Activated(UIBarButtonItem sender)
+        {
+        }
+
+        partial void btn_menu_Activated(UIBarButtonItem sender)
+        {
+        }
 	}
 }
 
