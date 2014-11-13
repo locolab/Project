@@ -40,5 +40,11 @@
 		<string>bluetooth-peripheral</string>
 		<string>fetch</string>
 	</array>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon-72@2x.png</string>
+		<string>Icon-76@2x.png</string>
+		<string>Default-Portrait@2x.png</string>
+	</array>
 </dict>
 </plist>
