@@ -1,3 +1,6 @@
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\bin\iPhoneSimulator\Debug\DrU.exe
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\bin\iPhoneSimulator\Debug\DrU.pdb
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\bin\iPhoneSimulator\Debug\Estimote.dll
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.plist
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.storyboardc\BYZ-38-t0r-view-8bC-Xf-vdC.nib
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.storyboardc\Info.plist
@@ -14,4 +17,9 @@ C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Next@2x.
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\pin-map-7.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\dru_icon_ipad@2x.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Comment-1@2x.png
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Icon-72@2x.png
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Default-Portrait@2x.png
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Icon-76@2x.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.csprojResolveAssemblyReference.cache
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.exe
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.pdb
