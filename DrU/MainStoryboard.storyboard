@@ -86,22 +86,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="MORE INFO:" translatesAutoresizingMaskIntoConstraints="NO" id="EhE-Q7-gSw" userLabel="txt_moreInfo">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Basic Info:" translatesAutoresizingMaskIntoConstraints="NO" id="4Og-f9-eBa" userLabel="txt_basicInfo">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -118,8 +102,6 @@
                         <outlet property="lbl_exibitName" destination="Jix-zp-oqw" id="name-outlet-Jix-zp-oqw"/>
                         <outlet property="scroll_lower" destination="1Jx-aC-TGX" id="name-outlet-1Jx-aC-TGX"/>
                         <outlet property="txt_askQuestion" destination="Hft-gP-vFH" id="name-outlet-Hft-gP-vFH"/>
-                        <outlet property="txt_basicInfo" destination="4Og-f9-eBa" id="name-outlet-4Og-f9-eBa"/>
-                        <outlet property="txt_moreInfo" destination="EhE-Q7-gSw" id="name-outlet-EhE-Q7-gSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -127,7 +109,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dru_icon_ipad.png" width="72" height="72"/>
+        <image name="dru_icon_ipad.png" width="144" height="144"/>
+        <image name="ask.png" width="52" height="52"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
