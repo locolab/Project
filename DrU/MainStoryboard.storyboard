@@ -21,7 +21,7 @@
                                 <items>
                                     <navigationItem title="Dr. Universe" id="iuB-wj-zRB">
                                         <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE" style="plain" image="images/Map_Path.png"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE" style="plain" image="Map_Path.png"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -52,12 +52,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb" image="images/qpbg.png">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb" image="qpbg.png">
                                         <rect key="frame" x="528" y="138" width="240" height="276"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="images/dru_icon_ipad.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="dru_icon_ipad.png">
                                 <rect key="frame" x="70" y="147" width="276" height="198"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
@@ -131,7 +131,7 @@
         <image name="dru_icon_ipad.png" width="144" height="144"/>
         <image name="ask.png" width="52" height="52"/>
         <image name="Assets/images/dru_icon_ipad.png" width="144" height="144"/>
-        <image name="DrU_Icon.png" width="538" height="380"/>
+        <image name="DrU_Icon.png" width="114" height="114"/>
         <image name="images/qpbg.png" width="553" height="742"/>
         <image name="images/ask.png" width="52" height="52"/>
         <image name="images/DrU_Icon.png" width="114" height="114"/>
@@ -144,6 +144,15 @@
         <image name="images/pin-map-7.png" width="30" height="30"/>
         <image name="images/dru_icon_ipad.png" width="144" height="144"/>
         <image name="images/Comment-1.png" width="44" height="42"/>
+        <image name="qpbg.png" width="553" height="742"/>
+        <image name="Prev.png" width="22" height="40"/>
+        <image name="pin-map-7.png" width="30" height="30"/>
+        <image name="Next.png" width="22" height="40"/>
+        <image name="Near_Me.png" width="50" height="50"/>
+        <image name="Map_Path.png" width="52" height="60"/>
+        <image name="Location.png" width="50" height="50"/>
+        <image name="homescreen_new.png" width="640" height="960"/>
+        <image name="Comment-1.png" width="44" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
