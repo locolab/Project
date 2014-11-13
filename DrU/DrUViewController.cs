@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Drawing;
-
+using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
@@ -58,20 +58,21 @@ namespace DrU
 
             manager.DidRangeBeacons += (sender, e) =>
             {
-                var bInfo = "";
-                foreach (var beek in e.Beacons)
+                var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy));
+                /*foreach (var beek in e.Beacons)
                 {
 
-                    bInfo += beek.Major + "-" + beek.Minor + ": " + beek.Proximity + " " + beek.Accuracy + "\n";
-                }
+                    bInfo += string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy);
+                }*/
 
                 txt_moreInfo.Text = bInfo;
+                
             };
 
             manager.StartMonitoring(region);
             manager.StartRangingBeacons(region);
             manager.StartUpdatingLocation();
-            txt_askQuestion.Text = "Started Ranging";
+            lbl_exibitName.Text = "Started Ranging"; 
 
         }
 
