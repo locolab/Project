@@ -35,17 +35,17 @@
                                 <rect key="frame" x="0.0" y="610" width="768" height="414"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qur-rB-xow" opaque="NO" highlighted="NO" selected="NO">
-                                        <rect key="frame" x="465" y="363" width="95" height="44"/>
+                                        <rect key="frame" x="452" y="363" width="68" height="44"/>
                                         <size key="titleShadowOffset" width="1" height="0"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0" maxY="0.0"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                         <state key="normal" title="ASK">
                                             <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.47843137254901963" blue="1" alpha="1"/>
                                         </state>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ask me a question?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-gP-vFH" textAlignment="center" borderStyle="roundedRect">
-                                        <rect key="frame" x="20" y="370" width="437" height="30"/>
+                                        <rect key="frame" x="7" y="370" width="437" height="30"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" searchField="YES"/>
                                         </accessibility>
@@ -80,13 +80,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                                 <rect key="frame" x="0.0" y="147" width="62" height="198"/>
-                                <state key="normal" title="LEFT" backgroundImage="images/Prev.png">
+                                <state key="normal" title="LEFT">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="706" y="152" width="62" height="198"/>
-                                <state key="normal" title="Right" backgroundImage="images/Next.png">
+                                <state key="normal" title="Right">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -142,6 +142,8 @@
         <image name="images/Near_Me.png" width="50" height="50"/>
         <image name="images/Next.png" width="22" height="40"/>
         <image name="images/pin-map-7.png" width="30" height="30"/>
+        <image name="images/dru_icon_ipad.png" width="144" height="144"/>
+        <image name="images/Comment-1.png" width="44" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
