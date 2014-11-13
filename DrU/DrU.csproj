@@ -90,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Resources\images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -109,6 +108,42 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Estimote.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\qpbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\ask%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\homescreen_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\DrU_Icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\Prev%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\Location%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\Map_Path%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\Near_Me%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\Next%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\pin-map-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\dru_icon_ipad%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\images\Comment-1%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>

@@ -21,7 +21,7 @@
                                 <items>
                                     <navigationItem title="Dr. Universe" id="iuB-wj-zRB">
                                         <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE" style="plain" image="images/Map_Path.png"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -34,10 +34,14 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-aC-TGX">
                                 <rect key="frame" x="0.0" y="610" width="768" height="414"/>
                                 <subviews>
-                                    <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qur-rB-xow" opaque="NO">
-                                        <rect key="frame" x="465" y="370" width="73" height="44"/>
-                                        <state key="normal" title="Ask" backgroundImage="images/ask.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qur-rB-xow" opaque="NO" highlighted="NO" selected="NO">
+                                        <rect key="frame" x="465" y="363" width="95" height="44"/>
+                                        <size key="titleShadowOffset" width="1" height="0"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0" maxY="0.0"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <state key="normal" title="ASK">
+                                            <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.47843137254901963" blue="1" alpha="1"/>
                                         </state>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ask me a question?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-gP-vFH" textAlignment="center" borderStyle="roundedRect">
@@ -53,7 +57,7 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="images/DrU_Icon.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="images/dru_icon_ipad.png">
                                 <rect key="frame" x="70" y="147" width="276" height="198"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
@@ -76,13 +80,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                                 <rect key="frame" x="0.0" y="147" width="62" height="198"/>
-                                <state key="normal" title="LEFT">
+                                <state key="normal" title="LEFT" backgroundImage="images/Prev.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="706" y="152" width="62" height="198"/>
-                                <state key="normal" title="Right">
+                                <state key="normal" title="Right" backgroundImage="images/Next.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -130,8 +134,14 @@
         <image name="DrU_Icon.png" width="538" height="380"/>
         <image name="images/qpbg.png" width="553" height="742"/>
         <image name="images/ask.png" width="52" height="52"/>
-        <image name="images/DrU_Icon.png" width="538" height="380"/>
+        <image name="images/DrU_Icon.png" width="114" height="114"/>
         <image name="images/homescreen_new.png" width="640" height="960"/>
+        <image name="images/Prev.png" width="22" height="40"/>
+        <image name="images/Location.png" width="50" height="50"/>
+        <image name="images/Map_Path.png" width="52" height="60"/>
+        <image name="images/Near_Me.png" width="50" height="50"/>
+        <image name="images/Next.png" width="22" height="40"/>
+        <image name="images/pin-map-7.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
