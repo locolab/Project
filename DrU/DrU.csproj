@@ -88,7 +88,9 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\images\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
@@ -106,12 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Estimote.dll" />
-    <BundleResource Include="dru_icon_ipad%402x.png" />
-    <BundleResource Include="ask%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="Assets\images\" />
+    <BundleResource Include="DrU_Icon.png" />
   </ItemGroup>
 </Project>

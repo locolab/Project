@@ -40,6 +40,10 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView DrU_animation { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIImageView img_exhibit { get; set; }
 
 		[Outlet]
@@ -57,6 +61,14 @@ namespace DrU
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField txt_askQuestion { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextView txt_basicInfo { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextView txt_moreInfo { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -84,6 +96,10 @@ namespace DrU
 				btn_right.Dispose ();
 				btn_right = null;
 			}
+			if (DrU_animation != null) {
+				DrU_animation.Dispose ();
+				DrU_animation = null;
+			}
 			if (img_exhibit != null) {
 				img_exhibit.Dispose ();
 				img_exhibit = null;
@@ -103,6 +119,14 @@ namespace DrU
 			if (txt_askQuestion != null) {
 				txt_askQuestion.Dispose ();
 				txt_askQuestion = null;
+			}
+			if (txt_basicInfo != null) {
+				txt_basicInfo.Dispose ();
+				txt_basicInfo = null;
+			}
+			if (txt_moreInfo != null) {
+				txt_moreInfo.Dispose ();
+				txt_moreInfo = null;
 			}
 		}
 	}
