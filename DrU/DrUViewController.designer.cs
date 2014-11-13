@@ -20,6 +20,10 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btn_Game { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton btn_left { get; set; }
 
 		[Outlet]
@@ -48,11 +52,15 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView text_description { get; set; }
+		UIScrollView scroll_lower { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField txt_askQuestion { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextView txt_basicInfo { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -63,6 +71,10 @@ namespace DrU
 			if (btn_askButton != null) {
 				btn_askButton.Dispose ();
 				btn_askButton = null;
+			}
+			if (btn_Game != null) {
+				btn_Game.Dispose ();
+				btn_Game = null;
 			}
 			if (btn_left != null) {
 				btn_left.Dispose ();
@@ -92,13 +104,17 @@ namespace DrU
 				lbl_exibitName.Dispose ();
 				lbl_exibitName = null;
 			}
-			if (text_description != null) {
-				text_description.Dispose ();
-				text_description = null;
+			if (scroll_lower != null) {
+				scroll_lower.Dispose ();
+				scroll_lower = null;
 			}
 			if (txt_askQuestion != null) {
 				txt_askQuestion.Dispose ();
 				txt_askQuestion = null;
+			}
+			if (txt_basicInfo != null) {
+				txt_basicInfo.Dispose ();
+				txt_basicInfo = null;
 			}
 			if (txt_moreInfo != null) {
 				txt_moreInfo.Dispose ();
