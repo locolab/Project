@@ -20,8 +20,16 @@
                                 <rect key="frame" x="0.0" y="65" width="768" height="44"/>
                                 <items>
                                     <navigationItem title="Dr. Universe" id="iuB-wj-zRB">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE" style="plain" image="Map_Path.png"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU">
+                                            <connections>
+                                                <action selector="btn_menu_Activated:" destination="BYZ-38-t0r" id="27"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE" style="plain" image="Map_Path.png">
+                                            <connections>
+                                                <action selector="btn_map_Activated:" destination="BYZ-38-t0r" id="26"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -78,15 +86,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13" reversesTitleShadowWhenHighlighted="NO" selected="NO" highlighted="NO" tag="0">
                                 <rect key="frame" x="0.0" y="147" width="62" height="198"/>
-                                <state key="normal" title="LEFT">
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <state key="normal" title="" image="Prev.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="706" y="152" width="62" height="198"/>
-                                <state key="normal" title="Right">
+                                <state key="normal" title="" image="Next.png" backgroundImage="">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>

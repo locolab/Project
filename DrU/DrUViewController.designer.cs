@@ -70,6 +70,14 @@ namespace DrU
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextView txt_moreInfo { get; set; }
 
+		[Action ("btn_map_Activated:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btn_map_Activated (UIBarButtonItem sender);
+
+		[Action ("btn_menu_Activated:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btn_menu_Activated (UIBarButtonItem sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (btn_askButton != null) {
