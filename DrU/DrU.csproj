@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Estimote.dll" />
+    <BundleResource Include="Resources\mainbackground.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\qpbg.png" />

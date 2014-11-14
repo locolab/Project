@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="42" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="108" width="768" height="916"/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-oB-JnQ">
                                 <rect key="frame" x="0.0" y="65" width="768" height="44"/>
                                 <items>
@@ -139,6 +142,7 @@
                         <outlet property="txt_basicInfo" destination="22" id="name-outlet-22"/>
                         <outlet property="btn_askButton" destination="31" id="name-outlet-31"/>
                         <outlet property="view_base" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
+                        <outlet property="img_background" destination="42" id="name-outlet-42"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -175,6 +179,7 @@
         <image name="homescreen ios 7.jpg" width="1536" height="2008"/>
         <image name="Default-Portrait.png" width="1536" height="2008"/>
         <image name="Icon-76.png" width="152" height="152"/>
+        <image name="mainbackground.jpg" width="2560" height="1600"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
