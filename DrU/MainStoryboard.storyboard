@@ -72,11 +72,12 @@
                                     </button>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="astronaut.png" highlighted="NO">
                                 <rect key="frame" x="70" y="147" width="276" height="198"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
                                 </accessibility>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This should change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jix-zp-oqw">
                                 <rect key="frame" x="474" y="147" width="224" height="21"/>
@@ -192,6 +193,10 @@
         <image name="pins9.png" width="32" height="51"/>
         <image name="location.png" width="32" height="51"/>
         <image name="menu2.png" width="32" height="29"/>
+        <image name="space.png" width="512" height="471"/>
+        <image name="astronaut.png" width="512" height="512"/>
+        <image name="astronautMain.png" width="512" height="512"/>
+        <image name="menuIcon.png" width="32" height="29"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>

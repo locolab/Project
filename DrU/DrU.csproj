@@ -109,6 +109,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\Estimote.dll" />
     <BundleResource Include="Resources\mainbackground.jpg" />
+    <BundleResource Include="Resources\astronautMain.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\nextIcon.png" />
