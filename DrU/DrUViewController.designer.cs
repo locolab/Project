@@ -70,6 +70,18 @@ namespace DrU
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextView txt_moreInfo { get; set; }
 
+		[Action ("btn_askButton_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btn_askButton_TouchUpInside (UIButton sender);
+
+		[Action ("btn_Game_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btn_Game_TouchUpInside (UIButton sender);
+
+		[Action ("btn_left_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btn_left_TouchUpInside (UIButton sender);
+
 		[Action ("btn_map_Activated:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void btn_map_Activated (UIBarButtonItem sender);
@@ -77,6 +89,10 @@ namespace DrU
 		[Action ("btn_menu_Activated:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void btn_menu_Activated (UIBarButtonItem sender);
+
+		[Action ("btn_right_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btn_right_TouchUpInside (UIButton sender);
 
 		void ReleaseDesignerOutlets ()
 		{

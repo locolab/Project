@@ -107,6 +107,22 @@ namespace DrU
         partial void btn_menu_Activated(UIBarButtonItem sender)
         {
         }
+
+        partial void btn_Game_TouchUpInside(UIButton sender)
+        {
+        }
+
+        partial void btn_right_TouchUpInside(UIButton sender)
+        {
+        }
+
+        partial void btn_left_TouchUpInside(UIButton sender)
+        {
+        }
+
+        partial void btn_askButton_TouchUpInside(UIButton sender)
+        {
+        }
 	}
 }
 
