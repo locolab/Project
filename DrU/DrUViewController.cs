@@ -67,7 +67,7 @@ namespace DrU
 
             manager.DidRangeBeacons += (sender, e) =>
             {
-                var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy));
+                var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: Prox: {2} Accuracy: {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy));
                 /*foreach (var beek in e.Beacons)
                 {
 
