@@ -1,0 +1,5 @@
+/Users/tylerwallace/Desktop/Capstone/Dr. U/DrU/obj/iPhone/Release/mtouch-cache/Link/monotouch.dll
+/Users/tylerwallace/Desktop/Capstone/Dr. U/DrU/obj/iPhone/Release/mtouch-cache/Link/System.dll
+/Users/tylerwallace/Desktop/Capstone/Dr. U/DrU/obj/iPhone/Release/mtouch-cache/Link/DrU.exe
+/Users/tylerwallace/Desktop/Capstone/Dr. U/DrU/obj/iPhone/Release/mtouch-cache/Link/mscorlib.dll
+/Users/tylerwallace/Desktop/Capstone/Dr. U/DrU/obj/iPhone/Release/mtouch-cache/Link/System.Core.dll
