@@ -111,52 +111,21 @@
     <BundleResource Include="Resources\mainbackground.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\nextIcon.png" />
+    <BundleResource Include="Resources\prevIcon.png" />
     <BundleResource Include="Resources\qpbg.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ask%402x.png" />
+    <BundleResource Include="Resources\location.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\homescreen_new.png" />
+    <BundleResource Include="Resources\menu2.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\DrU_Icon%402x.png" />
+    <BundleResource Include="Resources\space.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Prev%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Location%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Map_Path%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Near_Me%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Next%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\pin-map-7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\dru_icon_ipad%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Comment-1%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-72%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\homescreen ios 7.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-76%402x.png" />
+    <BundleResource Include="Resources\astronaut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>

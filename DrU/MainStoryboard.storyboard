@@ -16,19 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="42" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="42" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" highlighted="NO" image="mainbackground.jpg">
                                 <rect key="frame" x="0.0" y="108" width="768" height="916"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.984313725490196" blue="0.984313725490196" alpha="1"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-oB-JnQ">
                                 <rect key="frame" x="0.0" y="65" width="768" height="44"/>
                                 <items>
                                     <navigationItem title="Dr. Universe" id="iuB-wj-zRB">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU">
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU" image="menu2.png">
                                             <connections>
                                                 <action selector="btn_menu_Activated:" destination="BYZ-38-t0r" id="27"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE" style="plain" image="Map_Path.png">
+                                        <barButtonItem key="rightBarButtonItem" title="Map" id="xdb-CV-mGE" style="plain" image="location.png">
                                             <connections>
                                                 <action selector="btn_map_Activated:" destination="BYZ-38-t0r" id="26"/>
                                             </connections>
@@ -63,6 +64,7 @@
                                         <rect key="frame" x="460" y="370" width="68" height="30"/>
                                         <state key="normal" title="ASK">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                         </state>
                                         <connections>
                                             <action selector="btn_askButton_TouchUpInside:" destination="BYZ-38-t0r" id="38" eventType="touchUpInside"/>
@@ -70,7 +72,7 @@
                                     </button>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="Default-Portrait.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL">
                                 <rect key="frame" x="70" y="147" width="276" height="198"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
@@ -82,20 +84,21 @@
                                     <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgo-Vc-jB4">
                                 <rect key="frame" x="354" y="147" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13" reversesTitleShadowWhenHighlighted="NO" selected="NO" highlighted="NO" tag="0">
                                 <rect key="frame" x="0.0" y="147" width="62" height="198"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                <state key="normal" title="" backgroundImage="" image="Prev.png">
+                                <state key="normal" title="" backgroundImage="">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 </state>
                                 <connections>
                                     <action selector="btn_left_TouchUpInside:" destination="BYZ-38-t0r" id="37" eventType="touchUpInside"/>
@@ -103,15 +106,16 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="706" y="152" width="62" height="198"/>
-                                <state key="normal" title="" backgroundImage="" image="Next.png">
+                                <state key="normal" title="" backgroundImage="" image="nextIcon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.19215686274509805" green="0.30588235294117649" blue="0.52156862745098043" alpha="1"/>
                                 </state>
                                 <connections>
                                     <action selector="btn_right_TouchUpInside:" destination="BYZ-38-t0r" id="36" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="21" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" text="More Info: " textAlignment="center" editable="NO">
-                                <rect key="frame" x="20" y="362" width="728" height="240"/>
+                                <rect key="frame" x="0.0" y="362" width="768" height="240"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -177,9 +181,17 @@
         <image name="Comment-1.png" width="44" height="42"/>
         <image name="Icon-72.png" width="144" height="144"/>
         <image name="homescreen ios 7.jpg" width="1536" height="2008"/>
-        <image name="Default-Portrait.png" width="1536" height="2008"/>
-        <image name="Icon-76.png" width="152" height="152"/>
+        <image name="Default-Portrait.png" width="768" height="1004"/>
+        <image name="Icon-76.png" width="76" height="76"/>
         <image name="mainbackground.jpg" width="2560" height="1600"/>
+        <image name="next1.png" width="64" height="64"/>
+        <image name="prevlarge.png" width="512" height="512"/>
+        <image name="next2.png" width="128" height="128"/>
+        <image name="prevIcon.png" width="128" height="128"/>
+        <image name="nextIcon.png" width="128" height="128"/>
+        <image name="pins9.png" width="32" height="51"/>
+        <image name="location.png" width="32" height="51"/>
+        <image name="menu2.png" width="32" height="29"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>

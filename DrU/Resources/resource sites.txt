@@ -1,1 +1,4 @@
-got icons from here: http://www.icondeposit.com/theicondeposit:139
+
+ICONS website:	http://www.flaticon.com/
+
+used this tool to resize icons: http://www.resizeimage.4u2ges.com/default.asp
