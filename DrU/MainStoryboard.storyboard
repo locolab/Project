@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="65" width="768" height="44"/>
                                 <items>
                                     <navigationItem title="Dr. Universe" id="iuB-wj-zRB">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU" image="menu2.png">
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="des-af-feU" image="menu.png">
                                             <connections>
                                                 <action selector="btn_menu_Activated:" destination="BYZ-38-t0r" id="27"/>
                                             </connections>
@@ -72,7 +72,7 @@
                                     </button>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="astronaut.png" highlighted="NO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" highlighted="NO" image="Default-Portrait.png">
                                 <rect key="frame" x="70" y="147" width="276" height="198"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
@@ -197,6 +197,7 @@
         <image name="astronaut.png" width="512" height="512"/>
         <image name="astronautMain.png" width="512" height="512"/>
         <image name="menuIcon.png" width="32" height="29"/>
+        <image name="menu.png" width="32" height="29"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>

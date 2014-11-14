@@ -109,7 +109,6 @@
   <ItemGroup>
     <BundleResource Include="Resources\Estimote.dll" />
     <BundleResource Include="Resources\mainbackground.jpg" />
-    <BundleResource Include="Resources\astronautMain.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\nextIcon.png" />
@@ -120,13 +119,28 @@
     <BundleResource Include="Resources\location.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\menu2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\space.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\astronaut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dru_icon_ipad%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>
