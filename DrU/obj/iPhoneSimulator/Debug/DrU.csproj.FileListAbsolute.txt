@@ -10,13 +10,13 @@ C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\prevIcon
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\qpbg.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\location.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\space.png
-C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\astronaut.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Default-Portrait.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Default-Portrait@2x.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\dru_icon_ipad@2x.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Icon-76.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\Icon-76@2x.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\menu.png
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\placeholder.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.csprojResolveAssemblyReference.cache
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.exe
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.pdb

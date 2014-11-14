@@ -107,7 +107,6 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Estimote.dll" />
     <BundleResource Include="Resources\mainbackground.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\space.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\astronaut.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-Portrait.png" />
@@ -141,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Estimote.dll" />
+    <BundleResource Include="Resources\placeholder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>
