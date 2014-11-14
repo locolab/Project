@@ -38,6 +38,9 @@
                                 <state key="normal" title="Go To Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btn_Game_TouchUpInside:" destination="BYZ-38-t0r" id="35" eventType="touchUpInside"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-aC-TGX">
                                 <rect key="frame" x="0.0" y="610" width="768" height="414"/>
@@ -58,10 +61,13 @@
                                         <state key="normal" title="ASK">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btn_askButton_TouchUpInside:" destination="BYZ-38-t0r" id="38" eventType="touchUpInside"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="Default-Portrait.png">
                                 <rect key="frame" x="70" y="147" width="276" height="198"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
@@ -88,12 +94,18 @@
                                 <state key="normal" title="" backgroundImage="" image="Prev.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btn_left_TouchUpInside:" destination="BYZ-38-t0r" id="37" eventType="touchUpInside"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="706" y="152" width="62" height="198"/>
                                 <state key="normal" title="" backgroundImage="" image="Next.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btn_right_TouchUpInside:" destination="BYZ-38-t0r" id="36" eventType="touchUpInside"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="21" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" text="More Info: " textAlignment="center" editable="NO">
                                 <rect key="frame" x="20" y="362" width="728" height="240"/>
@@ -126,6 +138,7 @@
                         <outlet property="txt_moreInfo" destination="21" id="name-outlet-21"/>
                         <outlet property="txt_basicInfo" destination="22" id="name-outlet-22"/>
                         <outlet property="btn_askButton" destination="31" id="name-outlet-31"/>
+                        <outlet property="view_base" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
