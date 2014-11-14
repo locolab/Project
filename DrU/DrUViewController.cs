@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using MonoTouch.CoreGraphics;
@@ -12,6 +13,16 @@ namespace DrU
 {
 	public partial class DrUViewController : UIViewController, ICLLocationManagerDelegate
 	{
+
+        // keyboard view 
+        private UIView _activeview;             // Controller that activated the keyboard
+        private float _scrollAmount = 0.0f;    // amount to scroll 
+        private float _bottom = 0.0f;           // bottom point
+	    private float _offset = 10.0f; // extra offset
+	    private bool _moveViewUp = false;           // which direction are we moving
+        //end keyboard
+
+
 		public DrUViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -26,15 +37,7 @@ namespace DrU
 
 		#region View lifecycle
 
-        // keyboard view 
-        private UIView _activeview;             // Controller that activated the keyboard
-        private float _scrollAmount = 0.0f;    // amount to scroll 
-        private float _bottom = 0.0f;           // bottom point
-        private float _offset = 10.0f;          // extra offset
-        private bool _moveViewUp = false;           // which direction are we moving
-        //end keyboard
-
-
+      
 		public override void ViewDidLoad ()
         {
             base.ViewDidLoad();
@@ -82,6 +85,7 @@ namespace DrU
 
 
             // move text up
+            Debug.Write("TEST inside view did load");
 
 
            
@@ -99,18 +103,24 @@ namespace DrU
         // http://www.gooorack.com/2013/08/28/xamarin-moving-the-view-on-keyboard-show/ //
         private void KeyBoardUpNotification(NSNotification notification)
         {
+
+            Debug.Write("inside the KeyBoardUpNotification METHOD");
+
             // get the keyboard size
-            RectangleF r = UIKeyboard.BoundsFromNotification(notification);
+           //RectangleF r = UIKeyboard.BoundsFromNotification(notification);
+            var val = new NSValue(notification.UserInfo.ValueForKey(UIKeyboard.FrameBeginUserInfoKey).Handle);
+            RectangleF r = val.RectangleFValue;
 
             // Find what opened the keyboard
             foreach (UIView view in this.View.Subviews)
             {
                 if (view.IsFirstResponder)
                     _activeview = view;
+
             }
 
             // Bottom of the controller = initial position + height + offset      
-            _bottom = (_activeview.Frame.Y + _activeview.Frame.Height + _offset); 
+            _bottom = (_activeview.Frame.Y + _activeview.Frame.Height + _offset); // error here-------------
 
             // Calculate how far we need to scroll
             _scrollAmount = (r.Height - (View.Frame.Size.Height - _bottom));
@@ -131,12 +141,16 @@ namespace DrU
 
         private void KeyBoardDownNotification(NSNotification notification)
         {
+            Debug.Write("inside the KeyBoardDownNotification METHOD");
+
             if (_moveViewUp) { ScrollTheView(false); }
         }
 
 
         private void ScrollTheView(bool move)
         {
+
+            Debug.Write("inside the ScrollTheView METHOD");
 
             // scroll the view up or down
             UIView.BeginAnimations(string.Empty, System.IntPtr.Zero);
@@ -152,6 +166,7 @@ namespace DrU
             {
                 frame.Y += _scrollAmount;
                 _scrollAmount = 0;
+                
             }
 
             View.Frame = frame;
