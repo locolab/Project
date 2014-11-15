@@ -104,15 +104,13 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\locationMapBig.png" />
     <BundleResource Include="Resources\mainbackground.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\nextIcon.png" />
     <BundleResource Include="Resources\prevIcon.png" />
     <BundleResource Include="Resources\qpbg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\location.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\space.png" />

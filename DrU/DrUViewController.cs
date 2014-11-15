@@ -179,8 +179,16 @@ namespace DrU
             NSNotificationCenter.DefaultCenter.AddObserver
             (UIKeyboard.WillHideNotification, KeyBoardDownNotification);
 
+            // close keyboard on return NEED to add retun functionality so that ask button is clicked
+            this.txt_askQuestion.ShouldReturn += (txt_askQuestion) =>
+            {
+                txt_askQuestion.ResignFirstResponder();
+                return true;
+            };
+
 
         }
+
 
 // keyboard----------------------------------------------------------
         // http://www.gooorack.com/2013/08/28/xamarin-moving-the-view-on-keyboard-show/ //
@@ -233,6 +241,7 @@ namespace DrU
 
         private void KeyBoardDownNotification(NSNotification notification)
         {
+         
 
             if (_moveViewUp)
             {

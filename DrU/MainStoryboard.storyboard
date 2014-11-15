@@ -32,7 +32,7 @@
                                                 <action selector="btn_menu_Activated:" destination="BYZ-38-t0r" id="27"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Map" image="location.png" style="plain" id="xdb-CV-mGE">
+                                        <barButtonItem key="rightBarButtonItem" title="Map" style="plain" id="xdb-CV-mGE" image="locationMapBig.png">
                                             <connections>
                                                 <action selector="btn_map_Activated:" destination="BYZ-38-t0r" id="26"/>
                                             </connections>
@@ -75,7 +75,7 @@
                                     </button>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL" image="img_saturn.png">
                                 <rect key="frame" x="70" y="147" width="276" height="198"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0" blue="0" alpha="0"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -183,6 +183,8 @@
         <image name="animation/astro_anim10.jpg" width="553" height="742"/>
         <image name="animation/astro_anim11.jpg" width="553" height="742"/>
         <image name="animation/astro_anim12.jpg" width="553" height="742"/>
+        <image name="locationMap.png" width="32" height="32"/>
+        <image name="locationMapBig.png" width="50" height="50"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
