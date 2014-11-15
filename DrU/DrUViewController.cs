@@ -75,7 +75,7 @@ namespace DrU
 
             img_animation.AnimationRepeatCount = 1;
             img_animation.AnimationDuration = 1.5;
-            btn_askButton.TouchUpInside += (sender, args) => img_animation.StartAnimating();
+            btn_askButton.TouchUpInside += (sender, args) => AskQuestion();
 
            // img_animation.StartAnimating();
               //------- END ANIMATION
@@ -180,15 +180,21 @@ namespace DrU
             (UIKeyboard.WillHideNotification, KeyBoardDownNotification);
 
             // close keyboard on return NEED to add retun functionality so that ask button is clicked
-            this.txt_askQuestion.ShouldReturn += (txt_askQuestion) =>
+            this.txt_askQuestion.ShouldReturn += delegate
             {
-                txt_askQuestion.ResignFirstResponder();
+                AskQuestion();
                 return true;
             };
 
 
         }
 
+
+	    private void AskQuestion()
+	    {
+            txt_askQuestion.ResignFirstResponder();
+	        img_animation.StartAnimating();
+	    }
 
 // keyboard----------------------------------------------------------
         // http://www.gooorack.com/2013/08/28/xamarin-moving-the-view-on-keyboard-show/ //
