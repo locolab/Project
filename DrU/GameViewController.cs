@@ -12,5 +12,19 @@ namespace DrU
 		public GameViewController (IntPtr handle) : base (handle)
 		{
 		}
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            // Set the background image
+            img_GameBackground.Image = UIImage.FromBundle("Default-Portrait.png");
+
+        }
+
+
+        partial void btn_GoBackMain_TouchUpInside(UIButton sender)
+        {
+        }
 	}
 }

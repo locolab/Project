@@ -15,9 +15,7 @@ namespace DrU
 		{
 		}
 
-
-        
-		public override void DidReceiveMemoryWarning ()
+        public override void DidReceiveMemoryWarning ()
 		{
 			// Releases the view if it doesn't have a superview.
 			base.DidReceiveMemoryWarning ();
@@ -41,14 +39,7 @@ namespace DrU
                 return true;
             };
 
-            // set text field height
-	        var tHeight = txt_Name.Frame;
-	        tHeight.Height = 500f;
-
-	        txt_Name.Frame = tHeight;
-
-
-
+            
 	    }
 
         private void Getname()
@@ -56,9 +47,6 @@ namespace DrU
             txt_Name.ResignFirstResponder();
            // img_animation.StartAnimating();
         }
-
-
-
 
 
 	    partial void btn_Go_TouchUpInside(UIButton sender)
