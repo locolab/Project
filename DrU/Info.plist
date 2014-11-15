@@ -44,8 +44,6 @@
 	<array>
 		<string>Icon-76@2x.png</string>
 		<string>Icon-76.png</string>
-		<string>Default-Portrait.png</string>
-		<string>Default-Portrait@2x.png</string>
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
