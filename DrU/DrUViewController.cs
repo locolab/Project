@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using MonoTouch.CoreGraphics;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
@@ -20,6 +21,7 @@ namespace DrU
         private float _bottom = 0.0f;           // bottom point
 	    private float _offset = 10.0f; // extra offset
 	    private bool _moveViewUp = false;           // which direction are we moving
+        private int _ctrl = 0;
         //end keyboard
 
 
@@ -53,9 +55,9 @@ namespace DrU
             manager.StartMonitoringForRegion(region);
             manager.RequestStateForRegion(region);*/
 
-            CLLocationManager manager = new CLLocationManager();
-            var beaconID = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
-            CLBeaconRegion region = new CLBeaconRegion(beaconID, "Da Reejun");
+            var manager = new CLLocationManager();
+            var beaconId = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+            var region = new CLBeaconRegion(beaconId, "Da Reejun");
             
 
             if (!CLLocationManager.LocationServicesEnabled)
@@ -67,21 +69,69 @@ namespace DrU
 
             manager.DidRangeBeacons += (sender, e) =>
             {
-                var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: Prox: {2} Accuracy: {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy));
+                //var bInfo = "";
+                
+                //var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
                 /*foreach (var beek in e.Beacons)
                 {
-
                     bInfo += string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy);
                 }*/
-
-                txt_moreInfo.Text = bInfo;
                 
+                //txt_moreInfo.Text = bInfo;
+
+                switch (_ctrl)
+                {
+                    case 0:
+                        lbl_exibitName.Text = "Started Ranging";
+                        var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
+                        txt_moreInfo.Text = bInfo;
+                        break;
+                    case 1:
+                        
+                        if (!e.Beacons.ElementAt(0).Proximity.ToString().Equals("Unknown"))
+                        {
+                            if (e.Beacons.ElementAt(0).Major.ToString().Equals("46350"))
+                            {
+                                img_exhibit.Image = UIImage.FromBundle("Resources/img_saturn.png");
+                                lbl_exibitName.Text = "Saturn's Rings";
+                                txt_basicInfo.Text = "This be Saturn! Arrr!";
+                                txt_moreInfo.Text = "This is filler text that is supposed to be written in Latin but I do not speak Latin so this text will have to do. This"
+                                                    +
+                                                    " looks hideous in actual code, but it is not going to be used in the final release so I guess it is ok. Do not blame me as I am not"
+                                                    + " the senior developer...";
+                            }
+                            else if (e.Beacons.ElementAt(0).Major.ToString().Equals("24973"))
+                            {
+                                img_exhibit.Image = UIImage.FromBundle("Resources/img_mars.png");
+                                lbl_exibitName.Text = "Mars Rover";
+                                txt_basicInfo.Text = "This be some iRobot stuff";
+                                txt_moreInfo.Text = "This is even more filler text that was written by a developer that is need of a hug. I always work overtime but I never"
+                                                    +
+                                                    " get paid anything. I feel like I'm being taken advantage of by the others here. Please if anyone can read this tell my family"
+                                                    + " that I want to go home!";
+                            }
+                        }
+                        else
+                        {
+                            lbl_exibitName.Text = "Proximity be unknown yo";
+                        }
+                        break;
+                }
+
+                btn_left.TouchUpInside += (o, args) =>
+                {
+                    _ctrl = 0;
+                };
+
+                btn_right.TouchUpInside += (o, args) =>
+                {
+                    _ctrl = 1;
+                };
             };
 
             manager.StartMonitoring(region);
             manager.StartRangingBeacons(region);
             manager.StartUpdatingLocation();
-            lbl_exibitName.Text = "Started Ranging";
 
 
             // move text up

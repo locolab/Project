@@ -138,6 +138,9 @@
   <ItemGroup>
     <Content Include="Estimote.dll" />
     <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\img_mars.png" />
+    <BundleResource Include="Resources\img_saturn.png" />
+    <BundleResource Include="Resources\img_question.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>
