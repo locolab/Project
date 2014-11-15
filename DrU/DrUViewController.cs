@@ -44,6 +44,10 @@ namespace DrU
         {
             base.ViewDidLoad();
 
+            // Set the background image
+		    img_background.Image = UIImage.FromBundle("mainbackground.jpg");
+           // btn_left.SetImage(UIImage.FromBundle("prevIcon.png"), UIControlState.Disabled);
+
             // Perform any additional setup after loading the view, typically from a nib.
 
             /*ESTBeaconManager manager = new ESTBeaconManager();
