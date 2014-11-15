@@ -23,3 +23,6 @@ C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\img_ques
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\img_radar.png
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.exe
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.pdb
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.storyboardc\UIViewController-j4b-9u-v2v.nib
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\ibtool\MainStoryboard.storyboardc\j4b-9u-v2v-view-lou-iP-NuY.nib
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhoneSimulator\Debug\DrU.csprojResolveAssemblyReference.cache
