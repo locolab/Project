@@ -40,7 +40,7 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView DrU_animation { get; set; }
+		UIImageView img_animation { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -128,9 +128,9 @@ namespace DrU
 				btn_right.Dispose ();
 				btn_right = null;
 			}
-			if (DrU_animation != null) {
-				DrU_animation.Dispose ();
-				DrU_animation = null;
+			if (img_animation != null) {
+				img_animation.Dispose ();
+				img_animation = null;
 			}
 			if (img_background != null) {
 				img_background.Dispose ();

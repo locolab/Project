@@ -60,7 +60,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb" image="qpbg.png">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb">
                                         <rect key="frame" x="569" y="138" width="199" height="276"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31">
@@ -135,7 +135,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9ca-IT-GhY"/>
                     <connections>
-                        <outlet property="DrU_animation" destination="Fig-7O-2Rb" id="name-outlet-Fig-7O-2Rb"/>
+                        <outlet property="img_animation" destination="Fig-7O-2Rb" id="name-outlet-Fig-7O-2Rb"/>
                         <outlet property="btn_Game" destination="R3a-cg-0ef" id="name-outlet-R3a-cg-0ef"/>
                         <outlet property="btn_askButton" destination="31" id="name-outlet-31"/>
                         <outlet property="btn_left" destination="13" id="name-outlet-13"/>
@@ -171,6 +171,18 @@
         <image name="img_saturn.png" width="300" height="144"/>
         <image name="img_question.png" width="298" height="300"/>
         <image name="img_radar.png" width="226" height="226"/>
+        <image name="animation/astro_anim01.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim02.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim03.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim04.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim05.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim06.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim07.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim08.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim09.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim10.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim11.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim12.jpg" width="553" height="742"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>

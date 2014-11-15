@@ -55,6 +55,29 @@ namespace DrU
             manager.StartMonitoringForRegion(region);
             manager.RequestStateForRegion(region);*/
 
+
+            // animated images test
+            img_animation.AnimationImages = new UIImage[] 
+            {
+                  UIImage.FromBundle ("animation/astro_anim01.jpg")
+                , UIImage.FromBundle ("animation/astro_anim01.jpg")
+                , UIImage.FromBundle ("animation/astro_anim03.jpg")
+                , UIImage.FromBundle ("animation/astro_anim04.jpg")
+                , UIImage.FromBundle ("animation/astro_anim05.jpg")
+                , UIImage.FromBundle ("animation/astro_anim06.jpg")
+                , UIImage.FromBundle ("animation/astro_anim07.jpg")
+                , UIImage.FromBundle ("animation/astro_anim08.jpg")
+                , UIImage.FromBundle ("animation/astro_anim09.jpg")
+                , UIImage.FromBundle ("animation/astro_anim010.jpg")
+                , UIImage.FromBundle ("animation/astro_anim011.jpg")
+                , UIImage.FromBundle ("animation/astro_anim012.jpg") 
+            };
+
+            img_animation.AnimationRepeatCount = 0;
+            img_animation.AnimationDuration = .5;
+            img_animation.StartAnimating();
+              //------- END ANIMATION
+
             var manager = new CLLocationManager();
             var beaconId = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
             var region = new CLBeaconRegion(beaconId, "Da Reejun");
@@ -144,17 +167,15 @@ namespace DrU
 
 
             // move text up
-            Debug.Write("TEST inside view did load");
+            Debug.Write(" inside view did load");
 
             // Keyboard popup
             NSNotificationCenter.DefaultCenter.AddObserver
             (UIKeyboard.DidShowNotification, KeyBoardUpNotification);
-            Debug.Write("After KeyBoardUpNotification");
 
             // Keyboard Down
             NSNotificationCenter.DefaultCenter.AddObserver
             (UIKeyboard.WillHideNotification, KeyBoardDownNotification);
-            Debug.Write("After KeyBoardDownNotification");
 
 
         }
@@ -190,10 +211,10 @@ namespace DrU
             // Calculate how far we need to scroll
             _scrollAmount = (r.Height - (View.Frame.Size.Height - _bottom));
 
+
             // Perform the scrolling
             if (_scrollAmount > 0)
             {
-                Debug.Write("inside the KeyBoardUpNotification METHOD then PERFORMING SCROLLING");
                 _moveViewUp = true;
                 ScrollTheView(_moveViewUp);
                 Debug.Write("set  _moveViewUp = true; ");
@@ -202,27 +223,25 @@ namespace DrU
             else
             {
                 _moveViewUp = false;
-                Debug.Write("set  _moveViewUp = false; ");
             }
+
 
         }
 
 
         private void KeyBoardDownNotification(NSNotification notification)
         {
-            Debug.Write("inside the KeyBoardDownNotification METHOD");
 
             if (_moveViewUp)
             {
                 ScrollTheView(false);
             }
+
         }
 
 
         private void ScrollTheView(bool move)
         {
-
-            Debug.Write("inside the ScrollTheView METHOD");
 
             // scroll the view up or down
             UIView.BeginAnimations(string.Empty, System.IntPtr.Zero);
@@ -244,7 +263,6 @@ namespace DrU
             View.Frame = frame;
             UIView.CommitAnimations();
             
-            Debug.Write("END OF -- inside the ScrollTheView METHOD");
 
         }
 
@@ -292,6 +310,7 @@ namespace DrU
 
         partial void btn_right_TouchUpInside(UIButton sender)
         {
+
         }
 
         partial void btn_left_TouchUpInside(UIButton sender)
