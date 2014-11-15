@@ -19,7 +19,7 @@ namespace DrU
         private UIView _activeview;             // Controller that activated the keyboard
         private float _scrollAmount = 0.0f;    // amount to scroll 
         private float _bottom = 0.0f;           // bottom point
-	    private float _offset = 10.0f; // extra offset
+	    private float _offset = 0.0f; // extra offset
 	    private bool _moveViewUp = false;           // which direction are we moving
         private int _ctrl = 0;
         //end keyboard
@@ -146,15 +146,16 @@ namespace DrU
             // move text up
             Debug.Write("TEST inside view did load");
 
-
-           
             // Keyboard popup
             NSNotificationCenter.DefaultCenter.AddObserver
             (UIKeyboard.DidShowNotification, KeyBoardUpNotification);
+            Debug.Write("After KeyBoardUpNotification");
 
             // Keyboard Down
             NSNotificationCenter.DefaultCenter.AddObserver
             (UIKeyboard.WillHideNotification, KeyBoardDownNotification);
+            Debug.Write("After KeyBoardDownNotification");
+
 
         }
 
@@ -172,7 +173,7 @@ namespace DrU
 
             _activeview = View;
             // Find what opened the keyboard
-            foreach (UIView view in this.View.Subviews)
+          /*  foreach (UIView view in this.View.Subviews)
             {
                 if (view.IsFirstResponder)
                 {
@@ -181,7 +182,7 @@ namespace DrU
                 }
                 Debug.Write("inside the KeyBoardUpNotification METHOD then inside FOREACH");
 
-            }
+            } */
 
             // Bottom of the controller = initial position + height + offset      
             _bottom = (_activeview.Frame.Y + _activeview.Frame.Height + _offset); // error here-------------
@@ -195,11 +196,13 @@ namespace DrU
                 Debug.Write("inside the KeyBoardUpNotification METHOD then PERFORMING SCROLLING");
                 _moveViewUp = true;
                 ScrollTheView(_moveViewUp);
+                Debug.Write("set  _moveViewUp = true; ");
             }
 
             else
             {
                 _moveViewUp = false;
+                Debug.Write("set  _moveViewUp = false; ");
             }
 
         }
@@ -209,7 +212,10 @@ namespace DrU
         {
             Debug.Write("inside the KeyBoardDownNotification METHOD");
 
-            if (_moveViewUp) { ScrollTheView(false); }
+            if (_moveViewUp)
+            {
+                ScrollTheView(false);
+            }
         }
 
 
@@ -220,7 +226,7 @@ namespace DrU
 
             // scroll the view up or down
             UIView.BeginAnimations(string.Empty, System.IntPtr.Zero);
-            UIView.SetAnimationDuration(0.3);
+            UIView.SetAnimationDuration(0.1);
 
             RectangleF frame = View.Frame;
 
@@ -237,6 +243,8 @@ namespace DrU
 
             View.Frame = frame;
             UIView.CommitAnimations();
+            
+            Debug.Write("END OF -- inside the ScrollTheView METHOD");
 
         }
 
