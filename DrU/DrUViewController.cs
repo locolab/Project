@@ -82,7 +82,9 @@ namespace DrU
                 switch (_ctrl)
                 {
                     case 0:
+                        img_exhibit.Image = UIImage.FromBundle("img_radar.png");
                         lbl_exibitName.Text = "Started Ranging";
+                        txt_basicInfo.Text = "Scanning for Estimotes in the area...";
                         var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
                         txt_moreInfo.Text = bInfo;
                         break;
@@ -92,7 +94,7 @@ namespace DrU
                         {
                             if (e.Beacons.ElementAt(0).Major.ToString().Equals("46350"))
                             {
-                                img_exhibit.Image = UIImage.FromBundle("Resources/img_saturn.png");
+                                img_exhibit.Image = UIImage.FromBundle("img_saturn.png");
                                 lbl_exibitName.Text = "Saturn's Rings";
                                 txt_basicInfo.Text = "This be Saturn! Arrr!";
                                 txt_moreInfo.Text = "This is filler text that is supposed to be written in Latin but I do not speak Latin so this text will have to do. This"
@@ -102,7 +104,7 @@ namespace DrU
                             }
                             else if (e.Beacons.ElementAt(0).Major.ToString().Equals("24973"))
                             {
-                                img_exhibit.Image = UIImage.FromBundle("Resources/img_mars.png");
+                                img_exhibit.Image = UIImage.FromBundle("img_mars.png");
                                 lbl_exibitName.Text = "Mars Rover";
                                 txt_basicInfo.Text = "This be some iRobot stuff";
                                 txt_moreInfo.Text = "This is even more filler text that was written by a developer that is need of a hug. I always work overtime but I never"
@@ -113,7 +115,14 @@ namespace DrU
                         }
                         else
                         {
+                            img_exhibit.Image = UIImage.FromBundle("img_question.png");
                             lbl_exibitName.Text = "Proximity be unknown yo";
+                            txt_basicInfo.Text = "What in the world?";
+                            txt_moreInfo.Text =
+                                "I don't know what is going on but I can't properly detect the estimote! Either its something on your end, or I'm going crazy." +
+                                " It can be both, but that means there is something wrong with me and we all know that that isn't an issue.";
+
+
                         }
                         break;
                 }

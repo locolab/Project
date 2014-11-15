@@ -22,3 +22,4 @@ E:\Repos\Project\DrU\obj\iPhone\Release\DrU.csprojResolveAssemblyReference.cache
 E:\Repos\Project\DrU\obj\iPhone\Release\img_mars.png
 E:\Repos\Project\DrU\obj\iPhone\Release\img_saturn.png
 E:\Repos\Project\DrU\obj\iPhone\Release\img_question.png
+E:\Repos\Project\DrU\obj\iPhone\Release\img_radar.png
