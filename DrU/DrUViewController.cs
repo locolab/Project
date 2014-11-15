@@ -68,14 +68,16 @@ namespace DrU
                 , UIImage.FromBundle ("animation/astro_anim07.jpg")
                 , UIImage.FromBundle ("animation/astro_anim08.jpg")
                 , UIImage.FromBundle ("animation/astro_anim09.jpg")
-                , UIImage.FromBundle ("animation/astro_anim010.jpg")
-                , UIImage.FromBundle ("animation/astro_anim011.jpg")
-                , UIImage.FromBundle ("animation/astro_anim012.jpg") 
+                , UIImage.FromBundle ("animation/astro_anim10.jpg")
+                , UIImage.FromBundle ("animation/astro_anim11.jpg")
+                , UIImage.FromBundle ("animation/astro_anim12.jpg")
             };
 
-            img_animation.AnimationRepeatCount = 0;
-            img_animation.AnimationDuration = .5;
-            img_animation.StartAnimating();
+            img_animation.AnimationRepeatCount = 1;
+            img_animation.AnimationDuration = 1.5;
+            btn_askButton.TouchUpInside += (sender, args) => img_animation.StartAnimating();
+
+           // img_animation.StartAnimating();
               //------- END ANIMATION
 
             var manager = new CLLocationManager();
