@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2197BFD00000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA889B00000000000000000 /* UIKit.framework */; };
+		23AF1F300000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27402BCE0000000000000000 /* MapKit.framework */; };
+		38E287C80000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7394660000000000000000 /* Foundation.framework */; };
+		2C4D6A110000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDE76AF0000000000000000 /* CoreGraphics.framework */; };
+		BBE916200000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F9E0000000000000000000 /* Info.plist */; };
+		20F1F9FA0000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 248306980000000000000000 /* Entitlements.plist */; };
+		F1CBAE400000000000000000 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12ADC7820000000000000000 /* MainStoryboard.storyboard */; };
+		3D477BCE0000000000000000 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8886C000000000000000000 /* Icon-76@2x.png */; };
+		199CFDA20000000000000000 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E0A400000000000000000 /* Icon-76.png */; };
+		208C33C20000000000000000 /* locationMapBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 241D40600000000000000000 /* locationMapBig.png */; };
+		EB6F4AC00000000000000000 /* mainbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1248014A0000000000000000 /* mainbackground.jpg */; };
+		3CE1B5960000000000000000 /* nextIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 72C234000000000000000000 /* nextIcon.png */; };
+		2B0C76800000000000000000 /* prevIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9D831E0000000000000000 /* prevIcon.png */; };
+		358CB93E0000000000000000 /* qpbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 391DC5DC0000000000000000 /* qpbg.png */; };
+		23B77A280000000000000000 /* space.png in Resources */ = {isa = PBXBuildFile; fileRef = 274886C60000000000000000 /* space.png */; };
+		11E23B120000000000000000 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 157347B00000000000000000 /* Default-Portrait.png */; };
+		1FF38A6E0000000000000000 /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2384970C0000000000000000 /* Default-Portrait@2x.png */; };
+		2E04D9CA0000000000000000 /* dru_icon_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3195E6680000000000000000 /* dru_icon_ipad@2x.png */; };
+		1C2F9AB40000000000000000 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC0A7520000000000000000 /* menu.png */; };
+		A5A5B9E00000000000000000 /* Estimote.dll in Resources */ = {isa = PBXBuildFile; fileRef = DEB683C00000000000000000 /* Estimote.dll */; };
+		38851C880000000000000000 /* img_mars.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C1629260000000000000000 /* img_mars.png */; };
+		267CFA560000000000000000 /* img_saturn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A0E06F40000000000000000 /* img_saturn.png */; };
+		14A7BB400000000000000000 /* img_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 1838C7DE0000000000000000 /* img_question.png */; };
+		2D27C2A00000000000000000 /* img_radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 66388C800000000000000000 /* img_radar.png */; };
+		8129D8900000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = BA3AA2700000000000000000 /* AppDelegate.h */; };
+		44EADCF00000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFBA6D00000000000000000 /* AppDelegate.m */; };
+		3EDBA9540000000000000000 /* DrUViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 26CB5F200000000000000000 /* DrUViewController.h */; };
+		35D7983B0000000000000000 /* DrUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3968A4D90000000000000000 /* DrUViewController.m */; };
+		3786ACFC0000000000000000 /* LoginViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3B17B99A0000000000000000 /* LoginViewController.h */; };
+		23CF76090000000000000000 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276082A70000000000000000 /* LoginViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		23CA066B0000000000000000 /* DrU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "DrU.app"; path = "DrU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA889B00000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		27402BCE0000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		3C7394660000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		2FDE76AF0000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		F4F9E0000000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		248306980000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		12ADC7820000000000000000 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "MainStoryboard.storyboard"; path = "MainStoryboard.storyboard"; sourceTree = "<group>"; };
+		D8886C000000000000000000 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@2x.png"; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		1D2E0A400000000000000000 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Icon-76.png"; sourceTree = "<group>"; };
+		241D40600000000000000000 /* locationMapBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "locationMapBig.png"; path = "locationMapBig.png"; sourceTree = "<group>"; };
+		1248014A0000000000000000 /* mainbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "mainbackground.jpg"; path = "mainbackground.jpg"; sourceTree = "<group>"; };
+		72C234000000000000000000 /* nextIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nextIcon.png"; path = "nextIcon.png"; sourceTree = "<group>"; };
+		2E9D831E0000000000000000 /* prevIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "prevIcon.png"; path = "prevIcon.png"; sourceTree = "<group>"; };
+		391DC5DC0000000000000000 /* qpbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "qpbg.png"; path = "qpbg.png"; sourceTree = "<group>"; };
+		274886C60000000000000000 /* space.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "space.png"; path = "space.png"; sourceTree = "<group>"; };
+		157347B00000000000000000 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		2384970C0000000000000000 /* Default-Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x.png"; path = "Default-Portrait@2x.png"; sourceTree = "<group>"; };
+		3195E6680000000000000000 /* dru_icon_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dru_icon_ipad@2x.png"; path = "dru_icon_ipad@2x.png"; sourceTree = "<group>"; };
+		1FC0A7520000000000000000 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu.png"; path = "menu.png"; sourceTree = "<group>"; };
+		DEB683C00000000000000000 /* Estimote.dll */ = {isa = PBXFileReference; name = "Estimote.dll"; path = "Estimote.dll"; sourceTree = "<group>"; };
+		3C1629260000000000000000 /* img_mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "img_mars.png"; path = "img_mars.png"; sourceTree = "<group>"; };
+		2A0E06F40000000000000000 /* img_saturn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "img_saturn.png"; path = "img_saturn.png"; sourceTree = "<group>"; };
+		1838C7DE0000000000000000 /* img_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "img_question.png"; path = "img_question.png"; sourceTree = "<group>"; };
+		66388C800000000000000000 /* img_radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "img_radar.png"; path = "img_radar.png"; sourceTree = "<group>"; };
+		BA3AA2700000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		7DFBA6D00000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		26CB5F200000000000000000 /* DrUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DrUViewController.h"; path = "DrUViewController.h"; sourceTree = "<group>"; };
+		3968A4D90000000000000000 /* DrUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DrUViewController.m"; path = "DrUViewController.m"; sourceTree = "<group>"; };
+		3B17B99A0000000000000000 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LoginViewController.h"; path = "LoginViewController.h"; sourceTree = "<group>"; };
+		276082A70000000000000000 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LoginViewController.m"; path = "LoginViewController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		107895B00000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2197BFD00000000000000000 /* UIKit.framework in Frameworks */,
+				23AF1F300000000000000000 /* MapKit.framework in Frameworks */,
+				38E287C80000000000000000 /* Foundation.framework in Frameworks */,
+				2C4D6A110000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3092073E0000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				1B2BBB8A0000000000000000 /* DrU */,
+				3B452D180000000000000000 /* Frameworks */,
+				25DEE1640000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25DEE1640000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23CA066B0000000000000000 /* DrU.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		3B452D180000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AA889B00000000000000000 /* UIKit.framework */,
+				27402BCE0000000000000000 /* MapKit.framework */,
+				3C7394660000000000000000 /* Foundation.framework */,
+				2FDE76AF0000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		1B2BBB8A0000000000000000 /* DrU */ = {
+			isa = PBXGroup;
+			children = (
+				BA3AA2700000000000000000 /* AppDelegate.h */,
+				157347B00000000000000000 /* Default-Portrait.png */,
+				2384970C0000000000000000 /* Default-Portrait@2x.png */,
+				3195E6680000000000000000 /* dru_icon_ipad@2x.png */,
+				26CB5F200000000000000000 /* DrUViewController.h */,
+				248306980000000000000000 /* Entitlements.plist */,
+				DEB683C00000000000000000 /* Estimote.dll */,
+				1D2E0A400000000000000000 /* Icon-76.png */,
+				D8886C000000000000000000 /* Icon-76@2x.png */,
+				3C1629260000000000000000 /* img_mars.png */,
+				1838C7DE0000000000000000 /* img_question.png */,
+				66388C800000000000000000 /* img_radar.png */,
+				2A0E06F40000000000000000 /* img_saturn.png */,
+				F4F9E0000000000000000000 /* Info.plist */,
+				241D40600000000000000000 /* locationMapBig.png */,
+				3B17B99A0000000000000000 /* LoginViewController.h */,
+				1248014A0000000000000000 /* mainbackground.jpg */,
+				12ADC7820000000000000000 /* MainStoryboard.storyboard */,
+				1FC0A7520000000000000000 /* menu.png */,
+				72C234000000000000000000 /* nextIcon.png */,
+				2E9D831E0000000000000000 /* prevIcon.png */,
+				391DC5DC0000000000000000 /* qpbg.png */,
+				274886C60000000000000000 /* space.png */,
+				630A5AC00000000000000000 /* Supporting Files */,
+			);
+			name = "DrU";
+			sourceTree = "<group>";
+		};
+		630A5AC00000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DFBA6D00000000000000000 /* AppDelegate.m */,
+				3968A4D90000000000000000 /* DrUViewController.m */,
+				276082A70000000000000000 /* LoginViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		236440330000000000000000 /* DrU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1916E0910000000000000000 /* Build configuration list for PBXNativeTarget "DrU" */;
+			buildPhases = (
+				3EA3569A0000000000000000 /* Sources */,
+				107895B00000000000000000 /* Frameworks */,
+				278DF6250000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DrU";
+			productName = "DrU";
+			productReference = 23CA066B0000000000000000 /* DrU.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18B11A590000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E63BAB700000000000000000 /* Build configuration list for PBXProject "DrU" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3092073E0000000000000000;
+			productRefGroup = 25DEE1640000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				236440330000000000000000 /* DrU */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		278DF6250000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE916200000000000000000 /* Info.plist in Resources */,
+				20F1F9FA0000000000000000 /* Entitlements.plist in Resources */,
+				F1CBAE400000000000000000 /* MainStoryboard.storyboard in Resources */,
+				3D477BCE0000000000000000 /* Icon-76@2x.png in Resources */,
+				199CFDA20000000000000000 /* Icon-76.png in Resources */,
+				208C33C20000000000000000 /* locationMapBig.png in Resources */,
+				EB6F4AC00000000000000000 /* mainbackground.jpg in Resources */,
+				3CE1B5960000000000000000 /* nextIcon.png in Resources */,
+				2B0C76800000000000000000 /* prevIcon.png in Resources */,
+				358CB93E0000000000000000 /* qpbg.png in Resources */,
+				23B77A280000000000000000 /* space.png in Resources */,
+				11E23B120000000000000000 /* Default-Portrait.png in Resources */,
+				1FF38A6E0000000000000000 /* Default-Portrait@2x.png in Resources */,
+				2E04D9CA0000000000000000 /* dru_icon_ipad@2x.png in Resources */,
+				1C2F9AB40000000000000000 /* menu.png in Resources */,
+				A5A5B9E00000000000000000 /* Estimote.dll in Resources */,
+				38851C880000000000000000 /* img_mars.png in Resources */,
+				267CFA560000000000000000 /* img_saturn.png in Resources */,
+				14A7BB400000000000000000 /* img_question.png in Resources */,
+				2D27C2A00000000000000000 /* img_radar.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EA3569A0000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8129D8900000000000000000 /* AppDelegate.h in Sources */,
+				44EADCF00000000000000000 /* AppDelegate.m in Sources */,
+				3EDBA9540000000000000000 /* DrUViewController.h in Sources */,
+				35D7983B0000000000000000 /* DrUViewController.m in Sources */,
+				3786ACFC0000000000000000 /* LoginViewController.h in Sources */,
+				23CF76090000000000000000 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		338A6A880000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		3B094DD00000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "DrU";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E63BAB700000000000000000 /* Build configuration list for PBXProject "DrU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				338A6A880000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		1916E0910000000000000000 /* Build configuration list for PBXNativeTarget "DrU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B094DD00000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18B11A590000000000000000 /* Project object */;
+}

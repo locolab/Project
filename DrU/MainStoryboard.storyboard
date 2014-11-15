@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-Rg-rUk" image="">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-Rg-rUk">
                                 <rect key="frame" x="0.0" y="28" width="761" height="996"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's your name?" clearsOnBeginEditing="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-wZ-ycr" textAlignment="center">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's your name?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-wZ-ycr">
                                 <rect key="frame" x="20" y="645" width="498" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -28,12 +28,12 @@
                                 <rect key="frame" x="576" y="628" width="139" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <state key="normal" title="GO!">
+                                    <color key="titleColor" red="0.19215686274509805" green="0.30588235294117649" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.19215686274509805" green="0.30588235294117649" blue="0.52156862745098043" alpha="1"/>
                                 </state>
                                 <connections>
+                                    <action selector="btn_Go_TouchUpInside:" destination="gZO-Wo-2ky" eventType="touchUpInside" id="48"/>
                                     <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="flipHorizontal" id="HL1-9c-0AZ"/>
-                                    <action selector="btn_Go_TouchUpInside:" destination="gZO-Wo-2ky" id="48" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,8 +41,8 @@
                     </view>
                     <connections>
                         <outlet property="btn_Go" destination="4ch-w3-PGg" id="name-outlet-4ch-w3-PGg"/>
-                        <outlet property="txt_Name" destination="Vnr-wZ-ycr" id="name-outlet-Vnr-wZ-ycr"/>
                         <outlet property="img_LoginBackground" destination="lbW-Rg-rUk" id="name-outlet-lbW-Rg-rUk"/>
+                        <outlet property="txt_Name" destination="Vnr-wZ-ycr" id="name-outlet-Vnr-wZ-ycr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci7-Og-MQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,7 +61,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42" image="">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42">
                                 <rect key="frame" x="0.0" y="108" width="768" height="916"/>
                                 <color key="tintColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -92,6 +92,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btn_Game_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="35"/>
+                                    <segue destination="j4b-9u-v2v" kind="modal" modalTransitionStyle="coverVertical" id="e1n-Ah-ell"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-aC-TGX">
@@ -105,14 +106,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb" image="qpbg.png">
                                         <rect key="frame" x="569" y="138" width="199" height="276"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31">
                                         <rect key="frame" x="460" y="370" width="93" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="ASK">
-                                            <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.36862745098039218" blue="0.99215686274509807" alpha="1"/>
+                                            <color key="titleColor" red="0.043137254901960784" green="0.36862745098039218" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -166,16 +167,18 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="More Info: " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                 <rect key="frame" x="20" y="362" width="728" height="240"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                             </textView>
                             <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Basic Info:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22">
                                 <rect key="frame" x="354" y="176" width="344" height="169"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -204,37 +207,73 @@
             </objects>
             <point key="canvasLocation" x="451" y="133"/>
         </scene>
+        <!--Game View Controller-->
+        <scene sceneID="gB6-wV-EMj">
+            <objects>
+                <viewController id="j4b-9u-v2v" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4e8-le-K3q"/>
+                        <viewControllerLayoutGuide type="bottom" id="F1t-HC-wEP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lou-iP-NuY">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4s-yI-Fo2">
+                                <rect key="frame" x="268" y="220" width="206" height="30"/>
+                                <state key="normal" title="Go Back to Main">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="coverVertical" id="X3y-zd-PFa"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_saturn.png" translatesAutoresizingMaskIntoConstraints="NO" id="WNL-75-hxq">
+                                <rect key="frame" x="74" y="389" width="417" height="352"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGG-CB-MI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1378" y="134"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Default-Portrait.png" width="768" height="1004"/>
         <image name="img_saturn.png" width="300" height="144"/>
         <image name="locationMapBig.png" width="50" height="50"/>
-        <image name="mainbackground.jpg" width="2560" height="1600"/>
         <image name="menu.png" width="32" height="29"/>
         <image name="nextIcon.png" width="128" height="128"/>
         <image name="prevIcon.png" width="128" height="128"/>
-        <image name="qpbg.png" width="553" height="742"/>
-        <image name="img_radar.png" width="226" height="226"/>
-        <image name="img_question.png" width="298" height="300"/>
-        <image name="img_mars.png" width="298" height="298"/>
         <image name="Icon-76.png" width="76" height="76"/>
+        <image name="mainbackground.jpg" width="2560" height="1600"/>
+        <image name="qpbg.png" width="553" height="742"/>
+        <image name="space.png" width="512" height="471"/>
+        <image name="Default-Portrait.png" width="768" height="1004"/>
         <image name="dru_icon_ipad.png" width="144" height="144"/>
-        <image name="animation/astro_anim12.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim11.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim10.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim09.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim08.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim07.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim06.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim05.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim04.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim03.jpg" width="553" height="742"/>
-        <image name="animation/astro_anim02.jpg" width="553" height="742"/>
+        <image name="img_mars.png" width="298" height="298"/>
+        <image name="img_question.png" width="298" height="300"/>
+        <image name="img_radar.png" width="226" height="226"/>
         <image name="animation/astro_anim01.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim02.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim03.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim04.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim05.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim06.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim07.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim08.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim09.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim10.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim11.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim12.jpg" width="553" height="742"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="X3y-zd-PFa"/>
+    </inferredMetricsTieBreakers>
 </document>
