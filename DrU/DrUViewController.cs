@@ -76,6 +76,7 @@ namespace DrU
             img_animation.AnimationRepeatCount = 1;
             img_animation.AnimationDuration = 1.5;
             btn_askButton.TouchUpInside += (sender, args) => img_animation.StartAnimating();
+           
 
            // img_animation.StartAnimating();
               //------- END ANIMATION
