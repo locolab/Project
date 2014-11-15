@@ -170,11 +170,16 @@ namespace DrU
             var val = new NSValue(notification.UserInfo.ValueForKey(UIKeyboard.FrameBeginUserInfoKey).Handle);
             RectangleF r = val.RectangleFValue;
 
+            _activeview = View;
             // Find what opened the keyboard
             foreach (UIView view in this.View.Subviews)
             {
                 if (view.IsFirstResponder)
+                {
                     _activeview = view;
+                    Debug.Write("inside the KeyBoardUpNotification METHOD then inside if loop");
+                }
+                Debug.Write("inside the KeyBoardUpNotification METHOD then inside FOREACH");
 
             }
 
@@ -187,9 +192,11 @@ namespace DrU
             // Perform the scrolling
             if (_scrollAmount > 0)
             {
+                Debug.Write("inside the KeyBoardUpNotification METHOD then PERFORMING SCROLLING");
                 _moveViewUp = true;
                 ScrollTheView(_moveViewUp);
             }
+
             else
             {
                 _moveViewUp = false;
