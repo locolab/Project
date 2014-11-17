@@ -138,6 +138,13 @@ namespace DrU
                                                     " get paid anything. I feel like I'm being taken advantage of by the others here. Please if anyone can read this tell my family"
                                                     + " that I want to go home!";
                             }
+                            else
+                            {
+                                img_exhibit.Image = UIImage.FromBundle("placeholder.png");
+                                lbl_exibitName.Text = "Unknown Estimote";
+                                txt_basicInfo.Text = "What is this???";
+                                txt_moreInfo.Text = "Which estimote is this? I don't have the ID in my database.";
+                            }
                         }
                         else
                         {
