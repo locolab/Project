@@ -99,11 +99,21 @@
     <Compile Include="DrUViewController.designer.cs">
       <DependentUpon>DrUViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginViewController.cs" />
+    <Compile Include="LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameViewController.cs" />
+    <Compile Include="GameViewController.designer.cs">
+      <DependentUpon>GameViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
     <BundleResource Include="Resources\locationMapBig.png" />
     <BundleResource Include="Resources\mainbackground.jpg" />
   </ItemGroup>
@@ -125,17 +135,10 @@
     <BundleResource Include="Resources\dru_icon_ipad%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon-76.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estimote.dll" />
-    <BundleResource Include="Resources\placeholder.png" />
     <BundleResource Include="Resources\img_mars.png" />
     <BundleResource Include="Resources\img_saturn.png" />
     <BundleResource Include="Resources\img_question.png" />

@@ -76,10 +76,11 @@ namespace DrU
             img_animation.AnimationRepeatCount = 1;
             img_animation.AnimationDuration = 1.5;
             btn_askButton.TouchUpInside += (sender, args) => AskQuestion();
+           //------- END ANIMATION
 
-           // img_animation.StartAnimating();
-              //------- END ANIMATION
-
+            // Set the background image
+            img_background.Image = UIImage.FromBundle("mainbackground.jpg");
+            
             var manager = new CLLocationManager();
             var beaconId = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
             var region = new CLBeaconRegion(beaconId, "Da Reejun");
@@ -254,8 +255,6 @@ namespace DrU
 
         private void KeyBoardDownNotification(NSNotification notification)
         {
-         
-
             if (_moveViewUp)
             {
                 ScrollTheView(false);

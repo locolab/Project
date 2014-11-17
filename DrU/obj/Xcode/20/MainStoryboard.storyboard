@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="gZO-Wo-2ky">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="bK8-Hn-Leu">
+            <objects>
+                <viewController id="gZO-Wo-2ky" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rbd-Lv-8CK"/>
+                        <viewControllerLayoutGuide type="bottom" id="SxE-SM-qWX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OjZ-2O-TnF">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-Rg-rUk" image="">
+                                <rect key="frame" x="0.0" y="28" width="761" height="996"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's your name?" clearsOnBeginEditing="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-wZ-ycr" textAlignment="center">
+                                <rect key="frame" x="20" y="645" width="498" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ch-w3-PGg">
+                                <rect key="frame" x="576" y="628" width="139" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <state key="normal" title="GO!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.19215686274509805" green="0.30588235294117649" blue="0.52156862745098043" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="flipHorizontal" id="HL1-9c-0AZ"/>
+                                    <action selector="btn_Go_TouchUpInside:" destination="gZO-Wo-2ky" id="48" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="btn_Go" destination="4ch-w3-PGg" id="name-outlet-4ch-w3-PGg"/>
+                        <outlet property="txt_Name" destination="Vnr-wZ-ycr" id="name-outlet-Vnr-wZ-ycr"/>
+                        <outlet property="img_LoginBackground" destination="lbW-Rg-rUk" id="name-outlet-lbW-Rg-rUk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ci7-Og-MQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-481" y="133"/>
+        </scene>
+        <!--DrU View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hEh-1Y-wOp"/>
+                        <viewControllerLayoutGuide type="bottom" id="5dx-2c-Qdd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42" image="">
+                                <rect key="frame" x="0.0" y="108" width="768" height="916"/>
+                                <color key="tintColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-oB-JnQ">
+                                <rect key="frame" x="0.0" y="65" width="768" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Dr. Universe" id="iuB-wj-zRB">
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" image="menu.png" id="des-af-feU">
+                                            <connections>
+                                                <action selector="btn_menu_Activated:" destination="BYZ-38-t0r" id="27"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Map" image="locationMapBig.png" style="plain" id="xdb-CV-mGE">
+                                            <connections>
+                                                <action selector="btn_map_Activated:" destination="BYZ-38-t0r" id="26"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3a-cg-0ef">
+                                <rect key="frame" x="341" y="28" width="86" height="30"/>
+                                <state key="normal" title="Go To Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_Game_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="35"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-aC-TGX">
+                                <rect key="frame" x="0.0" y="610" width="768" height="414"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ask me a question?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-gP-vFH">
+                                        <rect key="frame" x="7" y="370" width="437" height="30"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" searchField="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb">
+                                        <rect key="frame" x="569" y="138" width="199" height="276"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31">
+                                        <rect key="frame" x="460" y="370" width="93" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <state key="normal" title="ASK">
+                                            <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.36862745098039218" blue="0.99215686274509807" alpha="1"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_askButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_saturn.png" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-XJ-YfL">
+                                <rect key="frame" x="70" y="147" width="276" height="198"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This should change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jix-zp-oqw">
+                                <rect key="frame" x="474" y="147" width="224" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgo-Vc-jB4">
+                                <rect key="frame" x="354" y="147" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                                <rect key="frame" x="0.0" y="147" width="62" height="198"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <state key="normal" title="" image="prevIcon.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_left_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="37"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15">
+                                <rect key="frame" x="706" y="152" width="62" height="198"/>
+                                <state key="normal" title="" image="nextIcon.png">
+                                    <color key="titleColor" red="0.19215686274509805" green="0.30588235294117649" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_right_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="36"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="More Info: " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                                <rect key="frame" x="20" y="362" width="728" height="240"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Basic Info:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22">
+                                <rect key="frame" x="354" y="176" width="344" height="169"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="0"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9ca-IT-GhY"/>
+                    <connections>
+                        <outlet property="btn_Game" destination="R3a-cg-0ef" id="name-outlet-R3a-cg-0ef"/>
+                        <outlet property="btn_askButton" destination="31" id="name-outlet-31"/>
+                        <outlet property="btn_left" destination="13" id="name-outlet-13"/>
+                        <outlet property="btn_map" destination="xdb-CV-mGE" id="name-outlet-xdb-CV-mGE"/>
+                        <outlet property="btn_menu" destination="des-af-feU" id="name-outlet-des-af-feU"/>
+                        <outlet property="btn_right" destination="15" id="name-outlet-15"/>
+                        <outlet property="img_animation" destination="Fig-7O-2Rb" id="name-outlet-Fig-7O-2Rb"/>
+                        <outlet property="img_background" destination="42" id="name-outlet-42"/>
+                        <outlet property="img_exhibit" destination="k6o-XJ-YfL" id="name-outlet-k6o-XJ-YfL"/>
+                        <outlet property="lbl_exhibit" destination="Kgo-Vc-jB4" id="name-outlet-Kgo-Vc-jB4"/>
+                        <outlet property="lbl_exibitName" destination="Jix-zp-oqw" id="name-outlet-Jix-zp-oqw"/>
+                        <outlet property="scroll_lower" destination="1Jx-aC-TGX" id="name-outlet-1Jx-aC-TGX"/>
+                        <outlet property="txt_askQuestion" destination="Hft-gP-vFH" id="name-outlet-Hft-gP-vFH"/>
+                        <outlet property="txt_basicInfo" destination="22" id="name-outlet-22"/>
+                        <outlet property="txt_moreInfo" destination="21" id="name-outlet-21"/>
+                        <outlet property="view_base" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Default-Portrait.png" width="768" height="1004"/>
+        <image name="img_saturn.png" width="300" height="144"/>
+        <image name="locationMapBig.png" width="50" height="50"/>
+        <image name="mainbackground.jpg" width="2560" height="1600"/>
+        <image name="menu.png" width="32" height="29"/>
+        <image name="nextIcon.png" width="128" height="128"/>
+        <image name="prevIcon.png" width="128" height="128"/>
+        <image name="qpbg.png" width="553" height="742"/>
+        <image name="img_radar.png" width="226" height="226"/>
+        <image name="img_question.png" width="298" height="300"/>
+        <image name="img_mars.png" width="298" height="298"/>
+        <image name="Icon-76.png" width="76" height="76"/>
+        <image name="dru_icon_ipad.png" width="144" height="144"/>
+        <image name="animation/astro_anim12.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim11.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim10.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim09.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim08.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim07.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim06.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim05.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim04.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim03.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim02.jpg" width="553" height="742"/>
+        <image name="animation/astro_anim01.jpg" width="553" height="742"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
