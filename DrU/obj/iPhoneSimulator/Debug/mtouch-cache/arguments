@@ -10,10 +10,6 @@
 	-sim \
 	/Users/Dheeraj_Mac/Github/Project/DrU/bin/iPhoneSimulator/Debug/DrU.app \
 	-r \
-	/Users/Dheeraj_Mac/Github/Project/DrU/CSMenu.dll \
-	-r \
-	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/MonoTouch.Dialog-1.dll \
-	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.Xml.dll \

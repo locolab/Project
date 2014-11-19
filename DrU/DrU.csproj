@@ -80,10 +80,6 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSMenu">
-      <HintPath>CSMenu.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -111,9 +107,9 @@
     <Compile Include="GameViewController.designer.cs">
       <DependentUpon>GameViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuViewController.cs" />
-    <Compile Include="MenuViewController.designer.cs">
-      <DependentUpon>MenuViewController.cs</DependentUpon>
+    <Compile Include="SettingsViewController.cs" />
+    <Compile Include="SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

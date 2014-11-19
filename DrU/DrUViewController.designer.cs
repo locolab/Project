@@ -68,7 +68,7 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView txt_basicInfo { get; set; }
+		UILabel txt_basicInfo { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]

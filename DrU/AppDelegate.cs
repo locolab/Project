@@ -5,6 +5,8 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
+
+
 namespace DrU
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
@@ -43,6 +45,8 @@ namespace DrU
 		public override void WillTerminate (UIApplication application)
 		{
 		}
+
+
 	}
 }
 

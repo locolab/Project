@@ -9,8 +9,7 @@ using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
 using MonoTouch.CoreBluetooth;
 using MonoTouch.CoreFoundation;
-using MonoTouch.Dialog;
-using Trewarren.CSMenu;
+
 
 namespace DrU
 {
@@ -28,7 +27,9 @@ namespace DrU
         //end keyboard
 
 
-		public DrUViewController (IntPtr handle) : base (handle)
+
+
+		public DrUViewController ()
 		{
 		}
 
@@ -40,9 +41,10 @@ namespace DrU
 			// Release any cached data, images, etc that aren't in use.
 		}
 
-
+	
 
 		#region View lifecycle
+
 
       
 		public override void ViewDidLoad ()
@@ -51,11 +53,10 @@ namespace DrU
 
         
 
-// -------------SLIDE MENU---------------------------
+// ------------- MENU---------------------------
+		
 
-
-			btn_menu.Clicked += delegate { this.ShowLeftMenu(); };
-
+			//btn_menu.Clicked += delegate { this.ShowLeftMenu(); }; //csMenu
 
 // -----------------------------------------------------
 
@@ -82,7 +83,7 @@ namespace DrU
            //------- END ANIMATION
 
             // Set the background image
-            img_background.Image = UIImage.FromBundle("mainbackground.jpg");
+			img_background.Image = UIImage.FromBundle("mainbackground.jpg");
             
             var manager = new CLLocationManager();
             var beaconId = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
@@ -90,7 +91,7 @@ namespace DrU
             
 
             if (!CLLocationManager.LocationServicesEnabled)
-                lbl_exibitName.Text = "Location Not Enabled";
+                lbl_exibitName.Text = "Location Not Enabled"; 
 
             manager.RequestAlwaysAuthorization();
             manager.RequestWhenInUseAuthorization();
@@ -164,8 +165,6 @@ namespace DrU
 
 
             // move text up
-            Debug.Write(" inside view did load");
-
             // Keyboard popup
             NSNotificationCenter.DefaultCenter.AddObserver
             (UIKeyboard.DidShowNotification, KeyBoardUpNotification);
@@ -288,8 +287,9 @@ namespace DrU
 
             base.ViewWillAppear(animated);
 
-            this.SetLeftMenuViewController("MyMenuID");// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
-            this.AddShowLeftMenuEdgeGestureRecognizer();
+			//CS menu next two lines
+           // this.SetLeftMenuViewController("MyMenuID");// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
+           //this.AddShowLeftMenuEdgeGestureRecognizer();
 		}
 
 		public override void ViewDidAppear (bool animated)
@@ -318,7 +318,7 @@ namespace DrU
         {
             Debug.Write("inside btn_meun activated");
 
-            this.ShowLeftMenu();
+            //this.ShowLeftMenu();
         }
 
 	    partial void btn_Game_TouchUpInside(UIButton sender)
