@@ -285,7 +285,8 @@ namespace DrU
 		public override void ViewWillAppear (bool animated)
 		{
             base.ViewWillAppear(animated);
-            this.SetLeftMenuViewController("MyMenu");				// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
+
+            this.SetLeftMenuViewController("MyMenu");// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
             this.AddShowLeftMenuEdgeGestureRecognizer();
 		}
 

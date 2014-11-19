@@ -4,13 +4,23 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Trewarren.CSMenu;
 
 namespace DrU
 {
-	public partial class MenuViewController : UIViewController
+	public partial class MenuViewController : CSMenuController
 	{
 		public MenuViewController (IntPtr handle) : base (handle)
 		{
+
 		}
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            SetMainViewController("view_baseID");
+        }
+
+
 	}
 }
