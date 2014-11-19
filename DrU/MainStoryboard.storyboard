@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="bK8-Hn-Leu">
             <objects>
-                <viewController id="gZO-Wo-2ky" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="gZO-Wo-2ky" customClass="LoginViewController" sceneMemberID="viewController" storyboardIdentifier="view_loginID">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rbd-Lv-8CK"/>
                         <viewControllerLayoutGuide type="bottom" id="SxE-SM-qWX"/>
@@ -43,6 +43,7 @@
                         <outlet property="btn_Go" destination="4ch-w3-PGg" id="name-outlet-4ch-w3-PGg"/>
                         <outlet property="img_LoginBackground" destination="lbW-Rg-rUk" id="name-outlet-lbW-Rg-rUk"/>
                         <outlet property="txt_Name" destination="Vnr-wZ-ycr" id="name-outlet-Vnr-wZ-ycr"/>
+                        <outlet property="view_login" destination="OjZ-2O-TnF" id="name-outlet-OjZ-2O-TnF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci7-Og-MQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,7 +53,7 @@
         <!--DrU View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController" storyboardIdentifier="view_baseID">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEh-1Y-wOp"/>
                         <viewControllerLayoutGuide type="bottom" id="5dx-2c-Qdd"/>

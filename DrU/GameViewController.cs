@@ -9,7 +9,7 @@ namespace DrU
 {
 	public partial class GameViewController : UIViewController
 	{
-		public GameViewController (IntPtr handle) : base (handle)
+		public GameViewController ()
 		{
 		}
 

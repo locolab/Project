@@ -9,11 +9,14 @@ using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
 using MonoTouch.CoreBluetooth;
 using MonoTouch.CoreFoundation;
+using MonoTouch.Dialog;
+using Trewarren.CSMenu;
 
 namespace DrU
 {
 	public partial class DrUViewController : UIViewController, ICLLocationManagerDelegate
 	{
+
 
         // keyboard view 
         private UIView _activeview;             // Controller that activated the keyboard
@@ -37,6 +40,8 @@ namespace DrU
 			// Release any cached data, images, etc that aren't in use.
 		}
 
+
+
 		#region View lifecycle
 
       
@@ -44,17 +49,15 @@ namespace DrU
         {
             base.ViewDidLoad();
 
-            // Perform any additional setup after loading the view, typically from a nib.
+        
 
-            /*ESTBeaconManager manager = new ESTBeaconManager();
-            ESTBeaconRegion region = new ESTBeaconRegion("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
-            ESTBeacon beacon = new ESTBeacon();
+// -------------SLIDE MENU---------------------------
 
-            manager.AvoidUnknownStateBeacons = true;
 
-            manager.StartMonitoringForRegion(region);
-            manager.RequestStateForRegion(region);*/
+		    btn_menu.Clicked += delegate { this.ShowRightMenu(); };
 
+
+// -----------------------------------------------------
 
             // animated images test
             img_animation.AnimationImages = new UIImage[] 
@@ -94,16 +97,7 @@ namespace DrU
             manager.PausesLocationUpdatesAutomatically = false;
 
             manager.DidRangeBeacons += (sender, e) =>
-            {
-                //var bInfo = "";
-                
-                //var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
-                /*foreach (var beek in e.Beacons)
-                {
-                    bInfo += string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy);
-                }*/
-                
-                //txt_moreInfo.Text = bInfo;
+            {        
 
                 switch (_ctrl)
                 {
@@ -269,6 +263,7 @@ namespace DrU
             {
                 frame.Y -= _scrollAmount;
             }
+
             else
             {
                 frame.Y += _scrollAmount;
@@ -282,16 +277,16 @@ namespace DrU
 
         }
 
-
-
+   
 //end keyboard----------------------------------------------------------
 
 
 
 		public override void ViewWillAppear (bool animated)
 		{
-			base.ViewWillAppear (animated);
-
+            base.ViewWillAppear(animated);
+            this.SetLeftMenuViewController("MyMenu");				// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
+            this.AddShowLeftMenuEdgeGestureRecognizer();
 		}
 
 		public override void ViewDidAppear (bool animated)
@@ -318,9 +313,10 @@ namespace DrU
 
         partial void btn_menu_Activated(UIBarButtonItem sender)
         {
+            this.ShowLeftMenu();
         }
 
-        partial void btn_Game_TouchUpInside(UIButton sender)
+	    partial void btn_Game_TouchUpInside(UIButton sender)
         {
         }
 
