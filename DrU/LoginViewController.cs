@@ -7,11 +7,10 @@ using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using Trewarren.CSMenu;
 
 namespace DrU
 {
-	public partial class LoginViewController :  CSMenuController
+	public partial class LoginViewController : UIViewController
 	{
 		public LoginViewController (IntPtr handle) : base (handle)
 		{
@@ -41,21 +40,19 @@ namespace DrU
                 return true;
             };
 
-            Debug.Write("inside Login ViewDidLoad");
-
-
+			//SetMainViewController("view_loginID");
             
 	    }
 
         private void Getname()
         {
             txt_Name.ResignFirstResponder();
-           // img_animation.StartAnimating();
         }
 
 
 	    partial void btn_Go_TouchUpInside(UIButton sender)
         {
+		
         }
 
       

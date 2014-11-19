@@ -18,7 +18,7 @@ namespace DrU
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-           SetMainViewController("view_baseID");
+           SetMainViewController("MainViewController");
         }
 
 
