@@ -53,7 +53,7 @@
         <!--DrU View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="view_baseID" id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEh-1Y-wOp"/>
                         <viewControllerLayoutGuide type="bottom" id="5dx-2c-Qdd"/>
@@ -107,7 +107,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qpbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb">
                                         <rect key="frame" x="569" y="138" width="199" height="276"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31">
@@ -211,7 +211,7 @@
         <!--Menu View Controller-->
         <scene sceneID="Dwa-Kk-Cxg">
             <objects>
-                <viewController storyboardIdentifier="view_menuID" id="hgJ-FK-GLg" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" id="hgJ-FK-GLg" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qXw-9n-oC5"/>
                         <viewControllerLayoutGuide type="bottom" id="R7p-8o-FBc"/>
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="om8-0b-g6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="1450"/>
+            <point key="canvasLocation" x="-82" y="1453"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="gB6-wV-EMj">
@@ -276,6 +276,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGG-CB-MI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1413" y="336"/>
+        </scene>
+        <scene sceneID="75">
+            <objects>
+                <viewController id="76" sceneMemberID="viewController" storyboardIdentifier="MyMenu">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="73"/>
+                        <viewControllerLayoutGuide type="bottom" id="74"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="77">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="80" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="221" y="89" width="449" height="30"/>
+                                <state key="normal" title="INSIDE MENU">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="1454"/>
         </scene>
     </scenes>
     <resources>

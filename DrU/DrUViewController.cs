@@ -54,7 +54,7 @@ namespace DrU
 // -------------SLIDE MENU---------------------------
 
 
-		    btn_menu.Clicked += delegate { this.ShowRightMenu(); };
+		    btn_menu.Clicked += delegate { this.ShowLeftMenu(); };
 
 
 // -----------------------------------------------------
@@ -284,9 +284,11 @@ namespace DrU
 
 		public override void ViewWillAppear (bool animated)
 		{
+            Debug.Write("inside view will appear");
+
             base.ViewWillAppear(animated);
 
-            this.SetLeftMenuViewController("MyMenu");// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
+            this.SetLeftMenuViewController("MyMenu)");// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
             this.AddShowLeftMenuEdgeGestureRecognizer();
 		}
 
@@ -314,6 +316,8 @@ namespace DrU
 
         partial void btn_menu_Activated(UIBarButtonItem sender)
         {
+            Debug.Write("inside btn_meun activated");
+
             this.ShowLeftMenu();
         }
 
