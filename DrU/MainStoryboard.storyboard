@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="bK8-Hn-Leu">
             <objects>
-                <viewController id="gZO-Wo-2ky" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="gZO-Wo-2ky" customClass="LoginViewController" sceneMemberID="viewController" storyboardIdentifier="view_loginID">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rbd-Lv-8CK"/>
                         <viewControllerLayoutGuide type="bottom" id="SxE-SM-qWX"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-Rg-rUk">
-                                <rect key="frame" x="0.0" y="28" width="761" height="996"/>
+                                <rect key="frame" x="0.0" y="28" width="770" height="996"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's your name?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-wZ-ycr">
                                 <rect key="frame" x="20" y="645" width="498" height="30"/>
@@ -52,7 +52,7 @@
         <!--DrU View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController" storyboardIdentifier="view_baseID">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEh-1Y-wOp"/>
                         <viewControllerLayoutGuide type="bottom" id="5dx-2c-Qdd"/>
@@ -75,6 +75,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Menu" image="menu.png" id="des-af-feU">
                                             <connections>
                                                 <action selector="btn_menu_Activated:" destination="BYZ-38-t0r" id="27"/>
+                                                <segue destination="69" kind="modal" id="136"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Map" image="locationMapBig.png" style="plain" id="xdb-CV-mGE">
@@ -95,8 +96,8 @@
                                     <segue destination="j4b-9u-v2v" kind="modal" modalTransitionStyle="coverVertical" id="e1n-Ah-ell"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-aC-TGX">
-                                <rect key="frame" x="0.0" y="610" width="768" height="414"/>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-aC-TGX" opaque="NO">
+                                <rect key="frame" x="0.0" y="610" width="770" height="414"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ask me a question?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-gP-vFH">
                                         <rect key="frame" x="7" y="370" width="437" height="30"/>
@@ -165,15 +166,16 @@
                                     <action selector="btn_right_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="36"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="More Info: " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                                <rect key="frame" x="20" y="362" width="728" height="240"/>
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Basic Info:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22" selectable="NO">
+                                <rect key="frame" x="354" y="176" width="344" height="169"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                             </textView>
-                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Basic Info:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                                <rect key="frame" x="354" y="176" width="344" height="169"/>
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="More Info:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="103" selectable="NO">
+                                <rect key="frame" x="0.0" y="350" width="770" height="250"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -199,8 +201,8 @@
                         <outlet property="scroll_lower" destination="1Jx-aC-TGX" id="name-outlet-1Jx-aC-TGX"/>
                         <outlet property="txt_askQuestion" destination="Hft-gP-vFH" id="name-outlet-Hft-gP-vFH"/>
                         <outlet property="txt_basicInfo" destination="22" id="name-outlet-22"/>
-                        <outlet property="txt_moreInfo" destination="21" id="name-outlet-21"/>
                         <outlet property="view_base" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
+                        <outlet property="txt_moreInfo" destination="103" id="name-outlet-103"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -210,7 +212,7 @@
         <!--Game View Controller-->
         <scene sceneID="gB6-wV-EMj">
             <objects>
-                <viewController id="j4b-9u-v2v" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController id="j4b-9u-v2v" customClass="GameViewController" sceneMemberID="viewController" storyboardIdentifier="view_gameID">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4e8-le-K3q"/>
                         <viewControllerLayoutGuide type="bottom" id="F1t-HC-wEP"/>
@@ -230,7 +232,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="56" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="2" y="81" width="765" height="941"/>
+                                <rect key="frame" x="0.0" y="82" width="770" height="941"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -244,6 +246,75 @@
             </objects>
             <point key="canvasLocation" x="1413" y="336"/>
         </scene>
+        <scene sceneID="68">
+            <objects>
+                <viewController id="69" sceneMemberID="viewController" customClass="SettingsViewController" storyboardIdentifier="view_settingsID">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="66"/>
+                        <viewControllerLayoutGuide type="bottom" id="67"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="70">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="73" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="66" width="770" height="958"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" id="82" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="20" width="770" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="83">
+                                        <barButtonItem style="plain" id="85" key="leftBarButtonItem" width="10" title="Back">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="84" translatesAutoresizingMaskIntoConstraints="NO" key="customView" reversesTitleShadowWhenHighlighted="NO">
+                                                <rect key="frame" x="0.0" y="0.0" width="158" height="30"/>
+                                                <state key="normal" title="Back" backgroundImage="">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btn_back_TouchUpInside:" destination="69" id="108" eventType="touchUpInside"/>
+                                                    <segue destination="BYZ-38-t0r" kind="modal" id="138"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="119" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="149" width="770" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Settings Button 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_test1_TouchUpInside:" destination="69" id="120" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="121" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="200" width="770" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Settings Button 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_test1_TouchUpInside:" destination="123" id="122" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="img_background" destination="73" id="name-outlet-73"/>
+                        <outlet property="btn_back" destination="84" id="name-outlet-84"/>
+                        <outlet property="btn_setting1" destination="119" id="name-outlet-119"/>
+                        <outlet property="btn_setting2" destination="121" id="name-outlet-121"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="1424"/>
+        </scene>
     </scenes>
     <resources>
         <image name="img_saturn.png" width="300" height="144"/>
@@ -252,7 +323,7 @@
         <image name="nextIcon.png" width="128" height="128"/>
         <image name="prevIcon.png" width="128" height="128"/>
         <image name="Icon-76.png" width="76" height="76"/>
-        <image name="mainbackground.jpg" width="2560" height="1600"/>
+        <image name="mainbackground.jpg" width="1600" height="2560"/>
         <image name="qpbg.png" width="553" height="742"/>
         <image name="space.png" width="512" height="471"/>
         <image name="Default-Portrait.png" width="768" height="1004"/>
