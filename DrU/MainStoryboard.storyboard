@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="bK8-Hn-Leu">
             <objects>
-                <viewController id="gZO-Wo-2ky" customClass="LoginViewController" sceneMemberID="viewController" storyboardIdentifier="view_loginID">
+                <viewController storyboardIdentifier="view_loginID" id="gZO-Wo-2ky" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rbd-Lv-8CK"/>
                         <viewControllerLayoutGuide type="bottom" id="SxE-SM-qWX"/>
@@ -53,7 +53,7 @@
         <!--DrU View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController" storyboardIdentifier="view_baseID">
+                <viewController storyboardIdentifier="view_baseID" id="BYZ-38-t0r" customClass="DrUViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEh-1Y-wOp"/>
                         <viewControllerLayoutGuide type="bottom" id="5dx-2c-Qdd"/>
@@ -107,7 +107,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb" image="qpbg.png">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qpbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fig-7O-2Rb">
                                         <rect key="frame" x="569" y="138" width="199" height="276"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31">
@@ -169,17 +169,17 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="More Info: " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                 <rect key="frame" x="20" y="362" width="728" height="240"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                             </textView>
                             <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Basic Info:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22">
                                 <rect key="frame" x="354" y="176" width="344" height="169"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -208,6 +208,38 @@
             </objects>
             <point key="canvasLocation" x="451" y="133"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Dwa-Kk-Cxg">
+            <objects>
+                <viewController storyboardIdentifier="view_menuID" id="hgJ-FK-GLg" customClass="MenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qXw-9n-oC5"/>
+                        <viewControllerLayoutGuide type="bottom" id="R7p-8o-FBc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cNV-HA-KZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="63" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="52" y="314" width="148" height="58"/>
+                                <state key="normal" title="MENU TEST 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="64" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="46" y="124" width="104" height="52"/>
+                                <state key="normal" title="MENU TEST 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="om8-0b-g6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="1450"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="gB6-wV-EMj">
             <objects>
@@ -226,11 +258,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="btn_GoBackMain_TouchUpInside:" destination="j4b-9u-v2v" eventType="touchUpInside" id="55"/>
                                     <segue destination="BYZ-38-t0r" kind="modal" modalTransitionStyle="coverVertical" id="X3y-zd-PFa"/>
-                                    <action selector="btn_GoBackMain_TouchUpInside:" destination="j4b-9u-v2v" id="55" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="56" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56">
                                 <rect key="frame" x="2" y="81" width="765" height="941"/>
                             </imageView>
                         </subviews>
@@ -252,9 +284,9 @@
         <image name="menu.png" width="32" height="29"/>
         <image name="nextIcon.png" width="128" height="128"/>
         <image name="prevIcon.png" width="128" height="128"/>
+        <image name="qpbg.png" width="553" height="742"/>
         <image name="Icon-76.png" width="76" height="76"/>
         <image name="mainbackground.jpg" width="2560" height="1600"/>
-        <image name="qpbg.png" width="553" height="742"/>
         <image name="space.png" width="512" height="471"/>
         <image name="Default-Portrait.png" width="768" height="1004"/>
         <image name="dru_icon_ipad.png" width="144" height="144"/>

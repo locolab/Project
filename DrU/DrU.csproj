@@ -81,7 +81,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSMenu">
-      <HintPath>.\CSMenu.dll</HintPath>
+      <HintPath>CSMenu.dll</HintPath>
     </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System" />
