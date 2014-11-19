@@ -27,7 +27,7 @@ namespace DrU
             base.ViewDidLoad();
 
             // Set the background image
-            img_GameBackground.Image = UIImage.FromBundle("gamebackground.jpg");
+            img_GameBackground.Image = UIImage.FromBundle("mainbackground.jpg");
 
         }
 
