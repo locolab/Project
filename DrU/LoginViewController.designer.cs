@@ -26,10 +26,6 @@ namespace DrU
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField txt_Name { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIView view_login { get; set; }
-
 		[Action ("btn_Go_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void btn_Go_TouchUpInside (UIButton sender);
@@ -47,10 +43,6 @@ namespace DrU
 			if (txt_Name != null) {
 				txt_Name.Dispose ();
 				txt_Name = null;
-			}
-			if (view_login != null) {
-				view_login.Dispose ();
-				view_login = null;
 			}
 		}
 	}

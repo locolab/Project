@@ -10,12 +10,10 @@ using MonoTouch.CoreLocation;
 using MonoTouch.CoreBluetooth;
 using MonoTouch.CoreFoundation;
 
-
 namespace DrU
 {
 	public partial class DrUViewController : UIViewController, ICLLocationManagerDelegate
 	{
-
 
         // keyboard view 
         private UIView _activeview;             // Controller that activated the keyboard
@@ -27,9 +25,7 @@ namespace DrU
         //end keyboard
 
 
-
-
-		public DrUViewController ()
+		public DrUViewController (IntPtr handle) : base (handle)
 		{
 		}
 
@@ -41,24 +37,24 @@ namespace DrU
 			// Release any cached data, images, etc that aren't in use.
 		}
 
-	
-
 		#region View lifecycle
-
 
       
 		public override void ViewDidLoad ()
         {
             base.ViewDidLoad();
 
-        
+            // Perform any additional setup after loading the view, typically from a nib.
 
-// ------------- MENU---------------------------
-		
+            /*ESTBeaconManager manager = new ESTBeaconManager();
+            ESTBeaconRegion region = new ESTBeaconRegion("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+            ESTBeacon beacon = new ESTBeacon();
 
-			//btn_menu.Clicked += delegate { this.ShowLeftMenu(); }; //csMenu
+            manager.AvoidUnknownStateBeacons = true;
 
-// -----------------------------------------------------
+            manager.StartMonitoringForRegion(region);
+            manager.RequestStateForRegion(region);*/
+
 
             // animated images test
             img_animation.AnimationImages = new UIImage[] 
@@ -83,7 +79,7 @@ namespace DrU
            //------- END ANIMATION
 
             // Set the background image
-			img_background.Image = UIImage.FromBundle("mainbackground.jpg");
+            img_background.Image = UIImage.FromBundle("mainbackground.jpg");
             
             var manager = new CLLocationManager();
             var beaconId = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
@@ -91,14 +87,23 @@ namespace DrU
             
 
             if (!CLLocationManager.LocationServicesEnabled)
-                lbl_exibitName.Text = "Location Not Enabled"; 
+                lbl_exibitName.Text = "Location Not Enabled";
 
             manager.RequestAlwaysAuthorization();
             manager.RequestWhenInUseAuthorization();
             manager.PausesLocationUpdatesAutomatically = false;
 
             manager.DidRangeBeacons += (sender, e) =>
-            {        
+            {
+                //var bInfo = "";
+                
+                //var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
+                /*foreach (var beek in e.Beacons)
+                {
+                    bInfo += string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy);
+                }*/
+                
+                //txt_moreInfo.Text = bInfo;
 
                 switch (_ctrl)
                 {
@@ -165,6 +170,8 @@ namespace DrU
 
 
             // move text up
+            Debug.Write(" inside view did load");
+
             // Keyboard popup
             NSNotificationCenter.DefaultCenter.AddObserver
             (UIKeyboard.DidShowNotification, KeyBoardUpNotification);
@@ -262,7 +269,6 @@ namespace DrU
             {
                 frame.Y -= _scrollAmount;
             }
-
             else
             {
                 frame.Y += _scrollAmount;
@@ -276,20 +282,16 @@ namespace DrU
 
         }
 
-   
+
+
 //end keyboard----------------------------------------------------------
 
 
 
 		public override void ViewWillAppear (bool animated)
 		{
-            Debug.Write("inside view will appear");
+			base.ViewWillAppear (animated);
 
-            base.ViewWillAppear(animated);
-
-			//CS menu next two lines
-           // this.SetLeftMenuViewController("MyMenuID");// Specify a menu by it's storyboard ID so it can be accessed from this MainViewController screen
-           //this.AddShowLeftMenuEdgeGestureRecognizer();
 		}
 
 		public override void ViewDidAppear (bool animated)
@@ -316,12 +318,9 @@ namespace DrU
 
         partial void btn_menu_Activated(UIBarButtonItem sender)
         {
-            Debug.Write("inside btn_meun activated");
-
-            //this.ShowLeftMenu();
         }
 
-	    partial void btn_Game_TouchUpInside(UIButton sender)
+        partial void btn_Game_TouchUpInside(UIButton sender)
         {
         }
 
