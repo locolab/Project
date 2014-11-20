@@ -30,13 +30,25 @@ namespace DrU
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIImageView img_background { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextView txt_test { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIView view_menu { get; set; }
+
 		[Action ("btn_back_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void btn_back_TouchUpInside (UIButton sender);
 
-		[Action ("btn_test1_TouchUpInside:")]
+		[Action ("btn_setting1_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void btn_test1_TouchUpInside (UIButton sender);
+		partial void btn_setting1_TouchUpInside (UIButton sender);
+
+		[Action ("btn_setting2_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btn_setting2_TouchUpInside (UIButton sender);
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -55,6 +67,14 @@ namespace DrU
 			if (img_background != null) {
 				img_background.Dispose ();
 				img_background = null;
+			}
+			if (txt_test != null) {
+				txt_test.Dispose ();
+				txt_test = null;
+			}
+			if (view_menu != null) {
+				view_menu.Dispose ();
+				view_menu = null;
 			}
 		}
 	}
