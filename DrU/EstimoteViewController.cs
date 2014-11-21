@@ -1,16 +1,10 @@
-using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Threading;
-using MonoTouch.CoreGraphics;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
-using MonoTouch.CoreBluetooth;
-using MonoTouch.CoreFoundation;
 
 
 namespace DrU
@@ -47,7 +41,7 @@ namespace DrU
             //Create back button
             var btnback = new UIButton(UIButtonType.RoundedRect)
             {
-                Frame = new RectangleF(40, 900, 200, 75),
+                Frame = new RectangleF(40, 925, 200, 75),
                 BackgroundColor = new UIColor(160,245,250,255),
                 Font = UIFont.FromName("Helvetica-Bold", 30f)
                 
@@ -95,56 +89,7 @@ namespace DrU
 
             #endregion
 
-            #region File Handling
-
-
-            //Navigation 
-            var supDir = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
-
-            if (!NSFileManager.DefaultManager.FileExists(supDir.Path))
-            {
-                Debug.Write("App Support Doesn't Exist");
-                NSError err;
-                var t = new NSDictionary();
-                if (!(NSFileManager.DefaultManager.CreateDirectory(supDir.Path, true, t, out err)))
-                {
-                    Debug.Write("Failed to create folder: " + err.LocalizedDescription);
-                }
-                else
-                {
-                    Debug.Write("Success!");
-                }
-            }
-            else
-            {
-                Debug.Write("App Support already exists");
-            }
-
-
-            if (!NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt")))
-            {
-                //Setting up new file directory
-                var file = Path.Combine(supDir.Path, "Test.txt");
-
-                //Writing to created file
-                File.WriteAllText(file, "This is a test");
-            }
-            else
-            {
-                Debug.Write("File Exists");
-            }
-
-            //Checking if file was created
-            var checker = NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt"));
-            
-            //Writing to console if file was created
-            Debug.Write(checker ? "File Creation Successful" : "File Failed");
-
-            if (checker)
-                lblInfo.Text = File.ReadAllText(Path.Combine(supDir.Path, "Test.txt"));
-                
-
-            #endregion
+            //FileHandle(lblInfo);
 
             #region Estimote Handling
 
@@ -186,6 +131,54 @@ namespace DrU
             #endregion
 
 
+        }
+
+        private void FileHandle(UILabel label)
+        {
+            //Navigation 
+            var supDir = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
+
+            if (!NSFileManager.DefaultManager.FileExists(supDir.Path))
+            {
+                Debug.Write("App Support Doesn't Exist");
+                NSError err;
+                var t = new NSDictionary();
+                if (!(NSFileManager.DefaultManager.CreateDirectory(supDir.Path, true, t, out err)))
+                {
+                    Debug.Write("Failed to create folder: " + err.LocalizedDescription);
+                }
+                else
+                {
+                    Debug.Write("Success!");
+                }
+            }
+            else
+            {
+                Debug.Write("App Support already exists");
+            }
+
+
+            if (!NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt")))
+            {
+                //Setting up new file directory
+                var file = Path.Combine(supDir.Path, "Test.txt");
+
+                //Writing to created file
+                File.WriteAllText(file, "This is a test");
+            }
+            else
+            {
+                Debug.Write("File Exists");
+            }
+
+            //Checking if file was created
+            var checker = NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt"));
+
+            //Writing to console if file was created
+            Debug.Write(checker ? "File Creation Successful" : "File Failed");
+
+            if (checker)
+                label.Text = File.ReadAllText(Path.Combine(supDir.Path, "Test.txt"));
         }
     }
 }

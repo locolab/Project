@@ -30,7 +30,7 @@ namespace DrU
 
         public override void RowDeselected(UITableView tableView, NSIndexPath indexPath)
         {
-            tableView.DeselectRow(indexPath, true); // normal iOS behaviour is to remove the blue highlight
+            //tableView.DeselectRow(indexPath, true); // normal iOS behaviour is to remove the blue highlight
         }
 
         public override UITableViewCell GetCell(UITableView tblView, NSIndexPath indexPath)
