@@ -28,8 +28,11 @@ namespace DrU
 
             // Set the background image
             img_GameBackground.Image = UIImage.FromBundle("mainbackground.jpg");
+<<<<<<< HEAD
 
            // PerformSegue("view_test", this);
+=======
+>>>>>>> origin/Game
 
 
         }
