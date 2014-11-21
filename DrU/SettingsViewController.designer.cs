@@ -32,7 +32,7 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView txt_test { get; set; }
+		UITextView text_test { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -68,9 +68,9 @@ namespace DrU
 				img_background.Dispose ();
 				img_background = null;
 			}
-			if (txt_test != null) {
-				txt_test.Dispose ();
-				txt_test = null;
+			if (text_test != null) {
+				text_test.Dispose ();
+				text_test = null;
 			}
 			if (view_menu != null) {
 				view_menu.Dispose ();

@@ -71,18 +71,17 @@ namespace DrU
                         , null).Show();
                 });
 
+                var textOut = File.ReadAllText(localPath);//              
+
 // local file saved in:
 // Users/Dheeraj_Mac/Library/Developer/CoreSimulator/Devices/E30A2179-74DB-4189-AB09-540A4935BF91/data/Containers/Data/Application/C788175C-E89A-44F5-8468-2DD162EF7FF8/Documents/Location.xml
-                
- 
+
             };
 
             var url = new Uri("http://cryotek.org/Locations.xml"); // Html home page
             webClient.Encoding = Encoding.UTF8;
             webClient.DownloadStringAsync(url);
-
-
-
+            
         }
 
 
