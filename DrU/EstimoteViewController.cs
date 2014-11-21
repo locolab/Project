@@ -120,11 +120,19 @@ namespace DrU
                 Debug.Write("App Support already exists");
             }
 
-            //Setting up new file directory
-            var file = Path.Combine(supDir.Path, "Test.txt");
 
-            //Writing to created file
-            File.WriteAllText(file, "This is a test");
+            if (!NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt")))
+            {
+                //Setting up new file directory
+                var file = Path.Combine(supDir.Path, "Test.txt");
+
+                //Writing to created file
+                File.WriteAllText(file, "This is a test");
+            }
+            else
+            {
+                Debug.Write("File Exists");
+            }
 
             //Checking if file was created
             var checker = NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt"));
