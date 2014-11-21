@@ -1,0 +1,3 @@
+IP: 10.143.35.4
+USB Debugging: 1
+Port: 10000
