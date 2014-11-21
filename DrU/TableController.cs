@@ -26,11 +26,16 @@ namespace DrU
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             //new UIAlertView("Row Selected", tableList[indexPath.Row].ToString(), null, "OK", null).Show();
+            UITableViewCell cell = tableView.CellAt (indexPath);
+            cell.Accessory = indexPath.Row >= 0 ? UITableViewCellAccessory.Checkmark : UITableViewCellAccessory.None;
         }
+    
 
         public override void RowDeselected(UITableView tableView, NSIndexPath indexPath)
         {
             //tableView.DeselectRow(indexPath, true); // normal iOS behaviour is to remove the blue highlight
+            UITableViewCell cell = tableView.CellAt(indexPath);
+            cell.Accessory = UITableViewCellAccessory.None;
         }
 
         public override UITableViewCell GetCell(UITableView tblView, NSIndexPath indexPath)
