@@ -16,21 +16,21 @@ namespace DrU
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIBarButtonItem btn_backnav { get; set; }
+		UIButton btn_GoBackMain { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIImageView img_GameBackground { get; set; }
 
-		[Action ("btn_backnav_Activated:")]
+		[Action ("btn_GoBackMain_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void btn_backnav_Activated (UIBarButtonItem sender);
+		partial void btn_GoBackMain_TouchUpInside (UIButton sender);
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (btn_backnav != null) {
-				btn_backnav.Dispose ();
-				btn_backnav = null;
+			if (btn_GoBackMain != null) {
+				btn_GoBackMain.Dispose ();
+				btn_GoBackMain = null;
 			}
 			if (img_GameBackground != null) {
 				img_GameBackground.Dispose ();

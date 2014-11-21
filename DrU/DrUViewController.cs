@@ -53,6 +53,16 @@ namespace DrU
 
             // Perform any additional setup after loading the view, typically from a nib.
 
+            /*ESTBeaconManager manager = new ESTBeaconManager();
+            ESTBeaconRegion region = new ESTBeaconRegion("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+            ESTBeacon beacon = new ESTBeacon();
+
+            manager.AvoidUnknownStateBeacons = true;
+
+            manager.StartMonitoringForRegion(region);
+            manager.RequestStateForRegion(region);*/
+
+
             // animated images test
             img_animation.AnimationImages = new UIImage[] 
             {
