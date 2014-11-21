@@ -27,13 +27,16 @@ namespace DrU
             base.ViewDidLoad();
 
             // Set the background image
-            img_GameBackground.Image = UIImage.FromBundle("Default-Portrait.png");
+            img_GameBackground.Image = UIImage.FromBundle("mainbackground.jpg");
+
+           // PerformSegue("view_test", this);
+
 
         }
 
-
-        partial void btn_GoBackMain_TouchUpInside(UIButton sender)
+        partial void btn_backnav_Activated(UIBarButtonItem sender)
         {
+
         }
 	}
 }
