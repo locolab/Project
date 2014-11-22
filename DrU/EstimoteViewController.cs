@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -11,12 +10,13 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
 
-
 namespace DrU
 {
-    class EstimoteViewController : UIViewController
+    class EstimoteViewController : ViewScroll
     {
-        private class EstimoteInit
+
+
+        public class EstimoteInit
         {
             private string major;
             private string minor;
@@ -52,17 +52,28 @@ namespace DrU
             }
         }
 
-        public event EventHandler RowSelected;
+        public EstimoteViewController()
+		{
+
+		}
+
         public override void ViewDidLoad()
         {
 
             base.ViewDidLoad();
 
-            var foundList = new List<string>();
+            var foundList = new List<EstimoteInit>();
 
             var newList = new List<EstimoteInit>();
 
-            List<EstimoteInit> addList = PopulateAdd();
+            List<EstimoteInit> addedList = PopulateAdd();
+
+            var tmp = new Random();
+
+            var unsetSource = new TableController(foundList, this);
+
+
+
 
             #region GUI Item Init
 
@@ -73,25 +84,26 @@ namespace DrU
                 Frame = UIScreen.MainScreen.Bounds,
                 Image = UIImage.FromBundle("mainbackground.jpg")
             };
-            View.Add(background);
+            
             
             //Create and add label
-            var lblInfo = new UILabel(new RectangleF(250,650,500,150))
+            var lblInfo = new UILabel(new RectangleF(250,60,300,60))
             {
-                Text = "Ranging",
-                TextColor = new UIColor(255,255,255,255)
+                Text = "Adding and Removing Estimotes",
+                TextColor = new UIColor(255,255,255,255),
+                Font = UIFont.FromName("Helvetica-Bold", 15f)
+               
             };
-            Add(lblInfo);
+            
 
             //Create back button
             var btnBack = new UIButton(UIButtonType.RoundedRect)
             {
-                Frame = new RectangleF(580, 820, 150, 60),
+                Frame = new RectangleF(580, 720, 150, 60),
                 BackgroundColor = new UIColor(160,245,250,255),
                 Font = UIFont.FromName("Helvetica-Bold", 30f)
                 
             };
-            btnBack.TouchUpInside += (sender, args) => DismissViewController(true, null);
             btnBack.SetTitle("Back", UIControlState.Normal);
             btnBack.Layer.CornerRadius = 5f;
             
@@ -117,27 +129,135 @@ namespace DrU
 
             var btnSave = new UIButton(UIButtonType.RoundedRect)
             {
-                Frame = new RectangleF(580, 900, 150, 60),
+                Frame = new RectangleF(580, 820, 150, 60),
+                BackgroundColor = new UIColor(160, 245, 250, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 30f),
+            };
+            
+            btnSave.SetTitle("Save", UIControlState.Normal);
+            btnSave.Layer.CornerRadius = 5f;
+
+            var btnAddBeacon = new UIButton(UIButtonType.RoundedRect)
+            {
+                Frame = new RectangleF(40, 920, 200, 60),
                 BackgroundColor = new UIColor(160, 245, 250, 255),
                 Font = UIFont.FromName("Helvetica-Bold", 20f)
             };
-            btnSave.SetTitle("Save", UIControlState.Normal);
-            btnSave.Layer.CornerRadius = 5f;
+
+            btnAddBeacon.SetTitle("Add Beacon", UIControlState.Normal);
+            btnAddBeacon.Layer.CornerRadius = 5f;
+
+            var btnClearText = new UIButton(UIButtonType.RoundedRect)
+            {
+                Frame = new RectangleF(280, 920, 200, 60),
+                BackgroundColor = new UIColor(160, 245, 250, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f)
+            };
+
+            btnClearText.SetTitle("Clear Boxes", UIControlState.Normal);
+            btnClearText.Layer.CornerRadius = 5f;
+
+            var txtName = new UITextField()
+            {
+                Frame = new RectangleF(40,720,200,60),
+                BackgroundColor = new UIColor(255,255,255,255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f),
+                Placeholder = "Name",
+                TextAlignment = UITextAlignment.Center
+            };
+
+            var txtExhibit = new UITextField()
+            {
+                Frame = new RectangleF(280, 720, 200, 60),
+                BackgroundColor = new UIColor(255, 255, 255, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f),
+                Placeholder = "Exhibit",
+                TextAlignment = UITextAlignment.Center
+            };
+
+            var txtMajor = new UITextField()
+            {
+                Frame = new RectangleF(40, 820, 200, 60),
+                BackgroundColor = new UIColor(255, 255, 255, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f),
+                Placeholder = "Major ID",
+                UserInteractionEnabled = false,
+                TextAlignment = UITextAlignment.Center
+            };
+
+            //txtMajor.TextColor = new UIColor(100,100,100,255);
+
+            var txtMinor = new UITextField()
+            {
+                Frame = new RectangleF(280, 820, 200, 60),
+                BackgroundColor = new UIColor(255, 255, 255, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f),
+                Placeholder = "Minor ID",
+                UserInteractionEnabled = false,
+                TextAlignment = UITextAlignment.Center
+            };
+
+            //txtMinor.TextColor = new UIColor(100, 100, 100, 255);
 
             //Create table for estimotes with no information
             var unsetTable = new UITableView()
             {
                 Frame = new RectangleF(530, 100, 200, 500),
+                AllowsMultipleSelection = false,
+                Source = unsetSource
             };
 
             //Create table for estimotes with information
-            var setTable = new UITableView(new RectangleF(40, 100, 200, 500));
+            var setTable = new UITableView(new RectangleF(40, 100, 200, 500))
+            {
+                AllowsMultipleSelection = false
+            };
+
+
+
+            btnSave.TouchUpInside += (sender, args) => CreateXml(addedList);
+            btnBack.TouchUpInside += (sender, args) => DismissViewController(true, null);
+
+            btnClearText.TouchUpInside += (sender, args) =>
+            {
+                txtExhibit.Text = "";
+                txtMajor.Text = "";
+                txtMinor.Text = "";
+                txtName.Text = "";
+            };
+
+            btnAddBeacon.TouchUpInside += (sender, args) =>
+            {
+                if (!txtName.HasText)
+                    new UIAlertView("No Name!", "Please give the new beacon a name", null, "OK", null).Show();
+                else if(!txtExhibit.HasText)
+                    new UIAlertView("No Exhibit!", "Please give the new beacon an exhibit", null, "OK", null).Show();
+                else
+                    foundList.Add(new EstimoteInit(tmp.Next(10000, 99999).ToString(), tmp.Next(10000, 99999).ToString(), txtName.Text, txtExhibit.Text));
+            };
+
+            
+
+
+            unsetSource.OnRowSelected += (sender, args) =>
+            {
+                txtMajor.Text = unsetSource.tableList[args.indexPath.Row].GetMajor();
+                txtMinor.Text = unsetSource.tableList[args.indexPath.Row].GetMinor();
+            };
 
             //Adding all buttons and tables
+            View.Add(background);
+            Add(lblInfo);
             Add(btnAdd);
             Add(btnSub);
             Add(btnBack);
             Add(btnSave);
+            Add(btnAddBeacon);
+            Add(btnClearText);
+            Add(txtName);
+            Add(txtExhibit);
+            Add(txtMajor);
+            Add(txtMinor);
             Add(unsetTable);
             Add(setTable);
 
@@ -167,18 +287,30 @@ namespace DrU
             {
                 foreach (var s in args.Beacons)
                 {
-                    //Add all estimotes to list if not previously found
-                    if (!foundList.Contains(s.Major.ToString()))
+                    var notFound = foundList.SingleOrDefault(a => a.GetMajor().ToString() == s.Major.ToString());
+                    if (notFound == null)
                     {
-                        foundList.Add(s.Major.ToString());
+                        foundList.Add(new EstimoteInit(s.Major.ToString(), s.Minor.ToString(), "", ""));
+                        //Reload table with new information
+                        
                     }
+                    unsetTable.ReloadData();
                 }
-                //Reload table with new information
-                unsetTable.ReloadData();
+                
             };
 
-            //Create table information
-            //unsetTable.Source = new TableController(estList, this);
+            txtName.ShouldReturn += delegate
+            {
+                txtName.ResignFirstResponder();
+                return true;
+            };
+
+            txtExhibit.ShouldReturn += delegate
+            {
+                txtExhibit.ResignFirstResponder();
+                return true;
+            };
+
 
             //Commence bluetooth detection
             manager.StartMonitoring(region);
@@ -188,6 +320,18 @@ namespace DrU
             #endregion
 
 
+        }
+
+        private List<EstimoteInit> GenerateUnsetEstimotes(IEnumerable<string> x, List<EstimoteInit> y)
+        {
+            var slave = new List<EstimoteInit>();
+
+            foreach (var v in x)
+            {
+                slave.Add(new EstimoteInit(x.ToString(), "", "", ""));
+            }
+
+            return slave;
         }
 
         private List<EstimoteInit> PopulateAdd()
@@ -220,13 +364,16 @@ namespace DrU
                     .Root.Elements()
                     .Select(
                         row =>
-                            new EstimoteInit(row.Element("major").Value, row.Element("minor").Value,
-                                row.Element("name").Value, row.Element("exhibit").Value));
+                            new EstimoteInit(row.Element("Major").Value, row.Element("Minor").Value,
+                                row.Element("Name").Value, row.Element("Exhibit").Value));
+
+                Debug.Write("XML successfully read");
 
                 return rows.ToList();
             }
             else
             {
+                Debug.Write("XML does not exist");
                 return null;
             }
 
@@ -235,6 +382,44 @@ namespace DrU
 
         private bool CreateXml(List<EstimoteInit> list)
         {
+
+            
+            if (list.Count <= 0)
+            {
+                new UIAlertView("Empty List!", "There are no Estimotes to save!", null, "OK", null).Show();
+                return false;
+            }
+
+            var supDir = Path.Combine(NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0].ToString(), "Estimote.xml");
+
+            XmlWriter x = XmlWriter.Create(supDir);
+
+            x.WriteStartDocument(true);
+            x.WriteStartElement("Estimotes");
+
+            foreach (var v in list)
+            {
+                x.WriteStartElement("Estimote");
+                x.WriteStartAttribute("Major");
+                x.WriteString(v.GetMajor());
+                x.WriteEndAttribute();
+                x.WriteStartAttribute("Minor");
+                x.WriteString(v.GetMinor());
+                x.WriteEndAttribute();
+                x.WriteStartAttribute("Name");
+                x.WriteString(v.GetName());
+                x.WriteEndAttribute();
+                x.WriteStartAttribute("Exhibit");
+                x.WriteString(v.GetExhibit());
+                x.WriteEndAttribute();
+                x.WriteEndElement();
+            }
+
+            x.WriteEndElement();
+
+            x.Flush();
+            x.Close();
+
             return false;
         }
 
