@@ -219,3 +219,7 @@ pip-log.txt
 *.mdb
 *.pdb
 *.cache
+*.exe
+*.mdb
+*.cache
+*.cache

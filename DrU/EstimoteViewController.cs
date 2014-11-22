@@ -1,7 +1,12 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
@@ -11,16 +16,56 @@ namespace DrU
 {
     class EstimoteViewController : UIViewController
     {
+        private class EstimoteInit
+        {
+            private string major;
+            private string minor;
+            private string name;
+            private string exhibit;
+
+            public EstimoteInit(string ma, string mi, string na, string ex)
+            {
+                major = ma;
+                minor = mi;
+                name = na;
+                exhibit = ex;
+            }
+
+            public string GetMajor()
+            {
+                return major;
+            }
+
+            public string GetMinor()
+            {
+                return minor;
+            }
+
+            public string GetName()
+            {
+                return name;
+            }
+
+            public string GetExhibit()
+            {
+                return exhibit;
+            }
+        }
+
+        public event EventHandler RowSelected;
         public override void ViewDidLoad()
         {
 
             base.ViewDidLoad();
 
+            var foundList = new List<string>();
+
+            var newList = new List<EstimoteInit>();
+
+            List<EstimoteInit> addList = PopulateAdd();
+
             #region GUI Item Init
 
-            //Create 'found estimote' list
-            var estList = new ArrayList();
-          
 
             //Create and add background image
             var background = new UIImageView
@@ -39,16 +84,16 @@ namespace DrU
             Add(lblInfo);
 
             //Create back button
-            var btnback = new UIButton(UIButtonType.RoundedRect)
+            var btnBack = new UIButton(UIButtonType.RoundedRect)
             {
-                Frame = new RectangleF(40, 925, 200, 75),
+                Frame = new RectangleF(580, 820, 150, 60),
                 BackgroundColor = new UIColor(160,245,250,255),
                 Font = UIFont.FromName("Helvetica-Bold", 30f)
                 
             };
-            btnback.TouchUpInside += (sender, args) => DismissViewController(true, null);
-            btnback.SetTitle("Back", UIControlState.Normal);
-            btnback.Layer.CornerRadius = 10.0f;
+            btnBack.TouchUpInside += (sender, args) => DismissViewController(true, null);
+            btnBack.SetTitle("Back", UIControlState.Normal);
+            btnBack.Layer.CornerRadius = 5f;
             
             //Create 'add' button
             var btnAdd = new UIButton(UIButtonType.RoundedRect)
@@ -70,6 +115,15 @@ namespace DrU
             btnSub.SetTitle("->", UIControlState.Normal);
             btnSub.Layer.CornerRadius = 5f;
 
+            var btnSave = new UIButton(UIButtonType.RoundedRect)
+            {
+                Frame = new RectangleF(580, 900, 150, 60),
+                BackgroundColor = new UIColor(160, 245, 250, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f)
+            };
+            btnSave.SetTitle("Save", UIControlState.Normal);
+            btnSave.Layer.CornerRadius = 5f;
+
             //Create table for estimotes with no information
             var unsetTable = new UITableView()
             {
@@ -82,7 +136,8 @@ namespace DrU
             //Adding all buttons and tables
             Add(btnAdd);
             Add(btnSub);
-            Add(btnback);
+            Add(btnBack);
+            Add(btnSave);
             Add(unsetTable);
             Add(setTable);
 
@@ -113,15 +168,17 @@ namespace DrU
                 foreach (var s in args.Beacons)
                 {
                     //Add all estimotes to list if not previously found
-                    if(!estList.Contains(s.Major.ToString()))
-                        estList.Add(s.Major.ToString());
+                    if (!foundList.Contains(s.Major.ToString()))
+                    {
+                        foundList.Add(s.Major.ToString());
+                    }
                 }
                 //Reload table with new information
                 unsetTable.ReloadData();
             };
 
             //Create table information
-            unsetTable.Source = new TableController(estList);
+            //unsetTable.Source = new TableController(estList, this);
 
             //Commence bluetooth detection
             manager.StartMonitoring(region);
@@ -133,52 +190,53 @@ namespace DrU
 
         }
 
-        private void FileHandle(UILabel label)
+        private List<EstimoteInit> PopulateAdd()
         {
             //Navigation 
             var supDir = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
 
-            if (!NSFileManager.DefaultManager.FileExists(supDir.Path))
+            if (NSFileManager.DefaultManager.FileExists(supDir.Path))
+            {
+                Debug.Write("App Support already exists");
+            }
+            else
             {
                 Debug.Write("App Support Doesn't Exist");
                 NSError err;
                 var t = new NSDictionary();
-                if (!(NSFileManager.DefaultManager.CreateDirectory(supDir.Path, true, t, out err)))
-                {
-                    Debug.Write("Failed to create folder: " + err.LocalizedDescription);
-                }
-                else
+                if (NSFileManager.DefaultManager.CreateDirectory(supDir.Path, true, t, out err))
                 {
                     Debug.Write("Success!");
                 }
+                else
+                {
+                    Debug.Write("Failed to create folder: " + err.LocalizedDescription);
+                }
+            }
+
+            if (NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Estimote.xml")))
+            {
+                var rows = XDocument.Load(Path.Combine(supDir.Path, "Estimote.xml"))
+                    .Root.Elements()
+                    .Select(
+                        row =>
+                            new EstimoteInit(row.Element("major").Value, row.Element("minor").Value,
+                                row.Element("name").Value, row.Element("exhibit").Value));
+
+                return rows.ToList();
             }
             else
             {
-                Debug.Write("App Support already exists");
+                return null;
             }
 
 
-            if (!NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt")))
-            {
-                //Setting up new file directory
-                var file = Path.Combine(supDir.Path, "Test.txt");
-
-                //Writing to created file
-                File.WriteAllText(file, "This is a test");
-            }
-            else
-            {
-                Debug.Write("File Exists");
-            }
-
-            //Checking if file was created
-            var checker = NSFileManager.DefaultManager.FileExists(Path.Combine(supDir.Path, "Test.txt"));
-
-            //Writing to console if file was created
-            Debug.Write(checker ? "File Creation Successful" : "File Failed");
-
-            if (checker)
-                label.Text = File.ReadAllText(Path.Combine(supDir.Path, "Test.txt"));
         }
+
+        private bool CreateXml(List<EstimoteInit> list)
+        {
+            return false;
+        }
+
     }
 }

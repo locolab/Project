@@ -9,13 +9,15 @@ namespace DrU
 {
     class TableController : UITableViewSource
     {
-        private ArrayList tableList;
+        private List<string> tableList;
+        private EstimoteViewController master;
         private string cellID = "TblCell";
 
 
-        public TableController(ArrayList list)
+        public TableController(List<string> list, EstimoteViewController source)
         {
             tableList = list;
+            master = source;
         }
 
         public override int RowsInSection(UITableView tblView, int section)
@@ -26,16 +28,14 @@ namespace DrU
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             //new UIAlertView("Row Selected", tableList[indexPath.Row].ToString(), null, "OK", null).Show();
-            UITableViewCell cell = tableView.CellAt (indexPath);
-            cell.Accessory = indexPath.Row >= 0 ? UITableViewCellAccessory.Checkmark : UITableViewCellAccessory.None;
+
+            tableView.DeselectRow(indexPath, true);
         }
     
 
         public override void RowDeselected(UITableView tableView, NSIndexPath indexPath)
         {
             //tableView.DeselectRow(indexPath, true); // normal iOS behaviour is to remove the blue highlight
-            UITableViewCell cell = tableView.CellAt(indexPath);
-            cell.Accessory = UITableViewCellAccessory.None;
         }
 
         public override UITableViewCell GetCell(UITableView tblView, NSIndexPath indexPath)
