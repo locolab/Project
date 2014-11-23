@@ -14,6 +14,9 @@ namespace DrU
 {
     class EstimoteViewController : ViewScroll
     {
+        private List<EstimoteInit> foundList;
+        private List<EstimoteInit> unsetList;
+        private List<EstimoteInit> setList; 
 
 
         public class EstimoteInit
@@ -54,7 +57,9 @@ namespace DrU
 
         public EstimoteViewController()
 		{
-
+            foundList = new List<EstimoteInit>();
+            unsetList = new List<EstimoteInit>();
+            setList = PopulateAdd();
 		}
 
         public override void ViewDidLoad()
@@ -62,18 +67,7 @@ namespace DrU
 
             base.ViewDidLoad();
 
-            var foundList = new List<EstimoteInit>();
-
-            var newList = new List<EstimoteInit>();
-
-            List<EstimoteInit> addedList = PopulateAdd();
-
             var tmp = new Random();
-
-            var unsetSource = new TableController(foundList, this);
-
-
-
 
             #region GUI Item Init
 
@@ -87,7 +81,7 @@ namespace DrU
             
             
             //Create and add label
-            var lblInfo = new UILabel(new RectangleF(250,60,300,60))
+            var lblInfo = new UILabel(new RectangleF(260,60,300,60))
             {
                 Text = "Adding and Removing Estimotes",
                 TextColor = new UIColor(255,255,255,255),
@@ -204,7 +198,6 @@ namespace DrU
             {
                 Frame = new RectangleF(530, 100, 200, 500),
                 AllowsMultipleSelection = false,
-                Source = unsetSource
             };
 
             //Create table for estimotes with information
@@ -215,7 +208,7 @@ namespace DrU
 
 
 
-            btnSave.TouchUpInside += (sender, args) => CreateXml(addedList);
+            btnSave.TouchUpInside += (sender, args) => CreateXml(setList);
             btnBack.TouchUpInside += (sender, args) => DismissViewController(true, null);
 
             btnClearText.TouchUpInside += (sender, args) =>
@@ -230,20 +223,21 @@ namespace DrU
             {
                 if (!txtName.HasText)
                     new UIAlertView("No Name!", "Please give the new beacon a name", null, "OK", null).Show();
-                else if(!txtExhibit.HasText)
+                else if (!txtExhibit.HasText)
                     new UIAlertView("No Exhibit!", "Please give the new beacon an exhibit", null, "OK", null).Show();
                 else
-                    foundList.Add(new EstimoteInit(tmp.Next(10000, 99999).ToString(), tmp.Next(10000, 99999).ToString(), txtName.Text, txtExhibit.Text));
+                {
+                    foundList.Add(new EstimoteInit(tmp.Next(10000, 99999).ToString(), tmp.Next(10000, 99999).ToString(),
+                        txtName.Text, txtExhibit.Text));
+                    unsetTable.ReloadData();
+                    
+                }
             };
 
             
 
 
-            unsetSource.OnRowSelected += (sender, args) =>
-            {
-                txtMajor.Text = unsetSource.tableList[args.indexPath.Row].GetMajor();
-                txtMinor.Text = unsetSource.tableList[args.indexPath.Row].GetMinor();
-            };
+
 
             //Adding all buttons and tables
             View.Add(background);
@@ -291,12 +285,33 @@ namespace DrU
                     if (notFound == null)
                     {
                         foundList.Add(new EstimoteInit(s.Major.ToString(), s.Minor.ToString(), "", ""));
-                        //Reload table with new information
-                        
+                        GenerateUnsetEstimotes();
+
                     }
                     unsetTable.ReloadData();
                 }
                 
+            };
+
+
+            var unsetSource = new TableController(unsetList, this);
+            var setSource = new TableController(setList, this);
+
+            unsetTable.Source = unsetSource;
+            setTable.Source = setSource;
+
+            unsetSource.OnRowSelected += (sender, args) =>
+            {
+                txtMajor.Text = unsetSource.tableList[args.indexPath.Row].GetMajor();
+                txtMinor.Text = unsetSource.tableList[args.indexPath.Row].GetMinor();
+            };
+
+            setSource.OnRowSelected += (sender, args) =>
+            {
+                txtName.Text = setSource.tableList[args.indexPath.Row].GetName();
+                txtExhibit.Text =  setSource.tableList[args.indexPath.Row].GetExhibit();
+                txtMajor.Text = setSource.tableList[args.indexPath.Row].GetMajor();
+                txtMinor.Text = setSource.tableList[args.indexPath.Row].GetMinor();
             };
 
             txtName.ShouldReturn += delegate
@@ -322,26 +337,37 @@ namespace DrU
 
         }
 
-        private List<EstimoteInit> GenerateUnsetEstimotes(IEnumerable<string> x, List<EstimoteInit> y)
+        private void GenerateUnsetEstimotes()
         {
-            var slave = new List<EstimoteInit>();
-
-            foreach (var v in x)
+            if (foundList == null) return;
+            if (setList == null)
             {
-                slave.Add(new EstimoteInit(x.ToString(), "", "", ""));
+                unsetList.Clear();
+                unsetList.AddRange(foundList);
             }
+            else
+            {
+                unsetList.Clear();
 
-            return slave;
+                foreach (var f in from f in foundList from s in setList where f.GetMajor() != s.GetMajor() select f)
+                {
+                    unsetList.Add(f);
+                }
+            }
         }
 
         private List<EstimoteInit> PopulateAdd()
         {
+
+            
+
             //Navigation 
             var supDir = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
 
             if (NSFileManager.DefaultManager.FileExists(supDir.Path))
             {
                 Debug.Write("App Support already exists");
+                GenerateXmlFile();
             }
             else
             {
@@ -351,6 +377,7 @@ namespace DrU
                 if (NSFileManager.DefaultManager.CreateDirectory(supDir.Path, true, t, out err))
                 {
                     Debug.Write("Success!");
+                    GenerateXmlFile();
                 }
                 else
                 {
@@ -380,6 +407,47 @@ namespace DrU
 
         }
 
+        private void GenerateXmlFile()
+        {
+            var supDir = Path.Combine(NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0].Path, "Estimote.xml");
+
+            if (NSFileManager.DefaultManager.FileExists(supDir))
+            {
+                Debug.Write("XML already exists");
+                return;
+            }
+            using(XmlWriter x = XmlWriter.Create(supDir))
+            {
+
+                Debug.Write("Creating XML");
+
+                x.WriteStartDocument(true);
+                x.WriteStartElement("Estimotes");
+
+                x.WriteStartElement("Estimote");
+                x.WriteStartElement("Major");
+                x.WriteString("46350");
+                x.WriteEndElement();
+                x.WriteStartElement("Minor");
+                x.WriteString("10884");
+                x.WriteEndElement();
+                x.WriteStartElement("Name");
+                x.WriteString("Space");
+                x.WriteEndElement();
+                x.WriteStartElement("Exhibit");
+                x.WriteString("Fire");
+                x.WriteEndElement();
+                x.WriteEndElement();
+
+                x.WriteEndElement();
+
+                x.WriteEndDocument();
+
+                x.Flush();
+                x.Close();
+            }
+        }
+
         private bool CreateXml(List<EstimoteInit> list)
         {
 
@@ -390,35 +458,39 @@ namespace DrU
                 return false;
             }
 
-            var supDir = Path.Combine(NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0].ToString(), "Estimote.xml");
+            var supDir = Path.Combine(NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0].Path, "Estimote.xml");
 
-            XmlWriter x = XmlWriter.Create(supDir);
+            using(XmlWriter x = XmlWriter.Create(supDir))
 
-            x.WriteStartDocument(true);
-            x.WriteStartElement("Estimotes");
-
-            foreach (var v in list)
             {
-                x.WriteStartElement("Estimote");
-                x.WriteStartAttribute("Major");
-                x.WriteString(v.GetMajor());
-                x.WriteEndAttribute();
-                x.WriteStartAttribute("Minor");
-                x.WriteString(v.GetMinor());
-                x.WriteEndAttribute();
-                x.WriteStartAttribute("Name");
-                x.WriteString(v.GetName());
-                x.WriteEndAttribute();
-                x.WriteStartAttribute("Exhibit");
-                x.WriteString(v.GetExhibit());
-                x.WriteEndAttribute();
+                x.WriteStartDocument(true);
+                x.WriteStartElement("Estimotes");
+
+                foreach (var v in list)
+                {
+                    x.WriteStartElement("Estimote");
+                    x.WriteStartElement("Major");
+                    x.WriteString("46350");
+                    x.WriteEndElement();
+                    x.WriteStartElement("Minor");
+                    x.WriteString("10884");
+                    x.WriteEndElement();
+                    x.WriteStartElement("Name");
+                    x.WriteString("Space");
+                    x.WriteEndElement();
+                    x.WriteStartElement("Exhibit");
+                    x.WriteString("Fire");
+                    x.WriteEndElement();
+                    x.WriteEndElement();
+                }
+
                 x.WriteEndElement();
+
+                x.WriteEndDocument();
+
+                x.Flush();
+                x.Close();
             }
-
-            x.WriteEndElement();
-
-            x.Flush();
-            x.Close();
 
             return false;
         }
