@@ -253,6 +253,11 @@ namespace DrU
 
 		}
 
+        public override bool PrefersStatusBarHidden()
+        {
+            return true;
+        }
+
 		public override void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);

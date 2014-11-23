@@ -48,6 +48,10 @@ namespace DrU
            // img_animation.StartAnimating();
         }
 
+        public override bool PrefersStatusBarHidden()
+        {
+            return true;
+        }
 
 	    partial void btn_Go_TouchUpInside(UIButton sender)
         {

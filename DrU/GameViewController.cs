@@ -31,8 +31,14 @@ namespace DrU
 
         }
 
+        public override bool PrefersStatusBarHidden()
+        {
+            return true;
+        }
 
-        partial void btn_GoBackMain_TouchUpInside(UIButton sender)
+
+
+        partial void btn_back_Activated(UIBarButtonItem sender)
         {
         }
 	}
