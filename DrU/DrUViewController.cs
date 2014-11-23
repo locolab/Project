@@ -81,8 +81,24 @@ namespace DrU
             // Set the background image
             img_background.Image = UIImage.FromBundle("mainbackground.jpg");
             
-            
-            
+            // Paralax Effect just on the background image
+            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(50),
+                MaximumRelativeValue = new NSNumber(-50)
+            };
+            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(75),
+                MaximumRelativeValue = new NSNumber(-75)
+            };
+            var effectGroup = new UIMotionEffectGroup
+            {
+                MotionEffects = new[] { xCenterEffect, yCenterEffect }
+            };
+
+            img_background.AddMotionEffect(effectGroup);
+            // End paralax effect
 
             if (!CLLocationManager.LocationServicesEnabled)
                 lbl_exibitName.Text = "Location Not Enabled";

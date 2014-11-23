@@ -29,6 +29,29 @@ namespace DrU
             // Set the background image
             img_GameBackground.Image = UIImage.FromBundle("Default-Portrait.png");
 
+
+            // Paralax Effect just on the background image
+            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(25),
+                MaximumRelativeValue = new NSNumber(-25)
+            };
+            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(75),
+                MaximumRelativeValue = new NSNumber(-75)
+            };
+            var effectGroup = new UIMotionEffectGroup
+            {
+                MotionEffects = new[] { xCenterEffect, yCenterEffect }
+            };
+
+            img_GameBackground.AddMotionEffect(effectGroup);
+
+
+
+            // End paralax effect
+
         }
 
         public override bool PrefersStatusBarHidden()
