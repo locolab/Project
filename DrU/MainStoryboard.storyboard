@@ -17,11 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-Rg-rUk">
-<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="28" width="768" height="996"/>
-=======
-                                <rect key="frame" x="0.0" y="0.0" width="770" height="1024"/>
->>>>>>> origin/GUI
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's your name?" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-wZ-ycr">
                                 <rect key="frame" x="20" y="645" width="498" height="30"/>
@@ -66,11 +62,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42">
-                                <rect key="frame" x="0.0" y="88" width="770" height="960"/>
+                                <rect key="frame" x="0.0" y="108" width="768" height="916"/>
                                 <color key="tintColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-oB-JnQ">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="65" width="768" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -90,8 +86,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3a-cg-0ef">
-                                <rect key="frame" x="0.0" y="46" width="770" height="44"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.27843137254901962" green="0.58823529411764708" blue="0.792156862745098" alpha="1"/>
+                                <rect key="frame" x="341" y="28" width="86" height="30"/>
                                 <state key="normal" title="Go To Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -178,11 +173,7 @@
                                 <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                             </textView>
                             <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Basic Info:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-<<<<<<< HEAD
                                 <rect key="frame" x="354" y="176" width="344" height="169"/>
-=======
-                                <rect key="frame" x="354" y="156" width="344" height="169"/>
->>>>>>> origin/GUI
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -239,56 +230,19 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="56" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-<<<<<<< HEAD
                                 <rect key="frame" x="2" y="81" width="765" height="941"/>
                             </imageView>
-=======
-                                <rect key="frame" x="0.0" y="44" width="770" height="980"/>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62">
-                                <rect key="frame" x="0.0" y="0.0" width="770" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Dr. Universe" id="63">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="64" image="">
-                                            <connections>
-                                                <action selector="btn_menu_Activated:" destination="66" id="65"/>
-                                                <action selector="btn_back_Activated:" destination="j4b-9u-v2v" id="69"/>
-                                                <segue destination="BYZ-38-t0r" kind="modal" id="72"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Map" image="locationMapBig.png" style="plain" id="67">
-                                            <connections>
-                                                <action selector="btn_map_Activated:" destination="66" id="68"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
->>>>>>> origin/GUI
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="btn_GoBackMain" destination="N4s-yI-Fo2" id="name-outlet-N4s-yI-Fo2"/>
                         <outlet property="img_GameBackground" destination="56" id="name-outlet-56"/>
-<<<<<<< HEAD
-=======
-                        <outlet property="btn_back" destination="64" id="name-outlet-64"/>
-                        <outlet property="btn_map" destination="67" id="name-outlet-67"/>
-                        <outlet property="view_game" destination="lou-iP-NuY" id="name-outlet-lou-iP-NuY"/>
->>>>>>> origin/GUI
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGG-CB-MI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="1413" y="336"/>
-=======
-            <point key="canvasLocation" x="1448" y="6"/>
->>>>>>> origin/GUI
         </scene>
     </scenes>
     <resources>

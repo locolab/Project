@@ -16,10 +16,7 @@ namespace DrU
 	    private CLLocationManager manager;
 	    private NSUuid beaconId;
 	    private CLBeaconRegion region;
-<<<<<<< HEAD
 	    private IntPtr handlePtr;
-=======
->>>>>>> origin/GUI
         //end keyboard
 
 
@@ -28,10 +25,7 @@ namespace DrU
             manager = new CLLocationManager();
             beaconId = new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
             region = new CLBeaconRegion(beaconId, "Da Reejun");
-<<<<<<< HEAD
 		    handlePtr = handle;
-=======
->>>>>>> origin/GUI
 		}
 
 
@@ -48,7 +42,6 @@ namespace DrU
       
 		public override void ViewDidLoad ()
         {
-
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view, typically from a nib.
@@ -87,32 +80,9 @@ namespace DrU
 
             // Set the background image
             img_background.Image = UIImage.FromBundle("mainbackground.jpg");
-
-            
-<<<<<<< HEAD
             
             
-=======
-            // testing paralax effect
-            /*
-            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
-            {
-                MinimumRelativeValue = new NSNumber(25),
-                MaximumRelativeValue = new NSNumber(-25)
-            };
-            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
-            {
-                MinimumRelativeValue = new NSNumber(75),
-                MaximumRelativeValue = new NSNumber(-75)
-            };
-            var effectGroup = new UIMotionEffectGroup
-            {
-                MotionEffects = new[] { xCenterEffect, yCenterEffect }
-            };
-            view_base.AddMotionEffect(effectGroup);
-            */
-
->>>>>>> origin/GUI
+            
 
             if (!CLLocationManager.LocationServicesEnabled)
                 lbl_exibitName.Text = "Location Not Enabled";
@@ -279,68 +249,6 @@ namespace DrU
                 }
 
 
-<<<<<<< HEAD
-=======
-		public override void ViewWillAppear (bool animated)
-		{
-            manager.DidRangeBeacons += (sender, e) =>
-            {
-                //var bInfo = "";
-
-                //var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
-                /*foreach (var beek in e.Beacons)
-                {
-                    bInfo += string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy);
-                }*/
-
-                //txt_moreInfo.Text = bInfo;
-
-                switch (_ctrl)
-                {
-                    case 0:
-                        img_exhibit.Image = UIImage.FromBundle("img_radar.png");
-                        lbl_exibitName.Text = "Started Ranging";
-                        txt_basicInfo.Text = "Scanning for Estimotes in the area...";
-                        var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
-                        txt_moreInfo.Text = bInfo;
-                        break;
-                    case 1:
-
-                        if (!e.Beacons.ElementAt(0).Proximity.ToString().Equals("Unknown"))
-                        {
-                            if (e.Beacons.ElementAt(0).Major.ToString().Equals("46350"))
-                            {
-                                img_exhibit.Image = UIImage.FromBundle("img_saturn.png");
-                                lbl_exibitName.Text = "Saturn's Rings";
-                                txt_basicInfo.Text = "This be Saturn! Arrr!";
-                                txt_moreInfo.Text = "This is filler text that is supposed to be written in Latin but I do not speak Latin so this text will have to do. This"
-                                                    +
-                                                    " looks hideous in actual code, but it is not going to be used in the final release so I guess it is ok. Do not blame me as I am not"
-                                                    + " the senior developer...";
-                            }
-                            else if (e.Beacons.ElementAt(0).Major.ToString().Equals("24973"))
-                            {
-                                img_exhibit.Image = UIImage.FromBundle("img_mars.png");
-                                lbl_exibitName.Text = "Mars Rover";
-                                txt_basicInfo.Text = "This be some iRobot stuff";
-                                txt_moreInfo.Text = "This is even more filler text that was written by a developer that is need of a hug. I always work overtime but I never"
-                                                    +
-                                                    " get paid anything. I feel like I'm being taken advantage of by the others here. Please if anyone can read this tell my family"
-                                                    + " that I want to go home!";
-                            }
-                            else
-                            {
-                                img_exhibit.Image = UIImage.FromBundle("placeholder.png");
-                                lbl_exibitName.Text = "Unknown Estimote";
-                                txt_basicInfo.Text = "What is this???";
-                                txt_moreInfo.Text = "Which estimote is this? I don't have the ID in my database.";
-                            }
-                        }
-                        break;
-                }
-
-
->>>>>>> origin/GUI
             };
 
 		}
@@ -349,12 +257,6 @@ namespace DrU
 		{
 			base.ViewDidAppear (animated);
 		}
-
-        // This removes the ipad status bar at the top
-        public override bool PrefersStatusBarHidden()
-        {
-            return true;
-        }
 
 		public override void ViewWillDisappear (bool animated)
 		{
