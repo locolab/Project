@@ -93,6 +93,7 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstimoteViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="DrUViewController.cs" />
@@ -107,10 +108,7 @@
     <Compile Include="GameViewController.designer.cs">
       <DependentUpon>GameViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SettingsViewController.cs" />
-    <Compile Include="SettingsViewController.designer.cs">
-      <DependentUpon>SettingsViewController.cs</DependentUpon>
-    </Compile>
+    <Compile Include="TableController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

@@ -27,16 +27,42 @@ namespace DrU
             base.ViewDidLoad();
 
             // Set the background image
-            img_GameBackground.Image = UIImage.FromBundle("mainbackground.jpg");
+            img_GameBackground.Image = UIImage.FromBundle("Default-Portrait.png");
 
-           // PerformSegue("view_test", this);
+            btn_map.Clicked += (sender, e) =>
+            {
+                var newpage = new EstimoteViewController();
+                PresentViewController(newpage, true, null);
+            };
 
+            // testing paralax effect
+            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(25),
+                MaximumRelativeValue = new NSNumber(-25)
+            };
+            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(75),
+                MaximumRelativeValue = new NSNumber(-75)
+            };
+            var effectGroup = new UIMotionEffectGroup
+            {
+                MotionEffects = new[] { xCenterEffect, yCenterEffect }
+            };
+            view_game.AddMotionEffect(effectGroup);
 
         }
 
-        partial void btn_backnav_Activated(UIBarButtonItem sender)
+        // This removes the ipad status bar at the top
+        public override bool PrefersStatusBarHidden()
         {
+            return true;
+        }
 
+
+        partial void btn_back_Activated(UIBarButtonItem sender)
+        {
         }
 	}
 }
