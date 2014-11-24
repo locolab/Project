@@ -20,7 +20,19 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btn_camera { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIBarButtonItem btn_map { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btn_pickImage { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView img_cameraView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -40,9 +52,21 @@ namespace DrU
 				btn_back.Dispose ();
 				btn_back = null;
 			}
+			if (btn_camera != null) {
+				btn_camera.Dispose ();
+				btn_camera = null;
+			}
 			if (btn_map != null) {
 				btn_map.Dispose ();
 				btn_map = null;
+			}
+			if (btn_pickImage != null) {
+				btn_pickImage.Dispose ();
+				btn_pickImage = null;
+			}
+			if (img_cameraView != null) {
+				img_cameraView.Dispose ();
+				img_cameraView = null;
 			}
 			if (img_GameBackground != null) {
 				img_GameBackground.Dispose ();

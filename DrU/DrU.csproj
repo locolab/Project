@@ -94,6 +94,7 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="EstimoteViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
