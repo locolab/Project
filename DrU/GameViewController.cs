@@ -27,19 +27,42 @@ namespace DrU
             base.ViewDidLoad();
 
             // Set the background image
-            img_GameBackground.Image = UIImage.FromBundle("mainbackground.jpg");
-<<<<<<< HEAD
+            img_GameBackground.Image = UIImage.FromBundle("Default-Portrait.png");
 
-           // PerformSegue("view_test", this);
-=======
->>>>>>> origin/Game
 
+            // Paralax Effect just on the background image
+            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(25),
+                MaximumRelativeValue = new NSNumber(-25)
+            };
+            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(75),
+                MaximumRelativeValue = new NSNumber(-75)
+            };
+            var effectGroup = new UIMotionEffectGroup
+            {
+                MotionEffects = new[] { xCenterEffect, yCenterEffect }
+            };
+
+            img_GameBackground.AddMotionEffect(effectGroup);
+
+
+
+            // End paralax effect
 
         }
 
-        partial void btn_backnav_Activated(UIBarButtonItem sender)
+        public override bool PrefersStatusBarHidden()
         {
+            return true;
+        }
 
+
+
+        partial void btn_back_Activated(UIBarButtonItem sender)
+        {
         }
 	}
 }
