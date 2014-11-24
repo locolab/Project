@@ -1,6 +1,5 @@
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\bin\iPhone\Debug\DrU.exe
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\bin\iPhone\Debug\DrU.pdb
-C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhone\Debug\DrU.csprojResolveAssemblyReference.cache
+C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhone\Debug\
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhone\Debug\DrU.exe
 C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhone\Debug\DrU.pdb
-C:\Users\Dheeraj\Documents\GitHub\Project\DrU\obj\iPhone\Debug\
