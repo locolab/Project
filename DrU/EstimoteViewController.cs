@@ -55,6 +55,10 @@ namespace DrU
             }
         }
 
+        public override bool PrefersStatusBarHidden()
+        { return true; }
+
+
         public EstimoteViewController()
 		{
             foundList = new List<EstimoteInit>();
@@ -66,10 +70,13 @@ namespace DrU
         {
 
             base.ViewDidLoad();
-
             var tmp = new Random();
 
+            var curEsimoteSelected = -1;
+            var curTableSelected = -1;
+
             #region GUI Item Init
+
 
 
             //Create and add background image
@@ -93,7 +100,7 @@ namespace DrU
             //Create back button
             var btnBack = new UIButton(UIButtonType.RoundedRect)
             {
-                Frame = new RectangleF(580, 720, 150, 60),
+                Frame = new RectangleF(530, 720, 200, 60),
                 BackgroundColor = new UIColor(160,245,250,255),
                 Font = UIFont.FromName("Helvetica-Bold", 30f)
                 
@@ -123,7 +130,7 @@ namespace DrU
 
             var btnSave = new UIButton(UIButtonType.RoundedRect)
             {
-                Frame = new RectangleF(580, 820, 150, 60),
+                Frame = new RectangleF(530, 820, 200, 60),
                 BackgroundColor = new UIColor(160, 245, 250, 255),
                 Font = UIFont.FromName("Helvetica-Bold", 30f),
             };
@@ -150,6 +157,15 @@ namespace DrU
 
             btnClearText.SetTitle("Clear Boxes", UIControlState.Normal);
             btnClearText.Layer.CornerRadius = 5f;
+
+            var btnReloadTable = new UIButton(UIButtonType.RoundedRect)
+            {
+                Frame = new RectangleF(530, 920, 200, 60),
+                BackgroundColor = new UIColor(160, 245, 250, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f)
+            };
+            btnReloadTable.SetTitle("Reload Data", UIControlState.Normal);
+            btnReloadTable.Layer.CornerRadius = 5f;
 
             var txtName = new UITextField()
             {
@@ -219,6 +235,12 @@ namespace DrU
                 txtName.Text = "";
             };
 
+            btnReloadTable.TouchUpInside += (sender, args) =>
+            {
+                unsetTable.ReloadData();
+                setTable.ReloadData();
+            };
+
             btnAddBeacon.TouchUpInside += (sender, args) =>
             {
                 if (!txtName.HasText)
@@ -234,10 +256,49 @@ namespace DrU
                 }
             };
 
-            
+            btnAdd.TouchUpInside += (sender, args) =>
+            {
+                if(curEsimoteSelected < 0)
+                    new UIAlertView("No Selection!", "Please select an estimote from the tables", null, "OK", null).Show();
+                else
+                {
+                    if (!txtName.HasText)
+                        new UIAlertView("No Name!", "Please give the new beacon a name", null, "OK", null).Show();
+                    else if (!txtExhibit.HasText)
+                        new UIAlertView("No Exhibit!", "Please give the new beacon an exhibit", null, "OK", null).Show();
+                    else
+                    {
+                        var notFound = setList.SingleOrDefault(a => a.GetMajor().ToString() == txtMajor.Text);
+                        if(notFound == null)
+                        {
+                            setList.Add(new EstimoteInit(txtName.Text, txtExhibit.Text, txtMajor.Text, txtMinor.Text));
+                            GenerateUnsetEstimotes();
+                            unsetTable.ReloadData();
+                            setTable.ReloadData();
+                        }
+                        else
+                        {
+                            new UIAlertView("Already Added!", "This Estimote has already been added", null, "OK", null).Show();
+                        }
 
+                    }
+                }
+            };
 
-
+            btnSub.TouchUpInside += (sender, args) =>
+            {
+                if (curEsimoteSelected < 0)
+                    new UIAlertView("No Selection!", "Please select an estimote from the tables", null, "OK", null).Show();
+                else if(curTableSelected != 0)
+                    new UIAlertView("Wrong Table!", "Please select a value from the left table", null, "OK", null).Show();
+                else
+                {
+                    setList.RemoveAt(curEsimoteSelected);
+                    GenerateUnsetEstimotes();
+                    setTable.ReloadData();
+                    unsetTable.ReloadData();
+                }
+            };
 
             //Adding all buttons and tables
             View.Add(background);
@@ -247,6 +308,7 @@ namespace DrU
             Add(btnBack);
             Add(btnSave);
             Add(btnAddBeacon);
+            Add(btnReloadTable);
             Add(btnClearText);
             Add(txtName);
             Add(txtExhibit);
@@ -302,12 +364,18 @@ namespace DrU
 
             unsetSource.OnRowSelected += (sender, args) =>
             {
+                curTableSelected = 1;
+                curEsimoteSelected = args.indexPath.Row;
+                txtName.Text = "";
+                txtExhibit.Text = "";
                 txtMajor.Text = unsetSource.tableList[args.indexPath.Row].GetMajor();
                 txtMinor.Text = unsetSource.tableList[args.indexPath.Row].GetMinor();
             };
 
             setSource.OnRowSelected += (sender, args) =>
             {
+                curTableSelected = 0;
+                curEsimoteSelected = args.indexPath.Row;
                 txtName.Text = setSource.tableList[args.indexPath.Row].GetName();
                 txtExhibit.Text =  setSource.tableList[args.indexPath.Row].GetExhibit();
                 txtMajor.Text = setSource.tableList[args.indexPath.Row].GetMajor();
@@ -349,9 +417,16 @@ namespace DrU
             {
                 unsetList.Clear();
 
-                foreach (var f in from f in foundList from s in setList where f.GetMajor() != s.GetMajor() select f)
+                foreach (var f in foundList)
                 {
-                    unsetList.Add(f);
+                    var match = false;
+                    foreach (var s in setList)
+                    {
+                        if (f.GetMajor() == s.GetMajor())
+                            match = true;
+                    }
+                    if(!match)
+                        unsetList.Add(f);
                 }
             }
         }
