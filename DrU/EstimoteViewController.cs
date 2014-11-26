@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Xml;
 using System.Xml.Linq;
 using MonoTouch.Foundation;
@@ -259,28 +260,35 @@ namespace DrU
             btnAdd.TouchUpInside += (sender, args) =>
             {
                 if(curEsimoteSelected < 0)
-                    new UIAlertView("No Selection!", "Please select an estimote from the tables", null, "OK", null).Show();
+                    new UIAlertView("No Selection!", "Please select an estimote from the left table!", null, "OK", null).Show();
                 else
                 {
-                    if (!txtName.HasText)
-                        new UIAlertView("No Name!", "Please give the new beacon a name", null, "OK", null).Show();
-                    else if (!txtExhibit.HasText)
-                        new UIAlertView("No Exhibit!", "Please give the new beacon an exhibit", null, "OK", null).Show();
-                    else
+                    if(curTableSelected != 1)
                     {
-                        var notFound = setList.SingleOrDefault(a => a.GetMajor().ToString() == txtMajor.Text);
-                        if(notFound == null)
-                        {
-                            setList.Add(new EstimoteInit(txtName.Text, txtExhibit.Text, txtMajor.Text, txtMinor.Text));
-                            GenerateUnsetEstimotes();
-                            unsetTable.ReloadData();
-                            setTable.ReloadData();
-                        }
+                        if (!txtName.HasText)
+                            new UIAlertView("No Name!", "Please give the new beacon a name", null, "OK", null).Show();
+                        else if (!txtExhibit.HasText)
+                            new UIAlertView("No Exhibit!", "Please give the new beacon an exhibit", null, "OK", null).Show();
                         else
                         {
-                            new UIAlertView("Already Added!", "This Estimote has already been added", null, "OK", null).Show();
-                        }
+                            var notFound = setList.SingleOrDefault(a => a.GetMajor().ToString() == txtMajor.Text);
+                            if(notFound == null)
+                            {
+                                setList.Add(new EstimoteInit(txtName.Text, txtExhibit.Text, txtMajor.Text, txtMinor.Text));
+                                GenerateUnsetEstimotes();
+                                unsetTable.ReloadData();
+                                setTable.ReloadData();
+                            }
+                            else
+                            {
+                                new UIAlertView("Already Added!", "This Estimote has already been added", null, "OK", null).Show();
+                            }
 
+                        }
+                    }
+                    else
+                    {
+                        new UIAlertView("Wrong Table!", "Please select an estimote from the left table!", null, "OK", null).Show();
                     }
                 }
             };
@@ -434,7 +442,24 @@ namespace DrU
         private List<EstimoteInit> PopulateAdd()
         {
 
-            
+            var req = HttpWebRequest.Create("http://cryotek.org/services/estimote");
+            req.ContentType = "application/json";
+            req.Method = "GET";
+
+            using (var response = req.GetResponse() as HttpWebResponse)
+            {
+                if(response.StatusCode != HttpStatusCode.OK)
+                    Debug.Write(string.Format("Error: {0}", response.StatusCode));
+                using (var reader = new StreamReader(response.GetResponseStream()))
+                {
+                    var content = reader.ReadToEnd();
+                    Debug.Write(string.IsNullOrWhiteSpace(content)
+                        ? "Empty Response"
+                        : string.Format("Response: {0}", content));
+                }
+            }
+
+            /*
 
             //Navigation 
             var supDir = NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
@@ -478,7 +503,9 @@ namespace DrU
                 Debug.Write("XML does not exist");
                 return null;
             }
+            */
 
+            return null;
 
         }
 
