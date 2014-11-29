@@ -5,11 +5,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Xml;
-using System.Xml.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
+using Newtonsoft.Json;
 
 namespace DrU
 {
@@ -225,7 +224,7 @@ namespace DrU
 
 
 
-            btnSave.TouchUpInside += (sender, args) => CreateXml(setList);
+            //btnSave.TouchUpInside += (sender, args) => CreateXml(setList);
             btnBack.TouchUpInside += (sender, args) => DismissViewController(true, null);
 
             btnClearText.TouchUpInside += (sender, args) =>
@@ -356,11 +355,9 @@ namespace DrU
                     {
                         foundList.Add(new EstimoteInit(s.Major.ToString(), s.Minor.ToString(), "", ""));
                         GenerateUnsetEstimotes();
-
                     }
                     unsetTable.ReloadData();
                 }
-                
             };
 
 
@@ -385,7 +382,7 @@ namespace DrU
                 curTableSelected = 0;
                 curEsimoteSelected = args.indexPath.Row;
                 txtName.Text = setSource.tableList[args.indexPath.Row].GetName();
-                txtExhibit.Text =  setSource.tableList[args.indexPath.Row].GetExhibit();
+                txtExhibit.Text = setSource.tableList[args.indexPath.Row].GetExhibit();
                 txtMajor.Text = setSource.tableList[args.indexPath.Row].GetMajor();
                 txtMinor.Text = setSource.tableList[args.indexPath.Row].GetMinor();
             };
@@ -511,6 +508,8 @@ namespace DrU
 
         private void GenerateXmlFile()
         {
+            /*
+
             var supDir = Path.Combine(NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0].Path, "Estimote.xml");
 
             if (NSFileManager.DefaultManager.FileExists(supDir))
@@ -546,56 +545,8 @@ namespace DrU
                 x.WriteEndDocument();
 
                 x.Flush();
-                x.Close();
+                x.Close();*/
             }
         }
 
-        private bool CreateXml(List<EstimoteInit> list)
-        {
-
-            
-            if (list.Count <= 0)
-            {
-                new UIAlertView("Empty List!", "There are no Estimotes to save!", null, "OK", null).Show();
-                return false;
-            }
-
-            var supDir = Path.Combine(NSFileManager.DefaultManager.GetUrls(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0].Path, "Estimote.xml");
-
-            using(XmlWriter x = XmlWriter.Create(supDir))
-
-            {
-                x.WriteStartDocument(true);
-                x.WriteStartElement("Estimotes");
-
-                foreach (var v in list)
-                {
-                    x.WriteStartElement("Estimote");
-                    x.WriteStartElement("Major");
-                    x.WriteString("46350");
-                    x.WriteEndElement();
-                    x.WriteStartElement("Minor");
-                    x.WriteString("10884");
-                    x.WriteEndElement();
-                    x.WriteStartElement("Name");
-                    x.WriteString("Space");
-                    x.WriteEndElement();
-                    x.WriteStartElement("Exhibit");
-                    x.WriteString("Fire");
-                    x.WriteEndElement();
-                    x.WriteEndElement();
-                }
-
-                x.WriteEndElement();
-
-                x.WriteEndDocument();
-
-                x.Flush();
-                x.Close();
-            }
-
-            return false;
-        }
-
-    }
 }
