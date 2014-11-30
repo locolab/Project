@@ -57,7 +57,7 @@ namespace DrU
                                    new UITableViewCell(UITableViewCellStyle.Default, cellID);
 
 
-            cell.TextLabel.Text = tableList[indexPath.Row].GetName() == "" ? tableList[indexPath.Row].GetMajor() : tableList[indexPath.Row].GetName();
+            cell.TextLabel.Text = tableList[indexPath.Row].name == "" ? tableList[indexPath.Row].major : tableList[indexPath.Row].name;
             return cell;
         }
 

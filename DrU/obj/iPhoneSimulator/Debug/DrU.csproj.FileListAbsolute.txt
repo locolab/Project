@@ -26,3 +26,4 @@ E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\img_radar.png
 E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\DrU.exe
 E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\DrU.pdb
 E:\Repos\Project\DrU\obj\iPhoneSimulator\Debug\DrU.csprojResolveAssemblyReference.cache
+E:\Repos\Project\DrU\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
