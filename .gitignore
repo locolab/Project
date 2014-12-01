@@ -1,17 +1,12 @@
- 
 obj
 bin
+test-results
 bin/*
 obj/*
 [Bb]in/*
 [Oo]bj/*
-*/bin/*
-*/obj/*
-*/*/bin/*
-*/*/obj/*
-*/*/*/bin/*
-*/*/*/obj/*
-*_ReSharper.*/
+_ReSharper.*/
+
 
 _UpgradeReport_Files
 UpgradeLog.* 
@@ -30,4 +25,4 @@ UpgradeLog.*
 *.exe
 *.mdb
 *.pdb
-*.cache 
+*.cache
