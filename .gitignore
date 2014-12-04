@@ -1,3 +1,4 @@
+ 
 obj
 bin
 test-results
@@ -7,22 +8,26 @@ obj/*
 [Oo]bj/*
 _ReSharper.*/
 
+*/bin/*
+*/obj/*
+*/*/bin/*
+*/*/obj/*
+*/*/*/bin/*
+*/*/*/obj/*
+*_ReSharper.*/
 
 _UpgradeReport_Files
 UpgradeLog.* 
-
-*.DS_Store
-*.sln.cache
-*.suo
-*.userprefs
-*.usertasks
-*.user
-*.pidb
-*.swp
-*.DS_Store
-*.nib
-*.pfx
+@@ -25,4 +30,4 @@ UpgradeLog.*
 *.exe
 *.mdb
 *.pdb
 *.cache
+ No newline at end of file
+*.cache 
+ No newline at end of file
+DrU.v11.suo
+DrU.v12.suo
+DrU/obj/iPhone/Release/DesignTimeResolveAssemblyReferencesInput.cache
+DrU/obj/iPhone/Release/DesignTimeResolveAssemblyReferencesInput.cache
+DrU.v12.suo
