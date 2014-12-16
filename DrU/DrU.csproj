@@ -80,6 +80,10 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSMenu, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CSMenu.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -109,6 +113,14 @@
     <Compile Include="GameViewController.cs" />
     <Compile Include="GameViewController.designer.cs">
       <DependentUpon>GameViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuViewController.cs" />
+    <Compile Include="MenuViewController.designer.cs">
+      <DependentUpon>MenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SlideOutMenuViewController.cs" />
+    <Compile Include="SlideOutMenuViewController.designer.cs">
+      <DependentUpon>SlideOutMenuViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="TableController.cs" />
     <Compile Include="ViewScroll.cs" />
@@ -143,6 +155,7 @@
     <BundleResource Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSMenu.dll" />
     <Content Include="Estimote.dll" />
     <BundleResource Include="Resources\img_mars.png" />
     <BundleResource Include="Resources\img_saturn.png" />
