@@ -322,29 +322,41 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="136" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="105" width="250" height="100"/>
+                                <rect key="frame" x="0.0" y="210" width="250" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="TEST BUTTON 2 AAAAAAA">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="155">
-                                <rect key="frame" x="163" y="318" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="155" fixedFrame="YES">
+                                <rect key="frame" x="170" y="653" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Game ON/OFF" lineBreakMode="tailTruncation" minimumFontSize="10" id="156" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="318" width="150" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="166" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="575" width="250" height="29"/>
+                                <segments>
+                                    <segment title="Game On"/>
+                                    <segment title="Game Off"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Game On/Off" borderStyle="roundedRect" minimumFontSize="17" id="169" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="653" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="172" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="105" width="250" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Open MapPage">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="btn_test2" destination="136" id="name-outlet-136"/>
-                        <outlet property="btn_test1" destination="131" id="name-outlet-131"/>
+                        <outlet property="btn_admin" destination="131" id="name-outlet-131"/>
                         <outlet property="switch_game" destination="155" id="name-outlet-155"/>
-                        <outlet property="lbl_game" destination="156" id="name-outlet-156"/>
+                        <outlet property="btn _ test" destination="172" id="name-outlet-172"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="129" userLabel="First Responder" sceneMemberID="firstResponder"/>

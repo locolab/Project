@@ -8,20 +8,20 @@ using System.CodeDom.Compiler;
 
 namespace DrU
 {
-	partial class SlideOutMenuViewController : UIViewController
+	partial class SlideOutMenuViewController : ViewScroll
 	{
 		public SlideOutMenuViewController (IntPtr handle) : base (handle)
 		{
 		}
 
-	    private UILabel testButton;
+	    UILabel testButton;
 
 	    public override void ViewDidLoad()
 	    {
 	        base.ViewDidLoad();
             // buttons are 200 px wide
 
-            btn_test1.TouchUpInside += (sender, e) =>
+            btn_admin.TouchUpInside += (sender, e) =>
 		    {
 		        var newpage = new EstimoteViewController();
 		        PresentViewController(newpage, true, null);

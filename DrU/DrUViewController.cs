@@ -9,7 +9,8 @@ using Trewarren.CSMenu;
 
 namespace DrU
 {
-	public partial class DrUViewController : UIViewController, ICLLocationManagerDelegate //ViewScroll was first
+//	public partial class DrUViewController : UIViewController, ICLLocationManagerDelegate //ViewScroll was first
+    public partial class DrUViewController : ViewScroll, ICLLocationManagerDelegate //ViewScroll was first
 	{
 
 
