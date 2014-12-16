@@ -20,15 +20,15 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton btn_test1 { get; set; }
+		UIButton btn_game { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton btn_test2 { get; set; }
+		UIButton btn_map { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UISwitch switch_game { get; set; }
+		UIImageView img_menuBackground { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -36,17 +36,17 @@ namespace DrU
 				btn_admin.Dispose ();
 				btn_admin = null;
 			}
-			if (btn_test1 != null) {
-				btn_test1.Dispose ();
-				btn_test1 = null;
+			if (btn_game != null) {
+				btn_game.Dispose ();
+				btn_game = null;
 			}
-			if (btn_test2 != null) {
-				btn_test2.Dispose ();
-				btn_test2 = null;
+			if (btn_map != null) {
+				btn_map.Dispose ();
+				btn_map = null;
 			}
-			if (switch_game != null) {
-				switch_game.Dispose ();
-				switch_game = null;
+			if (img_menuBackground != null) {
+				img_menuBackground.Dispose ();
+				img_menuBackground = null;
 			}
 		}
 	}

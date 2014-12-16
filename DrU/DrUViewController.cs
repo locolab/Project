@@ -9,7 +9,6 @@ using Trewarren.CSMenu;
 
 namespace DrU
 {
-//	public partial class DrUViewController : UIViewController, ICLLocationManagerDelegate //ViewScroll was first
     public partial class DrUViewController : ViewScroll, ICLLocationManagerDelegate //ViewScroll was first
 	{
 
@@ -19,6 +18,7 @@ namespace DrU
 	    private NSUuid beaconId;
 	    private CLBeaconRegion region;
 	    private IntPtr handlePtr;
+        private bool menu = false;
         //end keyboard
 
 
@@ -47,16 +47,6 @@ namespace DrU
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view, typically from a nib.
-
-            /*ESTBeaconManager manager = new ESTBeaconManager();
-            ESTBeaconRegion region = new ESTBeaconRegion("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
-            ESTBeacon beacon = new ESTBeacon();
-
-            manager.AvoidUnknownStateBeacons = true;
-
-            manager.StartMonitoringForRegion(region);
-            manager.RequestStateForRegion(region);*/
-
 
             // animated images test
             img_animation.AnimationImages = new UIImage[] 
@@ -131,10 +121,20 @@ namespace DrU
 
             btn_menu.Clicked += (sender, e) =>
             {
-                Debug.Write("Menu Clicked");
-                this.ShowLeftMenu(); 
-            };
+                if(!menu)
+                {
+                    this.ShowLeftMenu();
+                    menu = true;
+                }
+                else
+                {
+                    this.CloseLeftMenu();
+                    menu = false;
+                }
+                Debug.Write("Menu state: ");
 
+            };
+          
 
             // close keyboard on return NEED to add retun functionality so that ask button is clicked
             txt_askQuestion.ShouldReturn += delegate
@@ -161,19 +161,18 @@ namespace DrU
             this.SetLeftMenuViewController("SlideOutMenu");// Specify a menu by it's storyboard ID
             this.AddShowLeftMenuEdgeGestureRecognizer();
             //end slide out Menu
+            
+            // Close the SlideMenu after hitting a button
+            if (menu)
+            {
+                this.CloseLeftMenu();
+                menu = false;
+            }
+
 
             manager.DidRangeBeacons += (sender, e) =>
             {
-                //var bInfo = "";
-
-                //var bInfo = e.Beacons.Aggregate("", (current, beek) => current + string.Format("{0}-{1}: {4} {2} {5} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy, "Prox: ", "Accuracy: "));
-                /*foreach (var beek in e.Beacons)
-                {
-                    bInfo += string.Format("{0}-{1}: {2} {3}\n", beek.Major, beek.Minor, beek.Proximity, beek.Accuracy);
-                }*/
-
-                //txt_moreInfo.Text = bInfo;
-
+               
                 switch (_ctrl)
                 {
                     case 0:
@@ -230,6 +229,7 @@ namespace DrU
 
 		public override void ViewDidAppear (bool animated)
 		{
+	
 			base.ViewDidAppear (animated);
 		}
 

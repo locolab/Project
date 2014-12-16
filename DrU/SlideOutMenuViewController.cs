@@ -14,7 +14,7 @@ namespace DrU
 		{
 		}
 
-	    UILabel testButton;
+	    UIButton testButton;
 
 	    public override void ViewDidLoad()
 	    {
@@ -29,9 +29,11 @@ namespace DrU
 		    };
 
             var frame = new RectangleF(10, 600, 200, 30);
-            testButton = new UILabel(frame);
-            testButton.Text = "button programatically";
+            testButton = new UIButton(frame);
+            testButton.SetTitle("asfasdf",UIControlState.Normal);
             View.Add(testButton);
+
+
 	    }
 
       
