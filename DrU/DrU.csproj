@@ -109,6 +109,7 @@
     <Compile Include="GameViewController.designer.cs">
       <DependentUpon>GameViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyScene.cs" />
     <Compile Include="TableController.cs" />
     <Compile Include="ViewScroll.cs" />
   </ItemGroup>
@@ -159,6 +160,17 @@
     <BundleResource Include="Resources\animation\astro_anim10.jpg" />
     <BundleResource Include="Resources\animation\astro_anim11.jpg" />
     <BundleResource Include="Resources\animation\astro_anim12.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-1.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-2.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-3.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-4.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-5.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-6.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-7.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-8.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-9.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-10.jpg" />
+    <BundleResource Include="Resources\gameanim\astro_anim-11.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>
