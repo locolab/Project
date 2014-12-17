@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
-using Trewarren.CSMenu;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 namespace DrU
 {
-    public partial class DrUViewController : ViewScroll, ICLLocationManagerDelegate //ViewScroll was first
+	public partial class DrUViewController : ViewScroll, ICLLocationManagerDelegate
 	{
 
 
@@ -18,7 +22,9 @@ namespace DrU
 	    private NSUuid beaconId;
 	    private CLBeaconRegion region;
 	    private IntPtr handlePtr;
-        private bool menu = false;
+	    private int q_counter;
+	    private bool q_ask = true;
+	    private NSTimer q_wait;
         //end keyboard
 
 
@@ -48,6 +54,19 @@ namespace DrU
 
             // Perform any additional setup after loading the view, typically from a nib.
 
+            /*ESTBeaconManager manager = new ESTBeaconManager();
+            ESTBeaconRegion region = new ESTBeaconRegion("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+            ESTBeacon beacon = new ESTBeacon();
+
+            manager.AvoidUnknownStateBeacons = true;
+
+            manager.StartMonitoringForRegion(region);
+            manager.RequestStateForRegion(region);*/
+
+
+            // End paralax effect
+
+
             // animated images test
             img_animation.AnimationImages = new UIImage[] 
             {
@@ -73,24 +92,8 @@ namespace DrU
             // Set the background image
             img_background.Image = UIImage.FromBundle("mainbackground.jpg");
             
-            // Paralax Effect just on the background image
-            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
-            {
-                MinimumRelativeValue = new NSNumber(50),
-                MaximumRelativeValue = new NSNumber(-50)
-            };
-            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
-            {
-                MinimumRelativeValue = new NSNumber(75),
-                MaximumRelativeValue = new NSNumber(-75)
-            };
-            var effectGroup = new UIMotionEffectGroup
-            {
-                MotionEffects = new[] { xCenterEffect, yCenterEffect }
-            };
-
-            img_background.AddMotionEffect(effectGroup);
-            // End paralax effect
+            
+            
 
             if (!CLLocationManager.LocationServicesEnabled)
                 lbl_exibitName.Text = "Location Not Enabled";
@@ -98,6 +101,8 @@ namespace DrU
             manager.RequestAlwaysAuthorization();
             manager.RequestWhenInUseAuthorization();
             manager.PausesLocationUpdatesAutomatically = false;
+
+          
 
             btn_left.TouchUpInside += (o, args) =>
             {
@@ -119,22 +124,8 @@ namespace DrU
 		        PresentViewController(newpage, true, null);
 		    };
 
-            btn_menu.Clicked += (sender, e) =>
-            {
-                if(!menu)
-                {
-                    this.ShowLeftMenu();
-                    menu = true;
-                }
-                else
-                {
-                    this.CloseLeftMenu();
-                    menu = false;
-                }
-                Debug.Write("Menu state: ");
-
-            };
-          
+            // move text up
+            Debug.Write(" inside view did load");
 
             // close keyboard on return NEED to add retun functionality so that ask button is clicked
             txt_askQuestion.ShouldReturn += delegate
@@ -143,36 +134,114 @@ namespace DrU
                 return true;
             };
 
+
+            // Paralax Effect just on the background image
+            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(25),
+                MaximumRelativeValue = new NSNumber(-25)
+            };
+            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(75),
+                MaximumRelativeValue = new NSNumber(-75)
+            };
+            var effectGroup = new UIMotionEffectGroup
+            {
+                MotionEffects = new UIMotionEffect[] { xCenterEffect, yCenterEffect }
+            };
+
+            img_background.AddMotionEffect(effectGroup);
+
         }
 
 
 	    private void AskQuestion()
 	    {
-            txt_askQuestion.ResignFirstResponder();
+	        if (!q_ask) return;
+
+	        if (txt_askQuestion.Text == "")
+	        {
+	            var popView = new UIAlertView("No Question!", "You didn't ask a question! Please type in the question field then hit ASK", null, "OK");
+                popView.Show();
+                return;
+	        }
+
+	        if (txt_askQuestion.Text.Length <= 10)
+	        {
+                var popView = new UIAlertView("Question to Short!", "The question you asked did not meet the length requirements!", null, "OK");
+                popView.Show();
+                return;
+	        }
+
+	        q_ask = false;
+
+	        var q = NSUserDefaults.StandardUserDefaults.IntForKey("QuestionsAsked");
+	        q++;
+            NSUserDefaults.StandardUserDefaults.SetInt(q, "QuestionsAsked");
+	        q_counter++;
+	        var timer = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 3), CanAsk);
+	        txt_askQuestion.ResignFirstResponder();
 	        img_animation.StartAnimating();
+	        PostQuestion(txt_askQuestion.Text);
+	        Debug.Write(q);
 	    }
 
 
-		public override void ViewWillAppear (bool animated)
+	    private void CanAsk()
+	    {
+	        q_ask = true;
+	    }
+
+	    private void PostQuestion(String t)
+	    {
+	        var client = new WebClient();
+            client.QueryString.Add("Question",t);
+	        var result = client.DownloadString("http://www.cryotek.org/services/questions");
+	        if (result == "")
+	        {
+                txt_response.Text += "Dr. U Says: Hmm... It appears that I do not have the answer to that question." +
+                                     "I will place my top scientists on figuring out the answer!\n\n";
+
+	            return;
+	        }
+
+            Debug.Write(result);
+
+	        var obj = JObject.Parse(result);
+	        var res = obj["answer"];
+
+            Debug.Write(res);
+
+	        txt_response.Text = "Dr. U Says: " + res + "\n\n";
+
+	        /*
+
+            var req = WebRequest.Create("http://cryotek.org/services/logs");
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.Method = "POST";
+
+	        var byteArray = Encoding.UTF8.GetBytes(t);
+	        req.ContentLength = byteArray.Length;
+
+	        Stream dataStream = req.GetRequestStream();
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            dataStream.Close();
+
+	        var res = req.GetResponse();
+            Debug.Write(((HttpWebResponse)res).StatusDescription);
+
+            */
+
+	    }
+
+//end keyboard----------------------------------------------------------
+
+
+	    public override void ViewWillAppear (bool animated)
 		{
-            base.ViewWillAppear(animated);
-
-            //adding slide out Menu
-            this.SetLeftMenuViewController("SlideOutMenu");// Specify a menu by it's storyboard ID
-            this.AddShowLeftMenuEdgeGestureRecognizer();
-            //end slide out Menu
-            
-            // Close the SlideMenu after hitting a button
-            if (menu)
-            {
-                this.CloseLeftMenu();
-                menu = false;
-            }
-
-
             manager.DidRangeBeacons += (sender, e) =>
             {
-               
                 switch (_ctrl)
                 {
                     case 0:
@@ -184,7 +253,7 @@ namespace DrU
                         break;
                     case 1:
 
-                        if (!e.Beacons.ElementAt(0).Proximity.ToString().Equals("Unknown"))
+                        if (e != null && e.Beacons != null && !e.Beacons.ElementAt(0).Proximity.ToString().Equals("Unknown"))
                         {
                             if (e.Beacons.ElementAt(0).Major.ToString().Equals("46350"))
                             {
@@ -229,7 +298,6 @@ namespace DrU
 
 		public override void ViewDidAppear (bool animated)
 		{
-	
 			base.ViewDidAppear (animated);
 		}
 
@@ -252,10 +320,9 @@ namespace DrU
 
         partial void btn_menu_Activated(UIBarButtonItem sender)
         {
-            Debug.Write("inside btn_menu activated");
-            //this.ShowLeftMenu();   
+            
         }
-   
+
         partial void btn_Game_TouchUpInside(UIButton sender)
         {
         }
