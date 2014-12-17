@@ -28,6 +28,16 @@ namespace DrU
         {
             base.ViewDidLoad();
 
+            var q = NSUserDefaults.StandardUserDefaults.IntForKey("QuestionsAsked");
+            
+            var varText = new UITextField()
+            {
+                Frame = new RectangleF(40, 720, 200, 60),
+                BackgroundColor = new UIColor(255, 255, 255, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 20f),
+                TextAlignment = UITextAlignment.Center
+            };
+
             // Set the background image
            
             var background = new UIImageView
@@ -45,12 +55,15 @@ namespace DrU
 
             };
 
+            varText.Text = q + " Question(s) asked";
+
             btnBack.SetTitle("Back", UIControlState.Normal);
             btnBack.Layer.CornerRadius = 5f;
 
             btnBack.TouchUpInside += (sender, args) => DismissViewController(true, null);
             View.Add(background);
             Add(btnBack);
+            Add(varText);
 
             // end of back button
         }
