@@ -27,7 +27,6 @@ Global
 		{FCCCDDE5-417D-4AF4-8B57-7C08FD8EC3DD}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{FCCCDDE5-417D-4AF4-8B57-7C08FD8EC3DD}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{FCCCDDE5-417D-4AF4-8B57-7C08FD8EC3DD}.Debug|iPhone.Build.0 = Debug|iPhone
-		{FCCCDDE5-417D-4AF4-8B57-7C08FD8EC3DD}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{FCCCDDE5-417D-4AF4-8B57-7C08FD8EC3DD}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{FCCCDDE5-417D-4AF4-8B57-7C08FD8EC3DD}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{FCCCDDE5-417D-4AF4-8B57-7C08FD8EC3DD}.Release|iPhone.ActiveCfg = Release|iPhone

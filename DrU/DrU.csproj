@@ -80,8 +80,9 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\Components\json.net-4.5.11.1\lib\ios\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="CSMenu, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CSMenu.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -111,6 +112,15 @@
     <Compile Include="GameViewController.cs" />
     <Compile Include="GameViewController.designer.cs">
       <DependentUpon>GameViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuViewController.cs" />
+    <Compile Include="MenuViewController.designer.cs">
+      <DependentUpon>MenuViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyScene.cs" />
+    <Compile Include="SlideOutMenuViewController.cs" />
+    <Compile Include="SlideOutMenuViewController.designer.cs">
+      <DependentUpon>SlideOutMenuViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="TableController.cs" />
     <Compile Include="ViewScroll.cs" />
@@ -145,6 +155,7 @@
     <BundleResource Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSMenu.dll" />
     <Content Include="Estimote.dll" />
     <BundleResource Include="Resources\img_mars.png" />
     <BundleResource Include="Resources\img_saturn.png" />
@@ -162,12 +173,9 @@
     <BundleResource Include="Resources\animation\astro_anim10.jpg" />
     <BundleResource Include="Resources\animation\astro_anim11.jpg" />
     <BundleResource Include="Resources\animation\astro_anim12.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="json.net">
-      <Visible>False</Visible>
-      <Version>4.5.11.1</Version>
-    </XamarinComponentReference>
+    <BundleResource Include="Resources\gamebackground.jpg" />
+    <BundleResource Include="Resources\Icon-backup.png" />
+    <BundleResource Include="Resources\resource sites.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>

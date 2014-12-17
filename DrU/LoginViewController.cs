@@ -39,6 +39,26 @@ namespace DrU
                 return true;
             };
 
+
+            // Paralax Effect just on the background image
+            var xCenterEffect = new UIInterpolatingMotionEffect("center.x", UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(25),
+                MaximumRelativeValue = new NSNumber(-25)
+            };
+            var yCenterEffect = new UIInterpolatingMotionEffect("center.y", UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
+            {
+                MinimumRelativeValue = new NSNumber(75),
+                MaximumRelativeValue = new NSNumber(-75)
+            };
+            var effectGroup = new UIMotionEffectGroup
+            {
+                MotionEffects = new[] { xCenterEffect, yCenterEffect }
+            };
+
+            img_LoginBackground.AddMotionEffect(effectGroup);
+            // End paralax effect
+
             
 	    }
 

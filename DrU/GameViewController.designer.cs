@@ -16,38 +16,10 @@ namespace DrU
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIBarButtonItem btn_back { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIBarButtonItem btn_map { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView img_GameBackground { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UIView view_game { get; set; }
-
-		[Action ("btn_back_Activated:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void btn_back_Activated (UIBarButtonItem sender);
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (btn_back != null) {
-				btn_back.Dispose ();
-				btn_back = null;
-			}
-			if (btn_map != null) {
-				btn_map.Dispose ();
-				btn_map = null;
-			}
-			if (img_GameBackground != null) {
-				img_GameBackground.Dispose ();
-				img_GameBackground = null;
-			}
 			if (view_game != null) {
 				view_game.Dispose ();
 				view_game = null;
