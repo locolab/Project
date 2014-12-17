@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
@@ -17,6 +20,9 @@ namespace DrU
 	    private NSUuid beaconId;
 	    private CLBeaconRegion region;
 	    private IntPtr handlePtr;
+	    private int q_counter;
+	    private bool q_ask = true;
+	    private NSTimer q_wait;
         //end keyboard
 
 
@@ -150,19 +156,65 @@ namespace DrU
 
 	    private void AskQuestion()
 	    {
-            txt_askQuestion.ResignFirstResponder();
+	        if (!q_ask) return;
+
+	        if (txt_askQuestion.Text == "")
+	        {
+	            var popView = new UIAlertView("No Question!", "You didn't ask a question! Please type in the question field then hit ASK", null, "OK");
+                popView.Show();
+                return;
+	        }
+
+	        if (txt_askQuestion.Text.Length <= 10)
+	        {
+                var popView = new UIAlertView("Question to Short!", "The question you asked did not meet the length requirements!", null, "OK");
+                popView.Show();
+                return;
+	        }
+
+	        //q_ask = false;
+
+	        var q = NSUserDefaults.StandardUserDefaults.IntForKey("QuestionsAsked");
+	        q++;
+            NSUserDefaults.StandardUserDefaults.SetInt(q, "QuestionsAsked");
+	        q_counter++;
+	        //var timer = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 3), CanAsk);
+	        txt_askQuestion.ResignFirstResponder();
 	        img_animation.StartAnimating();
+	        //PostQuestion(txt_askQuestion.Text);
+	        Debug.Write(q);
 	    }
 
 
+	    private void CanAsk()
+	    {
+	        q_ask = true;
+	    }
+
+	    private void PostQuestion(String t)
+	    {
+            var req = WebRequest.Create("http://cryotek.org/services/logs");
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.Method = "POST";
+
+	        var byteArray = Encoding.UTF8.GetBytes(t);
+	        req.ContentLength = byteArray.Length;
+
+	        Stream dataStream = req.GetRequestStream();
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            dataStream.Close();
+
+	        var res = req.GetResponse();
+            Debug.Write(((HttpWebResponse)res).StatusDescription);
 
 
+
+	    }
 
 //end keyboard----------------------------------------------------------
 
 
-
-		public override void ViewWillAppear (bool animated)
+	    public override void ViewWillAppear (bool animated)
 		{
             manager.DidRangeBeacons += (sender, e) =>
             {

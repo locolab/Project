@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
@@ -510,18 +511,21 @@ namespace DrU
             else
             {
                 var xDoc = XDocument.Load(Path.Combine(supDir.Path, "Estimote.xml"));
-                List<EstimoteInit> reList = (from estimote in xDoc.Elements("Estimotes")
-                    select new EstimoteInit
+                //var reList;
+
+                XElement x = XElement.Load(Path.Combine(supDir.Path, "Estimote.xml"));
+                var reList = from est in x.Descendants("Estimote")
+                    select new EstimoteInit()
                     {
-                        major = estimote.Element("Major").Value,
-                        minor = estimote.Element("Minor").Value,
-                        name = estimote.Element("Name").Value,
-                        exhibit = estimote.Element("Exhibit").Value
-                    }).ToList();
+                        major = est.Element("Major").Value,
+                        minor = est.Element("Minor").Value,
+                        name = est.Element("Name").Value,
+                        exhibit = est.Element("Exhibit").Value
+                    };
 
                 Debug.Write("Read File in PopulateAdd");
 
-                return reList;
+                return reList.ToList();
             }
 
 
