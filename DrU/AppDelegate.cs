@@ -19,7 +19,7 @@ namespace DrU
         UINavigationController navigationController;
         UIViewController viewController;
 
-      	
+
         //end camera
 
 		public override UIWindow Window {
@@ -31,6 +31,7 @@ namespace DrU
 		// OpenGL applications should use this method to pause.
 		public override void OnResignActivation (UIApplication application)
 		{
+
 		}
 		
 		// This method should be used to release shared resources and it should store the application state.
@@ -47,7 +48,10 @@ namespace DrU
 		
 		// This method is called when the application is about to terminate. Save data, if needed.
 		public override void WillTerminate (UIApplication application)
-		{
+        {
+            // Resets the question asked counter var
+            NSUserDefaults.StandardUserDefaults.SetInt(0, "QuestionsAsked");
+
 		}
 	}
 }

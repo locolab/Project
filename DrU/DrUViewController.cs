@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Trewarren.CSMenu;
 
 
@@ -12,14 +17,17 @@ namespace DrU
     public partial class DrUViewController : ViewScroll, ICLLocationManagerDelegate //ViewScroll was first
 	{
 
-
         private int _ctrl = 0;
 	    private CLLocationManager manager;
 	    private NSUuid beaconId;
 	    private CLBeaconRegion region;
 	    private IntPtr handlePtr;
+	    private int q_counter;
+	    private bool q_ask = true;
+	    private NSTimer q_wait;
         private bool menu = false;
         //end keyboard
+
 
 
 		public DrUViewController (IntPtr handle) : base (handle)
@@ -70,6 +78,8 @@ namespace DrU
             btn_askButton.TouchUpInside += (sender, args) => AskQuestion();
            //------- END ANIMATION
 
+            txt_response.Layer.CornerRadius = 10.0f;
+
             // Set the background image
             img_background.Image = UIImage.FromBundle("mainbackground.jpg");
             
@@ -113,11 +123,12 @@ namespace DrU
             manager.StartRangingBeacons(region);
             manager.StartUpdatingLocation();
 
-		    btn_map.Clicked += (sender, e) =>
+		  /*  btn_map.Clicked += (sender, e) =>
 		    {
 		        var newpage = new EstimoteViewController();
 		        PresentViewController(newpage, true, null);
 		    };
+           */
 
             btn_menu.Clicked += (sender, e) =>
             {
@@ -145,12 +156,86 @@ namespace DrU
 
         }
 
-
-	    private void AskQuestion()
+ 	private void AskQuestion()
 	    {
-            txt_askQuestion.ResignFirstResponder();
+	        if (!q_ask) return;
+
+	        if (txt_askQuestion.Text == "")
+	        {
+	            var popView = new UIAlertView("No Question!", "You didn't ask a question! Please type in the question field then hit ASK", null, "OK");
+                popView.Show();
+                return;
+	        }
+
+	        if (txt_askQuestion.Text.Length <= 10)
+	        {
+                var popView = new UIAlertView("Question to Short!", "The question you asked did not meet the length requirements!", null, "OK");
+                popView.Show();
+                return;
+	        }
+
+	        q_ask = false;
+
+	        var q = NSUserDefaults.StandardUserDefaults.IntForKey("QuestionsAsked");
+	        q++;
+            NSUserDefaults.StandardUserDefaults.SetInt(q, "QuestionsAsked");
+	        q_counter++;
+	        var timer = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 3), CanAsk);
+	        txt_askQuestion.ResignFirstResponder();
 	        img_animation.StartAnimating();
+	        PostQuestion(txt_askQuestion.Text);
+	        Debug.Write(q);
 	    }
+
+
+	    private void CanAsk()
+	    {
+	        q_ask = true;
+	    }
+
+
+ 	private void PostQuestion(String t)
+	    {
+	        var client = new WebClient();
+            client.QueryString.Add("Question",t);
+	        var result = client.DownloadString("http://www.cryotek.org/services/questions");
+	        if (result == "")
+	        {
+                txt_response.Text += "Dr. U Says: Hmm... It appears that I do not have the answer to that question." +
+                                     "I will place my top scientists on figuring out the answer!\n\n";
+
+	            return;
+	        }
+
+            Debug.Write(result);
+
+	        var obj = JObject.Parse(result);
+	        var res = obj["answer"];
+
+            Debug.Write(res);
+
+	        txt_response.Text = "Dr. U Says: " + res + "\n\n";
+
+	        /*
+
+            var req = WebRequest.Create("http://cryotek.org/services/logs");
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.Method = "POST";
+
+	        var byteArray = Encoding.UTF8.GetBytes(t);
+	        req.ContentLength = byteArray.Length;
+
+	        Stream dataStream = req.GetRequestStream();
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            dataStream.Close();
+
+	        var res = req.GetResponse();
+            Debug.Write(((HttpWebResponse)res).StatusDescription);
+
+            */
+
+	    }
+
 
 
 		public override void ViewWillAppear (bool animated)
@@ -252,8 +337,7 @@ namespace DrU
 
         partial void btn_menu_Activated(UIBarButtonItem sender)
         {
-            Debug.Write("inside btn_menu activated");
-            //this.ShowLeftMenu();   
+            
         }
    
         partial void btn_Game_TouchUpInside(UIButton sender)

@@ -76,6 +76,10 @@ namespace DrU
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextView txt_response { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIView view_base { get; set; }
 
 		[Action ("btn_askButton_TouchUpInside:")]
@@ -163,6 +167,10 @@ namespace DrU
 			if (txt_moreInfo != null) {
 				txt_moreInfo.Dispose ();
 				txt_moreInfo = null;
+			}
+			if (txt_response != null) {
+				txt_response.Dispose ();
+				txt_response = null;
 			}
 			if (view_base != null) {
 				view_base.Dispose ();

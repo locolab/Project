@@ -11,9 +11,12 @@ namespace DrU
 {
 	public partial class GameViewController : UIViewController
 	{
-		public GameViewController (IntPtr handle) : base (handle)
+		
+        
+         public GameViewController (IntPtr handle) : base (handle)
 		{
 		}
+         
 
         public override void DidReceiveMemoryWarning()
         {
@@ -32,11 +35,14 @@ namespace DrU
             
             var varText = new UITextField()
             {
-                Frame = new RectangleF(40, 720, 200, 60),
+                Frame = new RectangleF(100, 220, 200, 60),
                 BackgroundColor = new UIColor(255, 255, 255, 255),
                 Font = UIFont.FromName("Helvetica-Bold", 20f),
                 TextAlignment = UITextAlignment.Center
+
             };
+                       
+            
 
             // Set the background image
            
@@ -49,7 +55,7 @@ namespace DrU
             //adding Back button
             var btnBack = new UIButton(UIButtonType.RoundedRect)
             {
-                Frame = new RectangleF(0, 100, 150, 60),
+                Frame = new RectangleF(100, 100, 150, 60),
                 BackgroundColor = new UIColor(160, 245, 250, 255),
                 Font = UIFont.FromName("Helvetica-Bold", 30f)
 

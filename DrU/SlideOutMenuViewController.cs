@@ -14,7 +14,6 @@ namespace DrU
 		{
 		}
 
-	    UIButton testButton;
 
 	    public override void ViewDidLoad()
 	    {
@@ -28,10 +27,13 @@ namespace DrU
 
 		    };
 
-            var frame = new RectangleF(10, 600, 200, 30);
-            testButton = new UIButton(frame);
-            testButton.SetTitle("asfasdf",UIControlState.Normal);
-            View.Add(testButton);
+            // Works after removing constructor in gameviewcontroller.cs 
+           /* btn_game.TouchUpInside += (sender, e) =>
+            {
+                var newpage = new GameViewController();
+                PresentViewController(newpage, true, null);
+            };
+            * */
 
 
 	    }

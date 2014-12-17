@@ -56,13 +56,10 @@ namespace DrU
             var cell = tblView.DequeueReusableCell(cellID) ??
                                    new UITableViewCell(UITableViewCellStyle.Default, cellID);
 
-            cell.TextLabel.Text = tableList[indexPath.Row].GetMajor();
+
+            cell.TextLabel.Text = tableList[indexPath.Row].name == "" ? tableList[indexPath.Row].major : tableList[indexPath.Row].name;
             return cell;
         }
 
-        public void SelectedItem()
-        {
-            
-        }
     }
 }
