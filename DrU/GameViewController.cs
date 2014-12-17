@@ -24,40 +24,38 @@ namespace DrU
         }
 
 
-        /*public override void ViewDidLoad()
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
             // Set the background image
-            img_GameBackground.Image = UIImage.FromBundle("mainbackground.jpg");
-            
-        }*/
-
-        public override void LoadView()
-        {
-            base.LoadView();
-
-            View = new SKView
+           
+            var background = new UIImageView
             {
-                ShowsFPS = true,
-                ShowsNodeCount = true,
-                ShowsDrawCount = true
+                Frame = UIScreen.MainScreen.Bounds,
+                Image = UIImage.FromBundle("mainbackground.jpg")
             };
-        }
-
-        public override void ViewWillLayoutSubviews()
-        {
-            base.ViewWillLayoutSubviews();
-
-            var view = (SKView)View;
-
-            if (view.Scene == null)
+            
+            //adding Back button
+            var btnBack = new UIButton(UIButtonType.RoundedRect)
             {
-                var scene = new MyScene(View.Bounds.Size);
-                scene.ScaleMode = SKSceneScaleMode.AspectFill;
-                view.PresentScene(scene);
-            }
+                Frame = new RectangleF(0, 100, 150, 60),
+                BackgroundColor = new UIColor(160, 245, 250, 255),
+                Font = UIFont.FromName("Helvetica-Bold", 30f)
+
+            };
+
+            btnBack.SetTitle("Back", UIControlState.Normal);
+            btnBack.Layer.CornerRadius = 5f;
+
+            btnBack.TouchUpInside += (sender, args) => DismissViewController(true, null);
+            View.Add(background);
+            Add(btnBack);
+
+            // end of back button
         }
+ 
+       
 
         public override bool PrefersStatusBarHidden()
         {

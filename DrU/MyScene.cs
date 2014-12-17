@@ -31,6 +31,8 @@ namespace DrU
             (i) => SKTexture.FromImageNamed(String.Format("gameanim/astro_anim-{0}.jpg", i))).ToArray();
             animate = SKAction.RepeatActionForever(SKAction.AnimateWithTextures(textures, 0.1));
         }
+        
+      
 
         public override void TouchesBegan(NSSet touches, UIEvent evt)
         {

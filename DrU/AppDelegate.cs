@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -15,6 +14,13 @@ namespace DrU
 	{
 		// class-level declarations
 	
+        // camera
+        UIWindow window;
+        UINavigationController navigationController;
+        UIViewController viewController;
+
+      	
+        //end camera
 
 		public override UIWindow Window {
 			get;
