@@ -201,7 +201,7 @@ namespace DrU
 	        var result = client.DownloadString("http://www.cryotek.org/services/questions");
 	        if (result == "")
 	        {
-                txt_response.Text = "Dr. U Says: Hmm... It appears that I do not have the answer to that question." +
+                txt_response.Text = "Dr. U Says: Hmm... It appears that I do not have the answer to that question. " +
                                      "I will place my top scientists on figuring out the answer!\n\n";
 
 	            return;
