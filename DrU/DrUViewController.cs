@@ -7,6 +7,8 @@ using System.Text;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 namespace DrU
@@ -172,16 +174,16 @@ namespace DrU
                 return;
 	        }
 
-	        //q_ask = false;
+	        q_ask = false;
 
 	        var q = NSUserDefaults.StandardUserDefaults.IntForKey("QuestionsAsked");
 	        q++;
             NSUserDefaults.StandardUserDefaults.SetInt(q, "QuestionsAsked");
 	        q_counter++;
-	        //var timer = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 3), CanAsk);
+	        var timer = NSTimer.CreateScheduledTimer(new TimeSpan(0, 0, 3), CanAsk);
 	        txt_askQuestion.ResignFirstResponder();
 	        img_animation.StartAnimating();
-	        //PostQuestion(txt_askQuestion.Text);
+	        PostQuestion(txt_askQuestion.Text);
 	        Debug.Write(q);
 	    }
 
@@ -193,6 +195,28 @@ namespace DrU
 
 	    private void PostQuestion(String t)
 	    {
+	        var client = new WebClient();
+            client.QueryString.Add("Question",t);
+	        var result = client.DownloadString("http://www.cryotek.org/services/questions");
+	        if (result == "")
+	        {
+                txt_response.Text += "Dr. U Says: Hmm... It appears that I do not have the answer to that question." +
+                                     "I will place my top scientists on figuring out the answer!\n\n";
+
+	            return;
+	        }
+
+            Debug.Write(result);
+
+	        var obj = JObject.Parse(result);
+	        var res = obj["answer"];
+
+            Debug.Write(res);
+
+	        txt_response.Text = "Dr. U Says: " + res + "\n\n";
+
+	        /*
+
             var req = WebRequest.Create("http://cryotek.org/services/logs");
             req.ContentType = "application/x-www-form-urlencoded";
             req.Method = "POST";
@@ -207,7 +231,7 @@ namespace DrU
 	        var res = req.GetResponse();
             Debug.Write(((HttpWebResponse)res).StatusDescription);
 
-
+            */
 
 	    }
 
